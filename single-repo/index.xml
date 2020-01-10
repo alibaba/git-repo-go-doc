@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>单仓库代码评审 on git-repo</title>
+    <link>http://git-repo.info/single-repo.html</link>
+    <description>Recent content in 单仓库代码评审 on git-repo</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    
+	<atom:link href="http://git-repo.info/single-repo/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>git peer-review</title>
+      <link>http://git-repo.info/single-repo/git-peer-review.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://git-repo.info/single-repo/git-peer-review.html</guid>
+      <description>git-repo 针对常用的单仓库的工作区，提供了快捷的创建代码评审的命令：git peer-review。该命令可以简写为 git pr 或者 git review。 1. 创建代码</description>
+    </item>
+    
+    <item>
+      <title>git abandon</title>
+      <link>http://git-repo.info/single-repo/git-abandon.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://git-repo.info/single-repo/git-abandon.html</guid>
+      <description>git abandon 是 git-repo 的一个别名命令，清理已经发起代码评审的本地分支。</description>
+    </item>
+    
+    <item>
+      <title>git download</title>
+      <link>http://git-repo.info/single-repo/git-download.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://git-repo.info/single-repo/git-download.html</guid>
+      <description>功能 git download 是 git-repo 的一个别名命令，实现下载代码评审的源代码。默认使用 checkout 命令检出待评审的提交。 命令格式 git download [options] &amp;lt;Merge-Request-ID&amp;gt; git download [options] &amp;lt;Change-ID&amp;gt;/&amp;lt;Patch-ID&amp;gt; 说明: 对于阿里巴巴代码平台上的</description>
+    </item>
+    
+  </channel>
+</rss>

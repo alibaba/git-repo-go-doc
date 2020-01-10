@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>git peer-review - git-repo</title>
+<meta name="description" content="client tool for git centralized workflow (Aone or gerrit)">
+<meta name="generator" content="Hugo 0.55.6" />
+<link href="http://git-repo.infoindex.xml" rel="alternate" type="application/rss+xml">
+<link rel="canonical" href="http://git-repo.info/single-repo/git-peer-review.html">
+<link rel="stylesheet" href="http://git-repo.info/css/theme.min.css">
+<script src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+<link rel="stylesheet" href="http://git-repo.info/css/chroma.min.css">
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery.easing@1.4.1/jquery.easing.min.js"></script>
+<script src="http://git-repo.info/js/bundle.js"></script><style>
+:root {}
+</style>
+<meta property="og:title" content="git peer-review" />
+<meta property="og:description" content="git-repo 针对常用的单仓库的工作区，提供了快捷的创建代码评审的命令：git peer-review。该命令可以简写为 git pr 或者 git review。 1. 创建代码" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://git-repo.info/single-repo/git-peer-review.html" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="git peer-review"/>
+<meta name="twitter:description" content="git-repo 针对常用的单仓库的工作区，提供了快捷的创建代码评审的命令：git peer-review。该命令可以简写为 git pr 或者 git review。 1. 创建代码"/>
+
+<meta itemprop="name" content="git peer-review">
+<meta itemprop="description" content="git-repo 针对常用的单仓库的工作区，提供了快捷的创建代码评审的命令：git peer-review。该命令可以简写为 git pr 或者 git review。 1. 创建代码">
+
+
+
+<meta itemprop="wordCount" content="2704">
+
+
+
+<meta itemprop="keywords" content="" />
+</head>
+<body><div class="container"><header>
+<h1>git-repo</h1>
+
+<p class="description">client tool for git centralized workflow (Aone or gerrit)</p>
+
+</header>
+<div class="global-menu">
+<nav>
+<ul>
+<li><a href="/index.html">Home</a></li>
+<li><a href="https://github.com/aliyun/git-repo-go/releases">Download</a></li>
+<li><a href="/changelog.html">ChangeLog</a></li>
+<li><a href="/contribution.html">Contribution</a></li>
+<li><a href="https://github.com/aliyun/git-repo-go/issues">Issue</a></li>
+<li><a href="https://github.com/aliyun/git-repo-go">Source code</a></li></ul>
+</nav>
+</div>
+<div class="content-container">
+<main><h1>git peer-review</h1>
+
+
+<p><code>git-repo</code> 针对常用的单仓库的工作区，提供了快捷的创建代码评审的命令：<code>git peer-review</code>。该命令可以简写为 <code>git pr</code> 或者 <code>git review</code>。</p>
+
+<h2 id="1-创建代码评审">1. 创建代码评审</h2>
+
+<p>使用 <code>git peer-review</code> 命令创建代码评审的步骤如下：</p>
+
+<h3 id="1-1-克隆远程仓库到工作区">1.1 克隆远程仓库到工作区</h3>
+
+<p>克隆远程仓库到本地工作区，例如克隆本 git-repo 网站的仓库。 （如果工作区中已经存在该仓库，则忽略此步骤。）</p>
+
+<pre><code>$ git clone https://codeup.teambition.com/git-repo/demo.git
+</code></pre>
+
+<p>切换到本地仓库的工作区：</p>
+
+<pre><code>$ cd demo
+</code></pre>
+
+<h4 id="1-2-创建特性分支">1.2 创建特性分支</h4>
+
+<p>在本地工作区中创建新的工作分支。这个步骤不是必须的，使用当前分支（如 master 分支）也可以。但是如果需要在一个工作区目录切换不同特性的开发，则创建分支是需要的，否则多个特性的代码可能混在同一个代码评审任务中，或相互覆盖。</p>
+
+<pre><code>$ git checkout -b topic1 origin/master
+</code></pre>
+
+<p>上面命令的两个参数要重点说明一下：</p>
+
+<ul>
+<li>参数 <code>-b topic1</code> 设定了新的工作分支的名称。</li>
+<li>最后的 <code>origin/master</code> 参数，则是为了将新建分支和上游的 master 分支建立关联。这个参数很重要，如果忘了添加该参数，则在用 <code>git peer-review</code> 创建代码评审时，会提示补救措施。</li>
+</ul>
+
+<h3 id="1-3-工作区内开发和提交">1.3 工作区内开发和提交</h3>
+
+<p>在工作区中进行代码开发工作，使用标准的 git 命令进行提交。</p>
+
+<h3 id="1-4-发起代码评审">1.4 发起代码评审</h3>
+
+<p>当完成本地开发后，需要将代码推送到上游仓库，并创建代码评审时，执行如下命令：</p>
+
+<pre><code>$ git pr
+</code></pre>
+
+<p>该命令的参数有很多，可以设置代码评审需要的各项参数，例如：</p>
+
+<ul>
+<li><p>指定评审者和关注者。多个用户名之间可以用（半角）逗号分开。</p>
+
+<pre><code>$ git pr --reviewers 星楚,澳明 --cc 知忧
+</code></pre></li>
+
+<li><p>设定代码评审处于草稿状态，可以发表评审意见，但是不能合入。</p>
+
+<pre><code>$ git pr --draft
+</code></pre></li>
+</ul>
+
+<p>如果当前分支相比远程分支没有新提交，则不会创建代码评审，显示提示信息如下：</p>
+
+<pre><code>$ git pr
+NOTE: no branches ready for upload
+</code></pre>
+
+<p>如果已经发起过一次代码评审，且之后没有代码改动，也不会执行。显示的提示信息如下：</p>
+
+<pre><code>$ git pr
+NOTE: no change in project . (branch topic1) since last upload
+NOTE: no branches ready for upload
+</code></pre>
+
+<p>如果本地分支未跟踪某一个远程分支，则 <code>git peer-review</code> 命令不知道该向哪个远程分支发起代码评审。必须设置本地分支和远程分支的跟踪，才可以发起代码评审。命令报错信息如下：</p>
+
+<pre><code>$ git pr
+FATAL: upload failed: cannot find tracking branch
+
+Please run command &quot;git branch -u &lt;upstream&gt;&quot; to track a remote branch. E.g.:
+
+    git branch -u origin/master
+</code></pre>
+
+<p>参照提示信息中的命令，建立工作区本地分支和远程分支的跟踪关系。</p>
+
+<h3 id="1-5-代码评审的编辑界面">1.5 代码评审的编辑界面</h3>
+
+<p>输入 <code>git pr</code> 命令后，会打开一个编辑器，内容是此次代码评审的各项可定制的参数，内容如下：</p>
+
+<pre><code>##############################################################################
+# Step 1: Input your options for code review
+#
+# Note: Input your options below the comments and keep the comments unchanged
+##############################################################################
+
+# [Title]       : one line message below as the title of code review
+
+# [Description] : multiple lines of text as the description of code review
+
+# [Issue]       : multiple lines of issue IDs for cross references
+
+# [Reviewer]    : multiple lines of user names as the reviewers for code review
+
+# [Cc]          : multiple lines of user names as the watchers for code review
+
+# [Draft]       : a boolean (yes/no, or true/false) to turn on/off draft mode
+
+# [Private]     : a boolean (yes/no, or true/false) to turn on/off private mode
+
+
+##############################################################################
+# Step 2: Select project and branches for upload
+#
+# Note: Uncomment the branches to upload, and not touch the project lines
+##############################################################################
+
+#
+# project ./:
+   branch topic1 ( 3 commit(s)) to remote branch master:
+#         03c01e211122b49fe05f48e08fd3e1dd1c52e57e
+#         ec78989440697fbc13bfbd3ea082fe9b3fc5f2d7
+#         4e599aa284ed64ba12ba1b5b06fbbd3199846434
+</code></pre>
+
+<p>其中以字符 &ldquo;#&rdquo; 开始的行是注释，不要改动注释行，因为 <code>git-repo</code> 要根据注释行的内容判断用户输入内容用于更改哪项代码评审的参数设置。 例如：</p>
+
+<ul>
+<li>在 &ldquo;# [Title]&rdquo; 行的下面添加的内容，成为代码评审的标题。默认用提交说明的标题作为代码评审标题。</li>
+<li>在 &ldquo;# [Description]&rdquo; 行的下面添加的内容，成为代码评审的详细描述。默认用提交说明的内容作为代码评审的详细描述。</li>
+<li>在 &ldquo;# [Issue]&rdquo; 行的下面如果添加 Issue ID，则将代码评审和问题之间的建立关联。</li>
+<li>在 &ldquo;# [Reviewer]&rdquo; 行的下面添加代码评审者姓名，一个一行，或者用逗号分隔。</li>
+<li>在 &ldquo;# [Cc]&rdquo; 行的下面添加代码评审的关注者姓名，一个一行，或者用逗号分隔。</li>
+<li>在 &ldquo;# [Draft]&rdquo; 行的下面如果输入 yes，则表明要创建一个草稿模式的代码评审。</li>
+<li>在最下面的 &ldquo;Step 2&rdquo; 区域，显示当前项目将要上传到远程仓库的分支和提交列表。检查提交列表，如果不想创建此次代码评审，则将 &ldquo;branch &hellip;&rdquo; 的行注释掉，或者删掉，则此次创建代码评审的任务终止。</li>
+</ul>
+
+<p>保存内容，退出编辑器，则开始向服务端推送代码，并开始代码评审的创建。</p>
+
+<p>编辑的内容会以模板的方式保存，以便在下一次执行 <code>git peer-review</code> 时复用。</p>
+
+<h3 id="1-6-完成代码评审的创建">1.6 完成代码评审的创建</h3>
+
+<p><code>git peer-review</code> 命令执行完毕后，显示代码评审创建成功的消息，示例如下：</p>
+
+<pre><code>remote: +----------------------------------------------------------------+
+remote: | Merge Request #7937 was created or updated.                    |
+remote: | View merge request at URL:                                     |
+remote: | https://codeup.teambition.com/git-repo/demo/merge_request/7937 |
+remote: +----------------------------------------------------------------+
+To ssh://codeup.teambition.com/git-repo/demo.git
+ * [new branch]      topic1 -&gt; refs/for/master/topic1
+</code></pre>
+
+<p>注意到提示信息中包含创建成功的代码评审的 URL 地址，通过浏览器访问该地址，显示创建好的代码评审。</p>
+
+<h3 id="1-7-服务器端仓库的变化">1.7 服务器端仓库的变化</h3>
+
+<p>通过命令行工具在服务器端创建代码评审，服务端不会创建新的分支，但是为了方便用户远程下载评审代码，仓库中生成了一个特殊的引用。</p>
+
+<p>例如上面创建的第 7937 号代码评审，会创建包含该评审 ID 号的，名为 <code>refs/merge-requests/7937/head</code> 的特殊引用。下载该待评审的代码，可以使用如下命令：</p>
+
+<pre><code>$ git fetch origin refs/merge-requests/7937/head
+From https://codeup.teambition.com/git-repo/demo.git
+ * branch            refs/merge-requests/7937/head -&gt; FETCH_HEAD
+</code></pre>
+
+<p>检出相关代码：</p>
+
+<pre><code>$ git checkout FETCH_HEAD
+</code></pre>
+
+<p><code>git-repo</code> 提供了一个便捷的 <code>download</code> 子命令完成上述操作。</p>
+
+<h2 id="2-重新发送-刷新代码评审">2. 重新发送，刷新代码评审</h2>
+
+<p>代码评审很少一蹴而就，针对评审者的意见，开发者（评审任务的创建者）往往需要重新上传代码刷新代码评审。对于阿里巴巴代码平台上创建的代码评审任务，重复执行 <code>git peer-review</code> 命令即可。</p>
+
+<ol>
+<li><p>开发者首先在本地工作区修改代码。</p></li>
+
+<li><p>执行如下命令，向远程仓库推送并刷新代码评审任务：</p>
+
+<pre><code>$ git pr
+</code></pre></li>
+</ol>
+
+<h2 id="3-支持的服务端类型">3. 支持的服务端类型</h2>
+
+<p>目前 <code>git peer-review</code> 支持两种类型的 Git 服务器，一种是 Gerrit 服务器，另一种就是阿里巴巴的代码平台。而其它平台并不支持。</p>
+
+<p>在 git-repo（包括 git peer-review）在执行时，会检查服务器是否支持集中式代码评审。对于使用 HTTP（HTTPS）协议下载的仓库，会向该 HTTP 网站的 <code>ssh_info</code> API 发起 Get 请求。</p>
+
+<h3 id="3-1-http-协议的服务探测">3.1 HTTP 协议的服务探测</h3>
+
+<p>阿里巴巴代码平台的 <code>ssh_info</code> API 返回一个 JSON 数据：</p>
+
+<pre><code>$ curl https://codeup.teambition.com/ssh_info
+{&quot;host&quot;:&quot;codeup.teambition.com&quot;,&quot;port&quot;:22,&quot;type&quot;:&quot;agit&quot;,&quot;version&quot;:2}
+</code></pre>
+
+<p>其中 host 和 port 是 SSH 协议上传代码的主机名和端口号。type 字段是服务器类型，这里的值为 <code>agit</code>，是 Alibaba-Git extension 的缩写。</p>
+
+<p>Gerrit 平台的 <code>ssh_info</code> API 返回一个字符串，内容是 SSH 协议的主机名和端口号：</p>
+
+<pre><code>$ curl https://review.opendev.org/ssh_info
+review.opendev.org 29418
+</code></pre>
+
+<h3 id="3-2-ssh-协议的服务探测">3.2 SSH 协议的服务探测</h3>
+
+<p>如果是 SSH 协议，会执行服务端的 <code>ssh_info</code> 命令来判断服务器类型：</p>
+
+<pre><code>$ ssh git@codeup.teambition.com ssh_info
+{&quot;type&quot;:&quot;agit&quot;,&quot;version&quot;:2}
+</code></pre>
+
+<h3 id="3-3-gerrit-的-commit-msg-钩子脚本">3.3 Gerrit 的 commit-msg 钩子脚本</h3>
+
+<p>阿里巴巴代码平台是通过 Session 来判断，是创建新的代码评审，还是刷新老的代码评审。而 Gerrit 则采用另外一套方案。</p>
+
+<p>Gerrit 需要在提交说明中嵌入唯一的 Change-Id 编号，在用户将提交推送到服务器后，通过检索 Change-Id 的方式来判断是创建新的评审，还是刷新老的评审任务。在提交中嵌入 Change-Id 是通过在客户端安装 <code>commit-msg</code> 钩子的方式进行的。</p>
+
+<pre><code>$ scp -p -P 29418 &lt;your_name&gt;@&lt;gerrit-server&gt;:hooks/commit-msg \
+  $(git rev-parse --git-dir)/hooks/
+</code></pre>
+
+<p>也可以运行 <code>git-repo</code> 的命令 【TODO】安装 commit-msg 钩子。</p>
+
+<h2 id="4-ssh-协议创建代码评审的授权">4. SSH 协议创建代码评审的授权</h2>
+
+<p>git-repo 在创建代码评审时，会优先使用 SSH 协议。SSH 协议针对集中式评审设计了新的授权模型，只要拥有仓库的读取权限，就能向仓库发起代码评审。实现了仓库的人人可写。</p>
+
+<p>通过 SSH 协议的写操作，会传递 <code>--receive-pack</code> 参数，该参数可以指定服务器启动的 receive-pack 应用名。例如阿里巴巴代码平台指定的 receive-pack 应用为 <code>agit-receive-pack</code>。针对该应用采用了不同的授权模型：只要拥有仓库的读权限，就能向仓库创建代码评审。</p>
+
+<h2 id="5-第三方应覆盖了别名命令">5. 第三方应覆盖了别名命令</h2>
+
+<p>OpenStack 社区的代码评审工具名为 <code>git-review</code>，如果系统中安装了 OpenStack 社区的 <code>git-review</code> 工具，则 <code>git-repo</code> 注册的别名命令 <code>git-review</code> 在运行时被覆盖。</p>
+
+<p>执行 <code>git repo</code> 命令，如果发现存在别名命令被覆盖的情况，会显示警告信息。</p>
+
+<pre><code>$ git repo
+WARNING: you cannot use the git-repo alias command 'git-review', it is overrided by '/usr/local/bin/git-review' installed
+... ...
+</code></pre>
+
+<p>遇到这种情况，请使用其它未占用的别名命令，如：<code>git pr</code>。</p>
+<div class="edit-meta">
+
+<br></div><nav class="pagination"><a class="nav nav-prev" href="/single-repo.html" title="单仓库代码评审"><i class="fas fa-arrow-left" aria-hidden="true"></i> Prev - 单仓库代码评审</a>
+<a class="nav nav-next" href="/single-repo/git-abandon.html" title="git abandon">Next - git abandon <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+</nav><footer><p class="powered">Powered by <a href="https://gohugo.io">Hugo</a>. Theme by <a href="https://themes.gohugo.io/hugo-theme-techdoc/">TechDoc</a>. Designed by <a href="https://github.com/thingsym/hugo-theme-techdoc">Thingsym</a>.</p>
+</footer>
+</main><div class="sidebar">
+
+<div class="sidebar-footer"></div>
+</div>
+</div><a href="#" id="backtothetop-fixed" class="backtothetop"
+ data-backtothetop-duration="600"
+ data-backtothetop-easing="easeOutQuart"
+ data-backtothetop-fixed-fadeIn="1000"
+ data-backtothetop-fixed-fadeOut="1000"
+ data-backtothetop-fixed-bottom="10"
+ data-backtothetop-fixed-right="20">
+<span class="fa-layers fa-fw">
+<i class="fas fa-circle"></i>
+<i class="fas fa-arrow-circle-up"></i>
+</span></a>
+</div>
+</body>
+</html>

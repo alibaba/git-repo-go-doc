@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>首页 on git-repo</title>
+    <link>http://git-repo.info/</link>
+    <description>Recent content in 首页 on git-repo</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    
+	<atom:link href="http://git-repo.info/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>安装 git-repo</title>
+      <link>http://git-repo.info/getting-started/installation.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://git-repo.info/getting-started/installation.html</guid>
+      <description>依赖 git-repo 依赖 git，在安装 git-repo 之前，需要确保已经安装了 git。 下载和安装 git-repo 访问 git-repo 的下载页面: https://github.com/aliyun/</description>
+    </item>
+    
+    <item>
+      <title>配置 git-repo</title>
+      <link>http://git-repo.info/getting-started/configuration.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://git-repo.info/getting-started/configuration.html</guid>
+      <description>在用户主目录下的 .git-repo/config.yml 文件，可以修改 git-repo 默认设置。如： verbose: 1 1: 显示 Info 级别日志；2: 显示 Debug 级别数据。 loglevel: warning 设置打印到日志时的日志级别 logrotate: &amp;lt;size&amp;gt; 日志回滚大小，默</description>
+    </item>
+    
+    <item>
+      <title>升级 git-repo</title>
+      <link>http://git-repo.info/getting-started/upgrade.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://git-repo.info/getting-started/upgrade.html</guid>
+      <description>运行下面命令升级 git-repo： $ git repo upgrade 从升级服务器自动下载相应平台的 git-repo 升级包，完成应用的替换和升级。 如果由于文件权限或者其它原因导致升级</description>
+    </item>
+    
+    <item>
+      <title>git peer-review</title>
+      <link>http://git-repo.info/single-repo/git-peer-review.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://git-repo.info/single-repo/git-peer-review.html</guid>
+      <description>git-repo 针对常用的单仓库的工作区，提供了快捷的创建代码评审的命令：git peer-review。该命令可以简写为 git pr 或者 git review。 1. 创建代码</description>
+    </item>
+    
+    <item>
+      <title>git abandon</title>
+      <link>http://git-repo.info/single-repo/git-abandon.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://git-repo.info/single-repo/git-abandon.html</guid>
+      <description>git abandon 是 git-repo 的一个别名命令，清理已经发起代码评审的本地分支。</description>
+    </item>
+    
+    <item>
+      <title>Manifest 文件</title>
+      <link>http://git-repo.info/multi-repos/manifest-file.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://git-repo.info/multi-repos/manifest-file.html</guid>
+      <description>Manifest 清单仓库和 Manifest 清单文件 定义多仓库关联的清单文件（manifest 文件）保存于一个仓库中，这个仓库称为 manifest 仓库。仓库中默认的 manifest 清单文件名为 def</description>
+    </item>
+    
+    <item>
+      <title>git download</title>
+      <link>http://git-repo.info/single-repo/git-download.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://git-repo.info/single-repo/git-download.html</guid>
+      <description>功能 git download 是 git-repo 的一个别名命令，实现下载代码评审的源代码。默认使用 checkout 命令检出待评审的提交。 命令格式 git download [options] &amp;lt;Merge-Request-ID&amp;gt; git download [options] &amp;lt;Change-ID&amp;gt;/&amp;lt;Patch-ID&amp;gt; 说明: 对于阿里巴巴代码平台上的</description>
+    </item>
+    
+    <item>
+      <title>git repo init</title>
+      <link>http://git-repo.info/multi-repos/git-repo-init.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://git-repo.info/multi-repos/git-repo-init.html</guid>
+      <description>功能 初始化当前工作区，或修改前一次 git repo init 执行时的参数设置。 当 git repo init 命令执行完毕后，会在工作区中创建子目录 .repo。其中包含 manifest 清单仓库（.r</description>
+    </item>
+    
+    <item>
+      <title>git repo sync</title>
+      <link>http://git-repo.info/multi-repos/git-repo-sync.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://git-repo.info/multi-repos/git-repo-sync.html</guid>
+      <description>功能 执行 sync 子命令，会在工作区克隆、检出、更新 manifest 清单中包含的仓库。 首先更新 manfiest 仓库。 和上一次更新的项目列表（.repo/project.list</description>
+    </item>
+    
+    <item>
+      <title>git repo start</title>
+      <link>http://git-repo.info/multi-repos/git-repo-start.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://git-repo.info/multi-repos/git-repo-start.html</guid>
+      <description>功能 以 manifest 清单仓库指定的版本为基准，为项目创建分支或切换分支。 命令格式 只对指定的项目，创建或切换分支： git repo start &amp;lt;branch-name&amp;gt; [project...] 为所有项目创建或切换分支，分支</description>
+    </item>
+    
+    <item>
+      <title>git repo upload</title>
+      <link>http://git-repo.info/multi-repos/git-repo-upload.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://git-repo.info/multi-repos/git-repo-upload.html</guid>
+      <description>功能 创建代码评审。 对于指定的项目，git-repo 会将本地分支与上一次执行 git repo upload 时上传的提交做比较，（上一次上传提交记录在 refs/published/&amp;lt;branch-name&amp;gt; 的引用中），提示</description>
+    </item>
+    
+    <item>
+      <title>git repo download</title>
+      <link>http://git-repo.info/multi-repos/git-repo-download.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://git-repo.info/multi-repos/git-repo-download.html</guid>
+      <description>功能 实现下载代码评审的源代码。默认使用 checkout 命令检出待评审的提交。 命令格式 git repo download [options] &amp;lt;project&amp;gt; &amp;lt;Merge-Request-ID&amp;gt; ... git repo download [options] &amp;lt;project&amp;gt; &amp;lt;Change-ID&amp;gt;/&amp;lt;Patch-ID&amp;gt; ... 说明: &amp;lt;project&amp;gt; 和代码评审ID 成对出现。如果省略 &amp;lt;project&amp;gt;</description>
+    </item>
+    
+    <item>
+      <title>git repo forall</title>
+      <link>http://git-repo.info/multi-repos/git-repo-forall.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://git-repo.info/multi-repos/git-repo-forall.html</guid>
+      <description>功能 该命令提供一个迭代器。可以为指定的每个项目运行指定的 shell 命令。 在 git repo forall 的 shell 命令中，可使用下列额外的环境变量： REPO_PROJECT 是项目的唯一名称。 REPO_PATH 是相对于</description>
+    </item>
+    
+    <item>
+      <title>git repo status</title>
+      <link>http://git-repo.info/multi-repos/git-repo-status.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://git-repo.info/multi-repos/git-repo-status.html</guid>
+      <description>功能 显示项目工作区状态。每个项目的状态显示两个字符，分别表示索引、工作区的改动: 在第一列中，大写字母表示索引中包含的更改。（相当于 git diff --c</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://git-repo.info/changelog.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://git-repo.info/changelog.html</guid>
+      <description>Changelog Changes of git-repo.
+0.7.1 (2020-01-02) New features:
+ Add helper for protocol extension, and use can add external helper. Smart selection of remote if repository has many remotes defined. AGit-Flow 2.0: set AGIT_FLOW envirionment for git connection. AGit-Flow 2.0: support version of ssh_info response. AGit-Flow 2.0: multiple users working on one code review. AGit-Flow 2.0: force push prevention if oldoid is provided.  Refactors, Enhancements and bugfixes:
+ Many refactors, such as project.</description>
+    </item>
+    
+  </channel>
+</rss>

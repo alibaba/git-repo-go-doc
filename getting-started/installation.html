@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>安装 git-repo - git-repo</title>
+<meta name="description" content="client tool for git centralized workflow (Aone or gerrit)">
+<meta name="generator" content="Hugo 0.55.6" />
+<link href="http://git-repo.infoindex.xml" rel="alternate" type="application/rss+xml">
+<link rel="canonical" href="http://git-repo.info/getting-started/installation.html">
+<link rel="stylesheet" href="http://git-repo.info/css/theme.min.css">
+<script src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+<link rel="stylesheet" href="http://git-repo.info/css/chroma.min.css">
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery.easing@1.4.1/jquery.easing.min.js"></script>
+<script src="http://git-repo.info/js/bundle.js"></script><style>
+:root {}
+</style>
+<meta property="og:title" content="安装 git-repo" />
+<meta property="og:description" content="依赖 git-repo 依赖 git，在安装 git-repo 之前，需要确保已经安装了 git。 下载和安装 git-repo 访问 git-repo 的下载页面: https://github.com/aliyun/" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://git-repo.info/getting-started/installation.html" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="安装 git-repo"/>
+<meta name="twitter:description" content="依赖 git-repo 依赖 git，在安装 git-repo 之前，需要确保已经安装了 git。 下载和安装 git-repo 访问 git-repo 的下载页面: https://github.com/aliyun/"/>
+
+<meta itemprop="name" content="安装 git-repo">
+<meta itemprop="description" content="依赖 git-repo 依赖 git，在安装 git-repo 之前，需要确保已经安装了 git。 下载和安装 git-repo 访问 git-repo 的下载页面: https://github.com/aliyun/">
+
+
+
+<meta itemprop="wordCount" content="436">
+
+
+
+<meta itemprop="keywords" content="" />
+</head>
+<body><div class="container"><header>
+<h1>git-repo</h1>
+
+<p class="description">client tool for git centralized workflow (Aone or gerrit)</p>
+
+</header>
+<div class="global-menu">
+<nav>
+<ul>
+<li><a href="/index.html">Home</a></li>
+<li><a href="https://github.com/aliyun/git-repo-go/releases">Download</a></li>
+<li><a href="/changelog.html">ChangeLog</a></li>
+<li><a href="/contribution.html">Contribution</a></li>
+<li><a href="https://github.com/aliyun/git-repo-go/issues">Issue</a></li>
+<li><a href="https://github.com/aliyun/git-repo-go">Source code</a></li></ul>
+</nav>
+</div>
+<div class="content-container">
+<main><h1>安装 git-repo</h1>
+
+
+<h2 id="依赖">依赖</h2>
+
+<p>git-repo 依赖 git，在安装 git-repo 之前，需要确保已经安装了 git。</p>
+
+<h2 id="下载和安装-git-repo">下载和安装 git-repo</h2>
+
+<ol>
+<li><p>访问 git-repo 的下载页面: <a href="https://github.com/aliyun/git-repo-go/releases">https://github.com/aliyun/git-repo-go/releases</a>。
+根据您的平台类型（Linux、Mac、或是 Windows），CPU 类型（amd64 或 386）下载并展开压缩包。</p></li>
+
+<li><p>如果是 Linux 或者 Mac OS X 平台，为下载文件设置可执行权限。例如：</p>
+
+<pre><code>$ chmod a+x git-repo
+</code></pre></li>
+
+<li><p>将下载的可执行文件复制到可执行目录。对于 Linux 和 Mac OS X 平台，这个目录可以是
+/usr/local/bin 或者其他目录。对于 Windows 平台，这个目录可能是 <code>C:\Windows\system32</code>。</p>
+
+<pre><code>$ cp git-repo /usr/local/bin/
+</code></pre></li>
+</ol>
+
+<h2 id="运行-git-repo">运行 git-repo</h2>
+
+<p>安装完毕，尝试执行下面命令。注意下面命令中 git 和 repo 之间可以不再需要短线，
+因为repo 命令已经自动注册为 git 的一个子命令。</p>
+
+<pre><code>$ git repo --version
+</code></pre>
+
+<h2 id="查看-git-repo-的帮助">查看 git-repo 的帮助</h2>
+
+<p>执行下面命令查看 git-repo 的帮助：</p>
+
+<pre><code>$ git repo -h
+</code></pre>
+
+<p>或者</p>
+
+<pre><code>$ git repo
+</code></pre>
+
+<p>注意：如果使用 <code>git repo --help</code> 或者 <code>git help repo</code>，则无法显示 git-repo 的帮助。
+因为这些命令激活了 git 的 man 手册，而非 git-repo 内置的帮助系统。</p>
+
+<p>git repo 有很多子命令。可以用如下命令查看子命令的帮助：</p>
+
+<pre><code>$ git repo help sync
+</code></pre>
+<div class="edit-meta">
+
+<br></div><nav class="pagination"><a class="nav nav-prev" href="/getting-started.html" title="开始"><i class="fas fa-arrow-left" aria-hidden="true"></i> Prev - 开始</a>
+<a class="nav nav-next" href="/getting-started/configuration.html" title="配置 git-repo">Next - 配置 git-repo <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+</nav><footer><p class="powered">Powered by <a href="https://gohugo.io">Hugo</a>. Theme by <a href="https://themes.gohugo.io/hugo-theme-techdoc/">TechDoc</a>. Designed by <a href="https://github.com/thingsym/hugo-theme-techdoc">Thingsym</a>.</p>
+</footer>
+</main><div class="sidebar">
+
+<div class="sidebar-footer"></div>
+</div>
+</div><a href="#" id="backtothetop-fixed" class="backtothetop"
+ data-backtothetop-duration="600"
+ data-backtothetop-easing="easeOutQuart"
+ data-backtothetop-fixed-fadeIn="1000"
+ data-backtothetop-fixed-fadeOut="1000"
+ data-backtothetop-fixed-bottom="10"
+ data-backtothetop-fixed-right="20">
+<span class="fa-layers fa-fw">
+<i class="fas fa-circle"></i>
+<i class="fas fa-arrow-circle-up"></i>
+</span></a>
+</div>
+</body>
+</html>

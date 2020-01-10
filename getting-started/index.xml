@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>开始 on git-repo</title>
+    <link>http://git-repo.info/getting-started.html</link>
+    <description>Recent content in 开始 on git-repo</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    
+	<atom:link href="http://git-repo.info/getting-started/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>安装 git-repo</title>
+      <link>http://git-repo.info/getting-started/installation.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://git-repo.info/getting-started/installation.html</guid>
+      <description>依赖 git-repo 依赖 git，在安装 git-repo 之前，需要确保已经安装了 git。 下载和安装 git-repo 访问 git-repo 的下载页面: https://github.com/aliyun/</description>
+    </item>
+    
+    <item>
+      <title>配置 git-repo</title>
+      <link>http://git-repo.info/getting-started/configuration.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://git-repo.info/getting-started/configuration.html</guid>
+      <description>在用户主目录下的 .git-repo/config.yml 文件，可以修改 git-repo 默认设置。如： verbose: 1 1: 显示 Info 级别日志；2: 显示 Debug 级别数据。 loglevel: warning 设置打印到日志时的日志级别 logrotate: &amp;lt;size&amp;gt; 日志回滚大小，默</description>
+    </item>
+    
+    <item>
+      <title>升级 git-repo</title>
+      <link>http://git-repo.info/getting-started/upgrade.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://git-repo.info/getting-started/upgrade.html</guid>
+      <description>运行下面命令升级 git-repo： $ git repo upgrade 从升级服务器自动下载相应平台的 git-repo 升级包，完成应用的替换和升级。 如果由于文件权限或者其它原因导致升级</description>
+    </item>
+    
+  </channel>
+</rss>

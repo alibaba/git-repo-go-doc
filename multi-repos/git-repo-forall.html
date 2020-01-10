@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>git repo forall - git-repo</title>
+<meta name="description" content="client tool for git centralized workflow (Aone or gerrit)">
+<meta name="generator" content="Hugo 0.55.6" />
+<link href="http://git-repo.infoindex.xml" rel="alternate" type="application/rss+xml">
+<link rel="canonical" href="http://git-repo.info/multi-repos/git-repo-forall.html">
+<link rel="stylesheet" href="http://git-repo.info/css/theme.min.css">
+<script src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+<link rel="stylesheet" href="http://git-repo.info/css/chroma.min.css">
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery.easing@1.4.1/jquery.easing.min.js"></script>
+<script src="http://git-repo.info/js/bundle.js"></script><style>
+:root {}
+</style>
+<meta property="og:title" content="git repo forall" />
+<meta property="og:description" content="功能 该命令提供一个迭代器。可以为指定的每个项目运行指定的 shell 命令。 在 git repo forall 的 shell 命令中，可使用下列额外的环境变量： REPO_PROJECT 是项目的唯一名称。 REPO_PATH 是相对于" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://git-repo.info/multi-repos/git-repo-forall.html" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="git repo forall"/>
+<meta name="twitter:description" content="功能 该命令提供一个迭代器。可以为指定的每个项目运行指定的 shell 命令。 在 git repo forall 的 shell 命令中，可使用下列额外的环境变量： REPO_PROJECT 是项目的唯一名称。 REPO_PATH 是相对于"/>
+
+<meta itemprop="name" content="git repo forall">
+<meta itemprop="description" content="功能 该命令提供一个迭代器。可以为指定的每个项目运行指定的 shell 命令。 在 git repo forall 的 shell 命令中，可使用下列额外的环境变量： REPO_PROJECT 是项目的唯一名称。 REPO_PATH 是相对于">
+
+
+
+<meta itemprop="wordCount" content="410">
+
+
+
+<meta itemprop="keywords" content="" />
+</head>
+<body><div class="container"><header>
+<h1>git-repo</h1>
+
+<p class="description">client tool for git centralized workflow (Aone or gerrit)</p>
+
+</header>
+<div class="global-menu">
+<nav>
+<ul>
+<li><a href="/index.html">Home</a></li>
+<li><a href="https://github.com/aliyun/git-repo-go/releases">Download</a></li>
+<li><a href="/changelog.html">ChangeLog</a></li>
+<li><a href="/contribution.html">Contribution</a></li>
+<li><a href="https://github.com/aliyun/git-repo-go/issues">Issue</a></li>
+<li><a href="https://github.com/aliyun/git-repo-go">Source code</a></li></ul>
+</nav>
+</div>
+<div class="content-container">
+<main><h1>git repo forall</h1>
+
+
+<h2 id="功能">功能</h2>
+
+<p>该命令提供一个迭代器。可以为指定的每个项目运行指定的 shell 命令。</p>
+
+<p>在 <code>git repo forall</code> 的 shell 命令中，可使用下列额外的环境变量：</p>
+
+<ul>
+<li><code>REPO_PROJECT</code> 是项目的唯一名称。</li>
+<li><code>REPO_PATH</code> 是相对于客户端根目录的路径。</li>
+<li><code>REPO_REMOTE</code> 是清单中远程系统的名称。</li>
+</ul>
+
+<h2 id="命令格式">命令格式</h2>
+
+<pre><code>git repo forall [project-list] -c command
+</code></pre>
+
+<h2 id="选项">选项</h2>
+
+<p>主要的选项如下：</p>
+
+<ul>
+<li><code>-c</code>：要运行的命令和参数。此命令会通过 /bin/sh 进行评估，它之后的任何参数都将作为 shell 位置参数传递。</li>
+<li><code>-e</code>：如果一条命令执行失败，整个命令终止执行。</li>
+<li><code>-p</code>：在所指定命令的输出结果之前显示项目标头。</li>
+<li><code>-g &lt;groups&gt;</code>：通过组筛选项目，只对筛选后的项目执行指定命令。</li>
+<li><code>-r &lt;regexp&gt;</code>：通过正则表达式匹配项目名称，匹配的项目执行指定命令。</li>
+<li><code>-i &lt;regexp&gt;</code>：通过正则表达式排除项目名称，没有匹配的项目执行指定命令。</li>
+</ul>
+
+<h2 id="示例">示例</h2>
+
+<ol>
+<li><p>在每个项目中执行 shell 命令，查看当前目录</p>
+
+<pre><code>$ git repo forall  -c 'echo &quot;Project $REPO_PROJECT in `pwd`&quot;'
+Project git-repo/demo in /Users/jiangxin/work/teambition/git-repo-demo/demo
+Project git-repo/demo-vendor in /Users/jiangxin/work/teambition/git-repo-demo/demo/vendor
+Project git-repo/demo-doc in /Users/jiangxin/work/teambition/git-repo-demo/doc
+</code></pre></li>
+
+<li><p>显示最新一条 git 日志</p>
+
+<pre><code>$ git repo forall -p -- git log -1 --oneline
+project demo/
+649941d topic1: initial
+
+project demo/vendor/
+443693b Initial vendor for project demo
+
+project doc/
+32f0be3 Initial doc for demo
+</code></pre></li>
+</ol>
+<div class="edit-meta">
+
+<br></div><nav class="pagination"><a class="nav nav-prev" href="/multi-repos/git-repo-download.html" title="git repo download"><i class="fas fa-arrow-left" aria-hidden="true"></i> Prev - git repo download</a>
+<a class="nav nav-next" href="/multi-repos/git-repo-status.html" title="git repo status">Next - git repo status <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+</nav><footer><p class="powered">Powered by <a href="https://gohugo.io">Hugo</a>. Theme by <a href="https://themes.gohugo.io/hugo-theme-techdoc/">TechDoc</a>. Designed by <a href="https://github.com/thingsym/hugo-theme-techdoc">Thingsym</a>.</p>
+</footer>
+</main><div class="sidebar">
+
+<div class="sidebar-footer"></div>
+</div>
+</div><a href="#" id="backtothetop-fixed" class="backtothetop"
+ data-backtothetop-duration="600"
+ data-backtothetop-easing="easeOutQuart"
+ data-backtothetop-fixed-fadeIn="1000"
+ data-backtothetop-fixed-fadeOut="1000"
+ data-backtothetop-fixed-bottom="10"
+ data-backtothetop-fixed-right="20">
+<span class="fa-layers fa-fw">
+<i class="fas fa-circle"></i>
+<i class="fas fa-arrow-circle-up"></i>
+</span></a>
+</div>
+</body>
+</html>

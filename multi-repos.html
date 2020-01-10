@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>多仓库协同和代码评审 - git-repo</title>
+<meta name="description" content="client tool for git centralized workflow (Aone or gerrit)">
+<meta name="generator" content="Hugo 0.55.6" />
+<link href="http://git-repo.infoindex.xml" rel="alternate" type="application/rss+xml">
+<link rel="canonical" href="http://git-repo.info/multi-repos.html">
+<link rel="stylesheet" href="http://git-repo.info/css/theme.min.css">
+<script src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+<link rel="stylesheet" href="http://git-repo.info/css/chroma.min.css">
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery.easing@1.4.1/jquery.easing.min.js"></script>
+<script src="http://git-repo.info/js/bundle.js"></script><style>
+:root {}
+</style>
+<meta property="og:title" content="多仓库协同和代码评审" />
+<meta property="og:description" content="client tool for git centralized workflow (Aone or gerrit)" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="http://git-repo.info/multi-repos.html" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="多仓库协同和代码评审"/>
+<meta name="twitter:description" content="client tool for git centralized workflow (Aone or gerrit)"/>
+
+<meta itemprop="name" content="多仓库协同和代码评审">
+<meta itemprop="description" content="client tool for git centralized workflow (Aone or gerrit)">
+
+</head>
+<body><div class="container"><header>
+<h1>git-repo</h1>
+
+<p class="description">client tool for git centralized workflow (Aone or gerrit)</p>
+
+</header>
+<div class="global-menu">
+<nav>
+<ul>
+<li><a href="/index.html">Home</a></li>
+<li><a href="https://github.com/aliyun/git-repo-go/releases">Download</a></li>
+<li><a href="/changelog.html">ChangeLog</a></li>
+<li><a href="/contribution.html">Contribution</a></li>
+<li><a href="https://github.com/aliyun/git-repo-go/issues">Issue</a></li>
+<li><a href="https://github.com/aliyun/git-repo-go">Source code</a></li></ul>
+</nav>
+</div>
+<div class="content-container">
+<main><h1>多仓库协同和代码评审</h1><p>在实践中，Git 大仓库存在着诸多问题：下载慢、不能对授权进行精细控制。解决大仓库的一个有效方案是化整为零：将大仓库拆分为多仓库。</p>
+
+<p>为了实现多仓库像一个仓库一样工作，Git提供一个原生的 submodule 方案，但是这个方案问题很多。例如：子模组固定在某个版本上，而不能实现随上游仓库分支更新而更新。多人修改子模组仓库，冲突从文件级别放大到仓库级别，让子模组的冲突不易解决。</p>
+
+<p>Android 项目创造了一个新的方案。即使用 XML 格式文件（manifest 清单文件）定义一个项目的多仓库关联，然后用 <code>repo</code> 客户端工具操作多仓库。</p>
+
+<p>git-repo 使用 go 语言重新实现了 Android repo 工具多仓库管理功能，目标是实现和 Android repo 工具的 100% 兼容。</p>
+
+<p>git repo 命令行格式如下：</p>
+
+<pre><code>git repo &lt;子命令&gt; &lt;参数&gt;
+</code></pre>
+
+<p>查看 git-repo 的帮助，使用命令：</p>
+
+<pre><code>git repo help
+git repo help &lt;子命令&gt;
+</code></pre>
+
+<p>一个典型的多仓库使用场景如下：</p>
+
+<ol>
+<li><p>创建一个空目录，作为工作区。</p>
+
+<pre><code>$ mkdir workspace
+$ cd workspace
+</code></pre></li>
+
+<li><p>通过克隆 manifest 清单仓库，完成工作区的初始化。</p>
+
+<pre><code>$ git repo init -u &lt;manifest-url&gt;
+</code></pre>
+
+<p>例如:</p>
+
+<pre><code>$ git repo init -u https://codeup.teambition.com/git-repo/manifests.git
+</code></pre></li>
+
+<li><p>下载相关仓库代码</p>
+
+<pre><code>$ git repo sync
+</code></pre></li>
+
+<li><p>创建开发分支</p>
+
+<pre><code>$ git repo start --all &lt;topic-branch&gt;
+</code></pre>
+
+<p>例如：</p>
+
+<pre><code>$ git repo start --all jx/topic1
+</code></pre></li>
+
+<li><p>在工作区中开发，每个仓库的改动单独完成本地提交。</p></li>
+
+<li><p>执行下面命令，会扫描工作区所有仓库的改动，逐个向上游仓库发起代码评审。</p>
+
+<pre><code>$ git repo upload
+</code></pre></li>
+</ol>
+<div class="edit-meta">
+
+<br></div><nav class="pagination"><a class="nav nav-prev" href="/single-repo/git-download.html" title="git download"><i class="fas fa-arrow-left" aria-hidden="true"></i> Prev - git download</a>
+<a class="nav nav-next" href="/multi-repos/manifest-file.html" title="Manifest 文件">Next - Manifest 文件 <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+</nav><footer><p class="powered">Powered by <a href="https://gohugo.io">Hugo</a>. Theme by <a href="https://themes.gohugo.io/hugo-theme-techdoc/">TechDoc</a>. Designed by <a href="https://github.com/thingsym/hugo-theme-techdoc">Thingsym</a>.</p>
+</footer>
+</main><div class="sidebar">
+
+<div class="sidebar-footer"></div>
+</div>
+</div><a href="#" id="backtothetop-fixed" class="backtothetop"
+ data-backtothetop-duration="600"
+ data-backtothetop-easing="easeOutQuart"
+ data-backtothetop-fixed-fadeIn="1000"
+ data-backtothetop-fixed-fadeOut="1000"
+ data-backtothetop-fixed-bottom="10"
+ data-backtothetop-fixed-right="20">
+<span class="fa-layers fa-fw">
+<i class="fas fa-circle"></i>
+<i class="fas fa-arrow-circle-up"></i>
+</span></a>
+</div>
+</body>
+</html>

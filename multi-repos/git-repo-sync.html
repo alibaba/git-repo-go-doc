@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>git repo sync - git-repo</title>
+<meta name="description" content="client tool for git centralized workflow (Aone or gerrit)">
+<meta name="generator" content="Hugo 0.55.6" />
+<link href="http://git-repo.infoindex.xml" rel="alternate" type="application/rss+xml">
+<link rel="canonical" href="http://git-repo.info/multi-repos/git-repo-sync.html">
+<link rel="stylesheet" href="http://git-repo.info/css/theme.min.css">
+<script src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+<link rel="stylesheet" href="http://git-repo.info/css/chroma.min.css">
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery.easing@1.4.1/jquery.easing.min.js"></script>
+<script src="http://git-repo.info/js/bundle.js"></script><style>
+:root {}
+</style>
+<meta property="og:title" content="git repo sync" />
+<meta property="og:description" content="功能 执行 sync 子命令，会在工作区克隆、检出、更新 manifest 清单中包含的仓库。 首先更新 manfiest 仓库。 和上一次更新的项目列表（.repo/project.list" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://git-repo.info/multi-repos/git-repo-sync.html" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="git repo sync"/>
+<meta name="twitter:description" content="功能 执行 sync 子命令，会在工作区克隆、检出、更新 manifest 清单中包含的仓库。 首先更新 manfiest 仓库。 和上一次更新的项目列表（.repo/project.list"/>
+
+<meta itemprop="name" content="git repo sync">
+<meta itemprop="description" content="功能 执行 sync 子命令，会在工作区克隆、检出、更新 manifest 清单中包含的仓库。 首先更新 manfiest 仓库。 和上一次更新的项目列表（.repo/project.list">
+
+
+
+<meta itemprop="wordCount" content="471">
+
+
+
+<meta itemprop="keywords" content="" />
+</head>
+<body><div class="container"><header>
+<h1>git-repo</h1>
+
+<p class="description">client tool for git centralized workflow (Aone or gerrit)</p>
+
+</header>
+<div class="global-menu">
+<nav>
+<ul>
+<li><a href="/index.html">Home</a></li>
+<li><a href="https://github.com/aliyun/git-repo-go/releases">Download</a></li>
+<li><a href="/changelog.html">ChangeLog</a></li>
+<li><a href="/contribution.html">Contribution</a></li>
+<li><a href="https://github.com/aliyun/git-repo-go/issues">Issue</a></li>
+<li><a href="https://github.com/aliyun/git-repo-go">Source code</a></li></ul>
+</nav>
+</div>
+<div class="content-container">
+<main><h1>git repo sync</h1>
+
+
+<h2 id="功能">功能</h2>
+
+<p>执行 sync 子命令，会在工作区克隆、检出、更新 manifest 清单中包含的仓库。</p>
+
+<p>首先更新 manfiest 仓库。</p>
+
+<p>和上一次更新的项目列表（<code>.repo/project.list</code> 文件）做对比，如果 manifest 中包含新增项目，则克隆和检出新项目，如果 manifest 清单中移除部分项目，则工作区中删除相关项目（如果这些项目中未做修改的话）。</p>
+
+<p>然后逐一更新工作区中的项目。</p>
+
+<ul>
+<li><p>如果项目尚未同步到工作区，则 <code>git repo sync</code> 相当于 <code>git clone</code>。</p></li>
+
+<li><p>如果项目已经同步到工作区，则 <code>git repo sync</code> 相当于：</p>
+
+<pre><code>git remote update
+git rebase origin/branch
+</code></pre></li>
+
+<li><p>如果 <code>git rebase</code> 操作导致合并冲突，请使用常规 git 命令（例如 <code>git rebase --continue</code>）解决冲突。</p></li>
+</ul>
+
+<h2 id="命令格式">命令格式</h2>
+
+<pre><code>git repo sync [options...]
+</code></pre>
+
+<h2 id="选项">选项</h2>
+
+<p>主要的选项如下：</p>
+
+<ul>
+<li><p><code>-c</code>：只从服务端获取当前分支。</p></li>
+
+<li><p><code>-d</code>：工作区项目进入分离头指针状态，并切换到 manifest 清单文件指定的提交。该参数对于编译构建时严格按照 manifest 清单文件检出提交，丢弃工作区本地修改，非常有用。</p></li>
+
+<li><p><code>-f</code>：即使某个项目同步失败，也继续同步其他项目。</p></li>
+
+<li><p><code>-j &lt;num&gt;</code>：设定并发数。默认 4 个并发。</p></li>
+
+<li><p><code>-n</code>：只做网络端操作。即相当于只进行 <code>git fetch</code> 操作，不修改本地仓库的检出。</p></li>
+
+<li><p><code>-l</code>：只做本地端操作。即相当于只进行 <code>git checkout</code> 操作，而不进行任何网络操作。</p></li>
+</ul>
+<div class="edit-meta">
+
+<br></div><nav class="pagination"><a class="nav nav-prev" href="/multi-repos/git-repo-init.html" title="git repo init"><i class="fas fa-arrow-left" aria-hidden="true"></i> Prev - git repo init</a>
+<a class="nav nav-next" href="/multi-repos/git-repo-start.html" title="git repo start">Next - git repo start <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+</nav><footer><p class="powered">Powered by <a href="https://gohugo.io">Hugo</a>. Theme by <a href="https://themes.gohugo.io/hugo-theme-techdoc/">TechDoc</a>. Designed by <a href="https://github.com/thingsym/hugo-theme-techdoc">Thingsym</a>.</p>
+</footer>
+</main><div class="sidebar">
+
+<div class="sidebar-footer"></div>
+</div>
+</div><a href="#" id="backtothetop-fixed" class="backtothetop"
+ data-backtothetop-duration="600"
+ data-backtothetop-easing="easeOutQuart"
+ data-backtothetop-fixed-fadeIn="1000"
+ data-backtothetop-fixed-fadeOut="1000"
+ data-backtothetop-fixed-bottom="10"
+ data-backtothetop-fixed-right="20">
+<span class="fa-layers fa-fw">
+<i class="fas fa-circle"></i>
+<i class="fas fa-arrow-circle-up"></i>
+</span></a>
+</div>
+</body>
+</html>

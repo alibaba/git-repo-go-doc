@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>标准化 Git 配置 - git-repo</title>
+<meta name="description" content="client tool for git centralized workflow (Aone or gerrit)">
+<meta name="generator" content="Hugo 0.55.6" />
+<link href="http://git-repo.infoindex.xml" rel="alternate" type="application/rss+xml">
+<link rel="canonical" href="http://git-repo.info/gitconfig.html">
+<link rel="stylesheet" href="http://git-repo.info/css/theme.min.css">
+<script src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+<link rel="stylesheet" href="http://git-repo.info/css/chroma.min.css">
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery.easing@1.4.1/jquery.easing.min.js"></script>
+<script src="http://git-repo.info/js/bundle.js"></script><style>
+:root {}
+</style>
+<meta property="og:title" content="标准化 Git 配置" />
+<meta property="og:description" content="client tool for git centralized workflow (Aone or gerrit)" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="http://git-repo.info/gitconfig.html" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="标准化 Git 配置"/>
+<meta name="twitter:description" content="client tool for git centralized workflow (Aone or gerrit)"/>
+
+<meta itemprop="name" content="标准化 Git 配置">
+<meta itemprop="description" content="client tool for git centralized workflow (Aone or gerrit)">
+
+</head>
+<body><div class="container"><header>
+<h1>git-repo</h1>
+
+<p class="description">client tool for git centralized workflow (Aone or gerrit)</p>
+
+</header>
+<div class="global-menu">
+<nav>
+<ul>
+<li><a href="/index.html">Home</a></li>
+<li><a href="https://github.com/aliyun/git-repo-go/releases">Download</a></li>
+<li><a href="/changelog.html">ChangeLog</a></li>
+<li><a href="/contribution.html">Contribution</a></li>
+<li><a href="https://github.com/aliyun/git-repo-go/issues">Issue</a></li>
+<li><a href="https://github.com/aliyun/git-repo-go">Source code</a></li></ul>
+</nav>
+</div>
+<div class="content-container">
+<main><h1>标准化 Git 配置</h1>
+
+<p><code>git-repo</code> 初次安装，需要执行任意一个 git-repo 命令以完成初始化。例如：</p>
+
+<pre><code>$ git repo version
+</code></pre>
+
+<p>第一次运行的初始化工作，包含了对 git 配置的扩展。</p>
+
+<p><code>git-repo</code> 在用户主目录下创建了扩展的 Git 配置文件：<code>.git-repo/gitconfig</code>。该文件由 <code>git-repo</code> 自动管理，不要手工修改，因为手工修改会因为文件升级而丢失。</p>
+
+<h2 id="新增-git-别名命令">新增 git 别名命令</h2>
+
+<p>通过 git 配置文件扩展，增加了一些单仓库提效相关的 git-repo 别名命令：</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">别名命令</th>
+<th align="left">实际命令</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">git peer-review</td>
+<td align="left">git repo upload &ndash;single</td>
+</tr>
+
+<tr>
+<td align="left">git pr</td>
+<td align="left">git repo upload &ndash;single</td>
+</tr>
+
+<tr>
+<td align="left">git review（*）</td>
+<td align="left">git repo upload &ndash;single</td>
+</tr>
+</tbody>
+</table>
+
+<p>其中：</p>
+
+<ul>
+<li><code>git review</code> 别名命令与 OpenStack 社区的 <code>git-review</code> 工具重名，尽量使用 <code>git pr</code> 别名命令。</li>
+</ul>
+
+<p>此外，还增加了一些常用的别名命令：</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">常用别名命令</th>
+<th align="left">实际命令</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">git br</td>
+<td align="left">git branch</td>
+</tr>
+
+<tr>
+<td align="left">git ci</td>
+<td align="left">git commit -s</td>
+</tr>
+
+<tr>
+<td align="left">git co</td>
+<td align="left">git checkout</td>
+</tr>
+
+<tr>
+<td align="left">git cp</td>
+<td align="left">git cherry-pick</td>
+</tr>
+
+<tr>
+<td align="left">git logf</td>
+<td align="left">git log &ndash;pretty=fuller</td>
+</tr>
+
+<tr>
+<td align="left">git logs</td>
+<td align="left">git log &ndash;pretty=refs &ndash;date=short</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="适配中文环境">适配中文环境</h2>
+
+<p>如果提交中包含中文路径的文件变更，则 git-repo 为 Git 自动增添的如下面设置，能帮助中文路径正确地显示。</p>
+
+<pre><code>[core]
+        quotepath = false
+</code></pre>
+
+<h2 id="其它可增强用户体验的-git-设置">其它可增强用户体验的 Git 设置</h2>
+
+<p>还增加了一些有助于提效的配置，如：</p>
+
+<ul>
+<li><p>在 git rebase -i 命令时，自动增加 <code>--autosquash</code> 参数，自动匹配 fixup 提交。</p>
+
+<pre><code>[rebase]
+        autosquash = true
+</code></pre></li>
+
+<li><p>分支合并时创建的合并提交，提交说明中自动包含合入提交的简要说明。</p>
+
+<pre><code>[merge]
+        log = true
+</code></pre></li>
+</ul>
+<div class="edit-meta">
+
+<br></div><nav class="pagination"><a class="nav nav-prev" href="/getting-started/upgrade.html" title="升级 git-repo"><i class="fas fa-arrow-left" aria-hidden="true"></i> Prev - 升级 git-repo</a>
+<a class="nav nav-next" href="/single-repo.html" title="单仓库代码评审">Next - 单仓库代码评审 <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+</nav><footer><p class="powered">Powered by <a href="https://gohugo.io">Hugo</a>. Theme by <a href="https://themes.gohugo.io/hugo-theme-techdoc/">TechDoc</a>. Designed by <a href="https://github.com/thingsym/hugo-theme-techdoc">Thingsym</a>.</p>
+</footer>
+</main><div class="sidebar">
+
+<div class="sidebar-footer"></div>
+</div>
+</div><a href="#" id="backtothetop-fixed" class="backtothetop"
+ data-backtothetop-duration="600"
+ data-backtothetop-easing="easeOutQuart"
+ data-backtothetop-fixed-fadeIn="1000"
+ data-backtothetop-fixed-fadeOut="1000"
+ data-backtothetop-fixed-bottom="10"
+ data-backtothetop-fixed-right="20">
+<span class="fa-layers fa-fw">
+<i class="fas fa-circle"></i>
+<i class="fas fa-arrow-circle-up"></i>
+</span></a>
+</div>
+</body>
+</html>
