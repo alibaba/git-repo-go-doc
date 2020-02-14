@@ -1,7 +1,7 @@
 ---
 title: "git repo status"
 draft: false
-weight: 90
+weight: 49
 ---
 
 ## 功能

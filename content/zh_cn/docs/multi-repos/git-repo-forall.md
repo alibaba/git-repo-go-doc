@@ -1,7 +1,7 @@
 ---
 title: "git repo forall"
 draft: false
-weight: 80
+weight: 48
 ---
 
 ## 功能

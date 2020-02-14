@@ -1,7 +1,7 @@
 ---
 title: "git repo start"
 draft: false
-weight: 60
+weight: 45
 ---
 
 ## 功能

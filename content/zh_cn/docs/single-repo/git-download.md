@@ -1,7 +1,7 @@
 ---
 title: "git download"
 draft: false
-weight: 40
+weight: 33
 ---
 
 ## 功能
@@ -15,8 +15,10 @@ weight: 40
 
 说明:
 
-+ 对于阿里巴巴代码平台上的仓库，使用 `<Merge-Request-ID>` 下载评审代码。
-+ 对于 Gerrit 上的仓库，要使用 `<Change-ID>/<Patch-ID>`，即斜线分隔的两个数字。
++ 对于支持 AGit-Flow 协议的仓库，使用 `<Merge-Request-ID>` 格式下载评审代码。
++ 对于属于 Gerrit 服务上的仓库，则使用 `<Change-ID>/<Patch-ID>` 格式，即斜线分隔的两个数字。
+
+
 ## 选项
 
 主要的选项如下：

@@ -1,7 +1,7 @@
 logo = true
-logoText = "ZDoc"
+logoText = "git-repo"
 logoType = "short" # long, short
-description = "The ZDoc theme for Hugo example site."
+description = "git-repo: client for agit-flow, gerrit and more"
 
 themeOptions = ["light", "dark"]
 
@@ -22,7 +22,7 @@ paginateWindow = 1
 taxoPaginate = 13
 taxoGroupByDate = "2006" # "2006-01": group by month, "2006": group by year
 
-github = "https://github.com/zzossig/hugo-theme-zdoc"
+github = "https://github.com/aliyun/git-repo-go"
 
 # comment
 enableComment = true
@@ -36,8 +36,8 @@ commento = false
   clientSecret = ""       # Your client secret
 
 [utterances]       # https://utteranc.es/
-  owner = ""              # Your GitHub ID
-  repo = ""               # The repo to store comments
+  owner = "jiangxin"              # Your GitHub ID
+  repo = "aliyun/git-repo-go-doc"               # The repo to store comments
 
 [gitalk]           # Gitalk is a comment system based on GitHub issues. see https://github.com/gitalk/gitalk
   owner = ""              # Your GitHub ID

@@ -1,7 +1,7 @@
 ---
 title: "Manifest 文件"
 draft: false
-weight: 32
+weight: 42
 ---
 
 ## Manifest 清单仓库和 Manifest 清单文件

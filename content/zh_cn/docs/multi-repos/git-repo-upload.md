@@ -1,7 +1,7 @@
 ---
 title: "git repo upload"
 draft: false
-weight: 70
+weight: 46
 ---
 
 ## 功能

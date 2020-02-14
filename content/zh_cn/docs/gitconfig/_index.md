@@ -1,31 +1,32 @@
 ---
-title: "标准化 Git 配置"
-weight: 15
+title: "Git 配置文件扩展"
+weight: 20
 draft: false
+enableToc: true
 ---
 
-`git-repo` 初次安装，需要执行任意一个 git-repo 命令以完成初始化。例如：
+## 安装 git 配置扩展
+
+`git-repo` 会在用户主目录下创建扩展的 Git 配置文件：`.git-repo/gitconfig`。该文件由 `git-repo` 自动管理，不要手工修改。如果手工修改该文件，会因为配置文件升级而丢失。
+
+如果该扩展 git 配置文件不存在，执行 `git-repo` 命令完成初始化：
 
     $ git repo version
-
-第一次运行的初始化工作，包含了对 git 配置的扩展。
-
-`git-repo` 在用户主目录下创建了扩展的 Git 配置文件：`.git-repo/gitconfig`。该文件由 `git-repo` 自动管理，不要手工修改，因为手工修改会因为文件升级而丢失。
 
 
 ## 新增 git 别名命令
 
-通过 git 配置文件扩展，增加了一些单仓库提效相关的 git-repo 别名命令：
+扩展的 git 配置文件中，包含了几条针对单仓库的集中式工作流的常用别名命令：
 
 别名命令         |  实际命令
 :----------------|:--------------------------
 git peer-review  | git repo upload --single
 git pr           | git repo upload --single
-git review（*）  | git repo upload --single
+git review       | git repo upload --single
+git download     | git repo download --single
+git abandon      | git repo abandon --single
 
-其中：
-
-+ `git review` 别名命令与 OpenStack 社区的 `git-review` 工具重名，尽量使用 `git pr` 别名命令。
+**注意**： `git review` 别名命令与 OpenStack 社区的 `git-review` 工具重名，尽量使用 `git pr` 别名命令。
 
 此外，还增加了一些常用的别名命令：
 
@@ -39,24 +40,20 @@ git logf         | git log --pretty=fuller
 git logs         | git log --pretty=refs --date=short
 
 
-## 适配中文环境
+## 其他有用的 git 设置
 
-如果提交中包含中文路径的文件变更，则 git-repo 为 Git 自动增添的如下面设置，能帮助中文路径正确地显示。
+提交中改动文件名如果包含中文，如下设置能帮助正确地显示中文路径。
 
     [core]
             quotepath = false
 
 
-## 其它可增强用户体验的 Git 设置
+在 `git rebase -i` 命令时，自动增加 `--autosquash` 参数，自动将 fixup 等提交适配到对应提交上。
 
-还增加了一些有助于提效的配置，如：
+    [rebase]
+            autosquash = true
 
-+ 在 git rebase -i 命令时，自动增加 `--autosquash` 参数，自动匹配 fixup 提交。
+分支合并时创建的合并提交，提交说明中自动包含合入提交的简要说明。
 
-        [rebase]
-                autosquash = true
-
-+ 分支合并时创建的合并提交，提交说明中自动包含合入提交的简要说明。
-
-        [merge]
-                log = true
+    [merge]
+            log = true

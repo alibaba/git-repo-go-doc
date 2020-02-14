@@ -1,7 +1,7 @@
 ---
 title: "代码贡献"
 draft: false
-weight: 40
+weight: 99
 ---
 
 git-repo 采用 go 语言开发，设计中参考了 Android 的 repo 工具，在多仓库管理命令上和 repo 保持兼容。
@@ -26,12 +26,10 @@ git-repo 采用 go 语言开发，设计中参考了 Android 的 repo 工具，�
 
 2. 构建
 
-    构建过程要从网络下载依赖的第三方包，整个过程可能会比较慢甚至失败。如遇到网络问题，请尝试下面的”使用 vendor 仓库构建“。
-
-    构建完毕，在当前目录下生成可执行文件 `git-repo`。
-
         $ cd git-repo-go
         $ make
+
+    构建完毕，在当前目录下生成可执行文件 `git-repo`。
 
 3. 编码风格测试
 
@@ -46,12 +44,11 @@ git-repo 采用 go 语言开发，设计中参考了 Android 的 repo 工具，�
         $ make -C test
 
 
-
 ## 编写测试用例
 
-单元测试用例使用 go 的 test 框架，以及 `gopkg.in/h2non/gock.v1` 包对 HTTP 操作的 Mock。
+单元测试用例使用 go 的 test 框架。
 
-集成测试使用 [sharness](https://github.com/chriscool/sharness) 测试框架。集成测试脚本位于 test 目录下。
+集成测试则使用 [sharness](https://github.com/chriscool/sharness) 测试框架。集成测试脚本位于 test 目录下。
 
 
 ## Bug 和需求

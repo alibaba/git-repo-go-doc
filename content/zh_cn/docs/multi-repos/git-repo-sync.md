@@ -1,7 +1,7 @@
 ---
 title: "git repo sync"
 draft: false
-weight: 50
+weight: 44
 ---
 
 ## 功能

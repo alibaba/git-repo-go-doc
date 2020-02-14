@@ -1,3 +1,5 @@
 resources/_gen/
 themes/
+public/
 *.swp
+.DS_Store
