@@ -1,6 +1,6 @@
 ## Git repo documentations
 
-Website for http://git-repo.net/
+Website for http://git-repo.info
 
 ## Build website
 

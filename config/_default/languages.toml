@@ -1,0 +1,11 @@
+[en]
+  title = "git-repo"
+  languageName = "English"
+  weight = 1
+  contentdir = "content/en"
+
+[zh_cn]
+  title = "git-repo"
+  languageName = "中文"
+  weight = 2
+  contentdir = "content/zh_cn"

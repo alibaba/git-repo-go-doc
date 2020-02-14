@@ -1,0 +1,30 @@
+[[main]]
+  identifier = "docs"
+  name = "docs"
+  url = "docs"
+  weight = 1
+
+[[main]]
+  identifier = "changelog"
+  name = "Changelog"
+  url = "changelog"
+  weight = 2
+
+[[main]]
+  identifier = "contribution"
+  name = "Contribution"
+  url = "docs/contribution"
+  weight = 3
+
+[[main]]
+  identifier = "download"
+  name = "Download"
+  url = "https://github.com/aliyun/git-repo-go/releases"
+  weight = 4
+
+[[main]]
+  identifier = "sourcecode"
+  name = "GitHub"
+  url = "https://github.com/aliyun/git-repo-go"
+  weight = 5
+

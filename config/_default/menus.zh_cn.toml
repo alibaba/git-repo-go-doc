@@ -1,0 +1,29 @@
+[[main]]
+  identifier = "docs"
+  name = "文档"
+  url = "docs"
+  weight = 1
+
+[[main]]
+  identifier = "changelog"
+  name = "变更说明"
+  url = "changelog"
+  weight = 2
+
+[[main]]
+  identifier = "contribution"
+  name = "贡献"
+  url = "docs/contribution"
+  weight = 3
+
+[[main]]
+  identifier = "download"
+  name = "下载"
+  url = "https://github.com/aliyun/git-repo-go/releases"
+  weight = 4
+
+[[main]]
+  identifier = "sourcecode"
+  name = "源码"
+  url = "https://github.com/aliyun/git-repo-go"
+  weight = 5
