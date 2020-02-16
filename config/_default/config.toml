@@ -16,6 +16,9 @@ googleAnalytics = ""
 
 disableKinds = ["taxonomyTerm"]
 
+[permalinks]
+  posts = "/:year/:month/:title/"
+
 [markup]
   [markup.goldmark]
     [markup.goldmark.renderer]
