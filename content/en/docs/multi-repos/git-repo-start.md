@@ -4,16 +4,16 @@ draft: false
 weight: 45
 ---
 
-## 功能
+## Description
 
-以 manifest 清单仓库指定的版本为基准，为项目创建分支或切换分支。
+Begin a new branch of development, starting from the revision specified in the manifest.
 
-## 命令格式
+## Usage
 
-只对指定的项目，创建或切换分支：
+Create a new branch for specific projects.
 
     git repo start <branch-name> [project...]
 
-为所有项目创建或切换分支，分支名 <branch-name>：
+Create a new branch for all projects.
 
     git repo start --all <branch-name>

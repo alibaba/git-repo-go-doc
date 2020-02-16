@@ -1,60 +1,62 @@
 ---
-title: "快速开始"
+title: "Quick start"
 draft: false
 weight: 11
 enableToc: false
 ---
 
-## 快速开始
+## Quick Start
 
-### 步骤 1：安装 git-repo
+### Install git-repo
 
-访问 git-repo 的下载页面: [https://github.com/aliyun/git-repo-go/releases](https://github.com/aliyun/git-repo-go/releases)。
+You can download `git-repo` from: [https://github.com/aliyun/git-repo-go/releases](https://github.com/aliyun/git-repo-go/releases).
 
-根据您平台的类型，下载合适的软件包。然后将下载并解压缩后的 `git-repo` 文件拷贝到可执行目录中（如 Linux 下的 `/usr/local/bin` 目录），即完成安装。
+Choose the proper package according to your OS (Linux, Mac, or Windows), and architecture (amd or 386), download and extract the package.
 
-
-### 步骤 2：运行 git-repo
-
-初次运行任意 git-repo 子命令，会完成一些初始化工作。例如执行下面的命令查看版本号：
-
-    git repo version
+Copy the binary into executable PATH (e.g. `/usr/local/bin` on Linux or macOS) to complete the installation.
 
 
-### 步骤 3：单仓库下发起代码评审
+### Run git-repo for the first time
 
-如果工作区当前分支未关联远程分支，先执行操作和远程仓库的远程分支建立关联。例如：如下命令建立和 origin 远程仓库的 master 分支建立关联。
+Run any subcommand of `git-repo`, will perform some initialization tasks. e.g.:
 
-    git branch -u origin/master
-
-发起代码审核，执行如下命令：
-
-    git pr
+    $ git repo version
 
 
-### 步骤 4：多仓库工作流
+### Code review single repository
 
-`git-repo` 支持 Android 式的多仓库工作流。
+Make sure to setup a remote tracking branch like:
 
-1. 创建工作区。
+    $ git branch -u origin/master
+
+Create code review (pull request) from command line:
+
+    $ git pr
+
+
+### Code review multiple repositories
+
+`git-repo` is compatible with Android `repo`, and can work on multiple repositories:
+
+1. Create a workspace.
 
         $ mkdir workspace
         $ cd workspace
 
-2. 下载 manifest 清单仓库，初始化工作区。
+2. Initialize workspace from a manifest project, which has an XML file (e.g., default.xml) to describe the relationship of the sub-projects.
 
         $ git repo init -u <manifest repository>
 
-3. 按照 Manifest 清单仓库中的文件，下载各个子仓库的代码，并检出到工作区。
+3. Fetch all sub-projects and checkout to the local workspace.
 
         $ git repo sync
 
-4. 创建开发分支。
+4. Create a local branch for development.
 
         $ git repo start --all <branch/name>
 
-5. 在工作区中开发，每个仓库的改动，在各自仓库中完成提交。
+5. Working in workspace and make new commits.
 
-6. 执行下面命令，扫描工作区所有仓库的改动，逐个向上游仓库发起代码评审。
+6. Run the following commands to send local commits to remote server to create code reviews (pull requests).
 
         $ git repo upload

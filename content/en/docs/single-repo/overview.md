@@ -1,15 +1,15 @@
 ---
-title: "单仓库协同概览"
+title: "Overview"
 draft: false
 weight: 31
 ---
 
-大多数用户参与的项目是一个代码仓。对于单仓库操作， `git-repo` 提供了如下命令扩展：
+`git-repo` provides several alias commands for git workflow on a single repository:
 
-* git peer-review，或 git pr: 创建代码评审。
-* git download: 下载评审的代码到本地。
-* git abandon: 清理当前完成评审发起的分支。
+* `git peer-review` or `git pr`: publish local commits to create code review.
+* `git download`: download specific code review to the local repository.
+* `git abandon`: prune already published local branch.
 
-使用 git-repo 针对单仓库系统的示意如下：
+Demo for git workflow on single repository:
 
-{{< figure src="/images/git-repo-single.gif" caption="图: git-repo for multiple repositories" >}}
+{{< figure src="/images/git-repo-single.gif" caption="Fig: git-repo for multiple repositories" >}}

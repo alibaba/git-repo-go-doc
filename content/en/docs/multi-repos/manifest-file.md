@@ -1,12 +1,12 @@
 ---
-title: "Manifest 文件"
+title: "Manifest Overview"
 draft: false
 weight: 42
 ---
 
-## Manifest 清单仓库和 Manifest 清单文件
+## Manifest file example
 
-定义多仓库关联的清单文件（manifest 文件）保存于一个仓库中，这个仓库称为 manifest 仓库。仓库中默认的 manifest 清单文件名为 `default.xml`，示例如下。（仓库中可以包含多个 XML 文件，但是除了默认的 `default.xml` 之外，其他 XML 文件需要通过命令行的相关参数显式的指定。）
+In a manifest repository, there are one or more XML files, which define the relationship of all repositories of the project. The default manifest file in the manifest project is `default.xml`. See the following content of a manifest file as an example:
 
     <?xml version="1.0" encoding="UTF-8"?>
     <manifest>
@@ -30,34 +30,36 @@ weight: 42
       <project name="jiangxin/multi-log" path="lib/multi-log" groups="lib" remote="github" />
     </manifest>
 
-这是一个标准的 XML 文件，根元素为 manifest，关于该文件格式的解读如下。
+The root element of the manifest XML file is `manifest` and has many other elements.
 
-## remote 元素
 
-一个 Manifest 文件中可以包含多个 remote 元素。每一个 remote 元素定义了一个远程服务器。每个 project 元素都关联唯一一个 remote 元素。remote 元素包括的属性如下：
+## Element remote
 
-+ name 定义 remote 的名称。仓库克隆时将以该名称建立和远程仓库的关联。
-+ fetch 定义服务器 URL 地址。如果是 fetch 是相对地址，则以 manifest 仓库地址（`git-repo init -u <URL>` 设定的地址）为基准，计算得出。当一个项目被克隆时，将通过 fetch 定义的服务器 URL 地址和项目 name 字段组合得到仓库的克隆地址。
-+ revision 定义项目的默认分支。
-+ review 参数设置 `git-repo` 发动集中式评审的服务器地址。
+One or more remote elements may be specified. Each remote element defines a remote server, which has a name, URL prefix, revision, and review URL. Every project should associate with one remote element.
 
-## default 元素
+Attributes of the remote element:
 
-当项目（project）元素没有设置 remote、revison 等属性，则直接使用 default 元素中相关设置。即 default 元素为 project 元素相关属性的缺省值。
++ Attribute `name`: A short name unique to this manifest file. The name specified here is used as the remote name in each project's `.git/config`, and is therefore automatically available to commands like `git fetch`, `git remote`, `git pull`, and `git push`.
++ Attribute `alias`: The alias, if specified, is used to override name to be set as the remote name in each project's `.git/config`. Its value can be duplicated while attribute name has to be unique in the manifest file. This helps each project to be able to have same remote name, which actually points to different remote URL.
++ Attribute `fetch`: The Git URL prefix for all projects which use this remote. Each project's name is appended to this prefix to form the actual URL used to clone the project. If fetch points to a relative path, it will form a real URL prefix from manifest repository URL, which is given by `git repo init -u <URL>` command line.
++ Attribute `revision`: Name of a Git branch (e.g., master or refs/heads/master) or revision. Remotes with their own revision will override the default revision.
++ Attribute `review`: Hostname of the code review server where reviews are uploaded to by `git repo upload`. This attribute is optional; if not specified, then `git repo upload` will not function.
 
-## project 元素
+## Element default
 
-每一个 project 元素定义一个仓库。其中关键属性如下：
+At most one default element may be specified. Its remote and revision attributes are used when a project element does not specify its own remote or revision attribute.
 
-+ 属性 name 既作为项目的名称，又和 remote 的 fetch 字段一起组合出仓库的 URL 地址。
-+ 属性 path 是一个相对路径，是仓库在本地工作区的检出路径。
-+ 属性 groups 将项目分组，用作项目的筛选。例如在 `git repo init -g <gorup` 命令中进行设置。
-+ 属性 remote 设置项目对应的远程源仓库。
+## Element project
 
-元素 project 还可以嵌套，嵌套内部的 project 路径以嵌套外部项目的路径为基准。
+One or more project elements may be specified. Each element describes a single Git repository to be cloned into the repo client workspace. Project can be nested.
 
-元素 project 还可以包含 linkfile、copyfile 等元素，完成文件的链接和拷贝。
++ Attribute `name`: A unique name of the project. The project's name is appended onto its remote's fetch URL to generate the actual URL to configure the Git remote with.
++ Attribute `path`: An optional path relative to the top directory of the repo client where the Git working directory for this project should be placed. If not supplied, the project name is used. If the project has a parent element, its path will be prefixed by the parent's.
++ Attribute `groups`: List of groups to which this project belongs, whitespace or comma separated. All projects belong to the group "all", and each project automatically belongs to a group of its "name:`name`" and "path:`path`".
++ Attribute `remote`: Name of a previously defined remote element. If not supplied, the remote given by the default element is used.
++ Attribute `revision`: Name of the Git branch the manifest wants to track for this project, or revision used for checkout only. If not supplied, the revision given by the remote element is used if applicable, else the default element is used.
 
-更多示例参见 Android 项目的 manifest 仓库：
+References:
 
-    地址：https://android.googlesource.com/platform/manifest
++ [Manifest format of Android repo](https://gerrit.googlesource.com/git-repo/+/refs/heads/master/docs/manifest-format.md)
++ [Android manifest file example](https://android.googlesource.com/platform/manifest)

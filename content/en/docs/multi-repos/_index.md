@@ -1,12 +1,12 @@
 ---
-title: "多仓库协同和代码评审"
+title: "For Multiple Repositories"
 draft: false
 weight: 40
 collapsible: true
 ---
 
-[概览](overview)
-[Manifest 文件](manifest-file)
+[Overview](overview)
+[Manifest Format](manifest-file)
 [git repo init](git-repo-init)
 [git repo sync](git-repo-sync)
 [git repo start](git-repo-start)

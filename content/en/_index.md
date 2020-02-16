@@ -1,8 +1,8 @@
 ---
-title: 首页
+title: Home
 description: Homepage of git-repo
 draft: false
-updatesBanner: "AGit-flow and git-repo will be announced at  [Git Merge 2020 conference](https://git-merge.com/), Los Angeles, MARCH 4."
+updatesBanner: "AGit-flow and git-repo will be announced at [Git Merge 2020 conference](https://git-merge.com/), Los Angeles, MARCH 4."
 landingImage: /images/git-repo-single.gif
 landingTitle:
   - git-repo
@@ -13,9 +13,9 @@ textColor:
 spaceBetweenTitleText: 25
 buttons:
   - link: docs/getting-started/quickstart
-    text: 快速上手
+    text: Getting Started
     color: primary
   - link: https://github.com/aliyun/git-repo-go/releases
-    text: 下载 git-repo
+    text: Download git-repo
     color: default
 ---

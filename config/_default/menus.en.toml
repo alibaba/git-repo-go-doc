@@ -1,6 +1,6 @@
 [[main]]
   identifier = "docs"
-  name = "docs"
+  name = "Docs"
   url = "docs"
   weight = 1
 

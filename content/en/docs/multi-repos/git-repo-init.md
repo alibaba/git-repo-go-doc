@@ -4,25 +4,25 @@ draft: false
 weight: 43
 ---
 
-## 功能
+## Description
 
-初始化当前工作区，或修改前一次 git repo init 执行时的参数设置。
+Initialize the current workspace or re-initialize workspace with different options.
 
-当 `git repo init` 命令执行完毕后，会在工作区中创建子目录 `.repo`。其中包含 manifest 清单仓库（`.repo/manifests`），以及清单文件（`.repo/manifest.xml`）文件。
+Will create `.repo` directory inside workspace while executing `git repo init`. There are one manifest repository and manifest file `.repo/manifest.xml` inside it.
 
-部分 `git repo init` 命令的参数会以 git 配置变量方式保存在 `.repo/manifests.git` 仓中，例如 `-m <name>`、`-g <groups>` 参数，就记录在 git 配置文件的 `[manifest]` 小节中。
+Some options of `git repo init` will save as git configs in the `.repo/manifests.git` repository, such as `-m <name>`, `-g <groups>` options.
 
 
-## 命令格式
+## Usage
 
     git repo init -u <URL> [options...]
 
 
-## 选项
+## Options
 
-主要的选项如下：
+Available options:
 
-+ `-u <URL>`：指定 manifests 清单仓库的 URL 地址。
-+ `-b <branch>`：指定检出的 manifests 清单仓库分支，默认使用 `master` 分支。 
-+ `-m <name>`：指定使用的 manifest 清单文件名称，默认使用 `default.xml` 文件。 
-+ `-g <groups>`：指定项目分组。可以使用逗号分隔多个分组。分组在 manifest 清单文件中定义。
++ `-u <URL>`: URL of manifest project.
++ `-b <branch>`: Manifest branch or revision to be checked out (default "master").
++ `-m <name>`: Manifest file name used to initialize workspace (default "default.xml").
++ `-g <groups>`: Restrict manifest projects to ones with specified group(s) [default|all|G1,G2,G3|G4,-G5,-G6] (default "default").

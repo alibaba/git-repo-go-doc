@@ -4,12 +4,12 @@ draft: false
 weight: 51
 ---
 
-## 功能
+## Description
 
-清理本地分支，删除已经被上游合并的本地分支。
+Delete all published local branches.
 
-该命令等价于 `git repo abandon --all [<project>...]`。相比 `git repo abandon` 支持 `--force` 参数，本命名更加安全。
+It equivalent to `git repo abandon --all [<project>...]` command. `git repo prune` does not allow `--force` option, so it is safer.
 
-## 命令格式
+## Usage
 
     git-repo prune [<project>...]

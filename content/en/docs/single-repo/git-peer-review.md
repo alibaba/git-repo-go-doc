@@ -4,69 +4,64 @@ draft: false
 weight: 32
 ---
 
-`git-repo` 针对常用的单仓库的工作区，提供了快捷的创建代码评审的命令：`git peer-review`。该命令可以简写为 `git pr` 或者 `git review`。
+`git-repo` provides alias command `git peer-review` or `git pr` to create a code review on a single repository.
 
 
-## 1. 创建代码评审
+## 1. Create a code review
 
-使用 `git peer-review` 命令创建代码评审的步骤如下：
+### 1.1 Clone
 
-### 1.1 克隆远程仓库到工作区
-
-克隆远程仓库到本地工作区。（如果工作区中已经存在该仓库，则忽略此步骤。）
+Clone remote repository to the local workspace (Ignore this step, if have local repository already):
 
     $ git clone https://codeup.teambition.com/git-repo/demo.git
-
-切换到本地仓库的工作区：
-
     $ cd demo
 
 
-#### 1.2 创建特性分支
+#### 1.2 Create local topic branch
 
-在本地工作区中创建新的工作分支。这个步骤不是必须的，使用当前分支（如 master 分支）也可以。但是如果需要在一个工作区目录进行不同特性的开发，则创建分支是必要的，否则多个特性的代码可能混在同一个代码评审任务中，或相互覆盖。
+This step is optional. If you want to work on several different tasks at the same local workspace, you must create a topic branch for each task. Otherwise, the code review will be overwritten.
 
     $ git checkout -b topic1 origin/master
 
-上面命令的两个参数要重点说明一下：
+Note:
 
-+ 参数 `-b topic1` 设定了新的工作分支的名称。
-+ 最后的 `origin/master` 参数，则是为了将新建分支和上游的 master 分支建立关联。这个参数很重要，如果忘了添加该参数，则在用 `git peer-review` 创建代码评审时，会提示补救方法。
-
-
-### 1.3 工作区内开发和提交
-
-在工作区中进行代码开发工作，使用标准的 git 命令进行提交。
++ Use option `-b topic1` to create a specific branch named "topic1".
++ New branch will be created from the commit pointed by the last argument `origin/master`, and the newly created branch will setup to track it.
 
 
-### 1.4 发起代码评审
+### 1.3 Working in the worktree
 
-当完成本地开发后，执行如下命令推送本地改动并创建代码评审：
+Create new commits in the worktree.
+
+
+### 1.4 Publish local commits to create a new code review
+
+Run the following command to publish local commits to remote server to create or update code review (pull request):
 
     $ git pr
 
-该命令的参数有很多，可以设置代码评审需要的各项参数，例如：
+`git pr` has many options, e.g.:
 
-* 指定评审者和关注者。多个用户名之间可以用（半角）逗号分开。
+* Assign reviewers and watchers. Separate multiple users with comma.
 
-        $ git pr --reviewers 星楚,澳明 --cc 知忧
+        $ git pr --reviewers user1,user2 --cc user3
 
-* 设定代码评审处于草稿状态，可以发表评审意见，但是不能合入。
+* Create a code review in draft mode. A draft mode code review cannot be merged.
 
         $ git pr --draft
 
-如果当前分支相比远程分支没有新提交，则不会创建代码评审，显示提示信息如下：
+If nothing changed in the local repository, will show the following error message:
 
     $ git pr
     NOTE: no branches ready for upload
 
-如果已经发起过一次代码评审，且之后没有代码改动，也不会执行。显示的提示信息如下：
+If all local commits have already been published by running `git pr`, execute another `git pr` will show the following message:
 
     $ git pr
     NOTE: no change in project . (branch topic1) since last upload
     NOTE: no branches ready for upload
 
-如果本地分支未跟踪某一个远程分支，则 `git pr` 命令不知道该向哪个远程分支发起代码评审。必须设置本地分支和远程分支的跟踪，才可以发起代码评审。命令报错信息如下：
+If there is no tracking branch, `git pr` doesn't know the target branch to create a code review. Will show the following error message:
 
     $ git pr
     FATAL: upload failed: cannot find tracking branch
@@ -75,12 +70,12 @@ weight: 32
     
         git branch -u origin/master
 
-参照提示信息中的命令，建立工作区本地分支和远程分支的跟踪关系。
+You can follow the instruction in the message to setup a remote tracking branch.
 
 
-### 1.5 代码评审的编辑界面
+### 1.5 User interface for `git pr`
 
-输入 `git pr` 命令后，会打开一个编辑器，内容是此次代码评审的各项可定制的参数，内容如下：
+When running `git pr`, will open the following text by an editor (e.g.: vim):
 
     ##############################################################################
     # Step 1: Input your options for code review
@@ -88,7 +83,7 @@ weight: 32
     # Note: Input your options below the comments and keep the comments unchanged
     ##############################################################################
     
-    # [Title]       : one line message below as the title of code review
+    # [Title]       : one-line message below as the title of code review
     
     # [Description] : multiple lines of text as the description of code review
     
@@ -117,24 +112,26 @@ weight: 32
     #         4e599aa284ed64ba12ba1b5b06fbbd3199846434
 
 		
-其中以字符 "#" 开始的行是注释，不要改动注释行，因为 `git-repo` 要根据注释行的内容判断用户输入内容用于更改哪项代码评审的参数设置。 例如：
+The first section of the text is used for input options for `git pr`. Lines begin with the character "#" are comments. Please do not change these comments, for `git-repo` needs to find parameter names in the comments.
 
-+ 在 "# [Title]" 行的下面添加的内容，成为代码评审的标题。默认用提交说明的标题作为代码评审标题。
-+ 在 "# [Description]" 行的下面添加的内容，成为代码评审的详细描述。默认用提交说明的内容作为代码评审的详细描述。
-+ 在 "# [Issue]" 行的下面如果添加 Issue ID，则将代码评审和问题之间的建立关联。
-+ 在 "# [Reviewer]" 行的下面添加代码评审者姓名，一个一行，或者用逗号分隔。
-+ 在 "# [Cc]" 行的下面添加代码评审的关注者姓名，一个一行，或者用逗号分隔。
-+ 在 "# [Draft]" 行的下面如果输入 yes，则表明要创建一个草稿模式的代码评审。
-+ 在最下面的 "Step 2" 区域，显示当前项目将要上传到远程仓库的分支和提交列表。检查提交列表，如果不想创建此次代码评审，则将 "branch ..." 的行注释掉，或者删掉，则此次创建代码评审的任务终止。
-
-保存内容，退出编辑器，则开始向服务端推送代码，并开始代码评审的创建。
-
-编辑的内容会以模板的方式保存，以便在下一次执行 `git pr` 时复用。
++ Below the line started with "# [Title]", add one-line title.
++ Below the line started with "# [Description]", add description.
++ Below the line started with "# [Issue]", add issue number for reference.
++ Below the line started with "# [Reviewer]", add reviewers (one reviewer on each line, or separated by comma).
++ Below the line started with "# [Cc]", add watchers.
++ Below the line started with "# [Draft]", input "yes" to turn on draft mode.
 
 
-### 1.6 完成代码评审的创建
+The second section lists branches of the current project that are ready to publish for each project. Uncomment the branches you want to publish. `git-repo` will create code reviews for these publish branches.
 
-`git pr` 命令执行完毕后，显示代码评审创建成功的消息，示例如下：
+If no branch is ready for publish (all branches are comment out), `git pr` will abort.
+
+Save the content and quit the editor, will start to send local commits to remote server to create/update code review.
+
+
+### 1.6 Result of creating/updating code review
+
+The result of creating/updating code review will be displayed. The following message is an example of Alibaba code platform:
 
     remote: +----------------------------------------------------------------+
     remote: | Merge Request #7937 was created or updated.                    |
@@ -144,52 +141,46 @@ weight: 32
     To ssh://codeup.teambition.com/git-repo/demo.git
      * [new branch]      topic1 -> refs/for/master/topic1
 
-注意：提示信息中包含创建成功的代码评审的 URL 地址，通过浏览器访问该地址，显示创建好的代码评审。
+NOTE: code review URL will be displayed in the message.
 
 
-### 1.7 服务器端仓库的变化
+### 1.7 Special reference of the code review for download
 
-通过命令行工具在服务器端创建代码评审，服务端不会创建新的分支，但是为了方便用户远程下载评审代码，仓库中生成了一个特殊的引用。
-
-例如上面创建的第 7937 号代码评审，会创建包含该评审 ID 号的特殊引用，如：`refs/merge-requests/7937/head`。下载该待评审的代码，可以使用如下命令：
+After the code review is created, a new special reference will be created inside the repository. The special reference is not a branch or tag, and can be fetched, e.g.:
 
     $ git fetch origin refs/merge-requests/7937/head
     From https://codeup.teambition.com/git-repo/demo.git
      * branch            refs/merge-requests/7937/head -> FETCH_HEAD
 
-检出相关代码：
+Checkout the fetched code:
 
     $ git checkout FETCH_HEAD
 
-`git-repo` 提供了一个便捷的 `download` 子命令完成上述操作。
-
-## 2. 重新发送，刷新代码评审
-
-代码评审很少一蹴而就，针对评审者的意见，开发者（评审任务的创建者）往往需要重新上传代码刷新代码评审。对于阿里巴巴代码平台上创建的代码评审任务，重复执行 `git pr` 命令即可。
-
-1. 开发者首先在本地工作区修改代码。
-
-2. 执行如下命令，向远程仓库推送并刷新代码评审任务：
-
-        $ git pr
+NOTE: `git-repo` provides alias command `git download` for downloading commits of the code review.
 
 
-## 3. 多人协同
+## 2. Refresh commits of code review
 
-代码评审者收到代码评审任务后，除了可以在代码评审 web 界面中添加评论之外，还可以使用 `git-repo` 更改评审中的代码。
+If commits of the code review need to be updated, make changes in the local repository, and run the following command to refresh commits of the code review:
 
-首先代码评审者在本地工作区（指向同一代码仓库）中，使用 `git download` 命令下载该代码评审任务指定的代码。例如下载 ID 为 7937 的代码评审：
+    $ git pr
+
+## 3. Multiple users' collaboration
+
+Run `git pr` on the same repository, with the same local branch, to the same remote branch, by the same user, will refresh commits of the same code review (pull request), instead of creating a new one.
+
+If a different user, such as a reviewer, wants to update the commits of a code review, how can he/she do it?
+
+First, download the commits of the code review. Download pull request #7937 for example:
 
     $ git download 7937
 
-执行该命令后，本地工作区切换到该代码评审指向的提交。创建一个本地分支，例如：code-review 分支
+Then, create a new local branch, such as:
 
     $ git checkout -b code-review
 
-代码评审者在这个分支中进行修改，并完成本地的代码提交。
+Make changes in the local repository.
 
-然后代码评审者通过如下命令向远程服务器推送，并更新相应的代码评审。
+Send changes of the local repository to the remote server to update the specific pull request:
 
     $ git pr --change 7937
-
-说明：多人协同模式只支持 AGit-Flow 服务，而不支持 Gerrit 服务。

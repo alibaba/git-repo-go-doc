@@ -1,35 +1,30 @@
 ---
-title: "运行 git-repo"
+title: "Running"
 draft: false
 weight: 13
 enableToc: false
 ---
 
-## 运行 git-repo
+## Execute git-repo for the first time
 
-初次运行任意 `git-repo` 子命令，会完成一些初始化工作，例如：[对 Git 配置文件进行扩展](../../gitconfig)。
-
-因此 `git-repo` 安装完毕后，可以执行如下命令。
+`git-repo` will perform some initialization tasks on the first execution. See: [git config extensions](../../gitconfig). Running any command will trigger the initialization tasks.
 
     $ git repo --version
 
+Note: `git-repo` will be recognized as git subcommand so that we can execute `git repo` (without a dash).
 
-说明：上面命令中 git 和 repo 之间可以不再需要短线，因为 Git 自动将具有类似 `git-<subcmd>` 的可执行文件视为自己的子命令。
 
+## Manual for git-repo
 
-## 查看 git-repo 的帮助
-
-执行下面命令查看 git-repo 的帮助：
+Show help messages of `git-repo`:
 
     $ git repo -h
 
-或者
+or
 
     $ git repo
 
-注意：如果使用 `git repo --help` 或者 `git help repo`，则无法显示 git-repo 的帮助。因为这些命令激活了 git 的 man 手册，而非 git-repo 内置的帮助系统。
-
-git repo 有很多子命令。可以用如下命令查看子命令的帮助：
+To see help messages of subcommands of `git-repo`, see the following examples:
 
     $ git repo help init
     $ git repo help sync

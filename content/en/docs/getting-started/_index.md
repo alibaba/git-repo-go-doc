@@ -1,11 +1,11 @@
 ---
-title: "开始"
+title: "Getting Started"
 draft: false
 weight: 10
 collapsible: true
 ---
 
-[快速开始](quickstart)
-[安装](installation)
-[运行](running)
-[升级](upgrade)
+[Quick Start](quickstart)
+[Install](installation)
+[Running](running)
+[Upgrade](upgrade)

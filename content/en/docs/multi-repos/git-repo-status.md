@@ -4,27 +4,27 @@ draft: false
 weight: 49
 ---
 
-## 功能
+## Description
 
-显示项目工作区状态。每个项目的状态显示两个字符，分别表示索引、工作区的改动:
+Show a summary of git status on each project. For each file in the project, a two-letter code is used. The first letter stands for changes of index, and the second letter stands for changes of worktree.
 
-在第一列中，大写字母表示索引中包含的更改。（相当于 `git diff --cached`。）
+In the first column, an uppercase letter indicates how the staging area differs from the last committed state.
 
-字母  |  含义      | 说明
-------|:-----------|:--------------------------------------
--     | 没有变化   | 在 HEAD 与索引中相同
-A     | 已添加     | 不存在于 HEAD 中，但存在于索引中
-M     | 已修改     | 存在于 HEAD 中，但索引中的文件已修改
-D     | 已删除     | 存在于 HEAD 中，但不存在于索引中
-R     | 已重命名   | 不存在于 HEAD 中，索引中文件的路径已更改
-C     | 已复制     | 不存在于 HEAD 中，复制自索引中的另一个文件
-T     | 模式已更改 | HEAD 与索引中的内容相同，但模式已更改
-U     | 未合并     | HEAD 与索引之间存在冲突；需要加以解决
+Letter | Meaning      | Description
+-------|:-------------|:--------------------------------------
+`-`    | No change    | Same in HEAD and index 
+A      | Added        | Not in HEAD, in index
+M      | Modified     | In HEAD, modified in index
+D      | Deleted      | In HEAD, not in index 
+R      | Renamed      | Not in HEAD, path changed in index
+C      | Copied       | Not in HEAD, copied from another in index
+T      | Mode changed | Same content in HEAD and index, mode changed
+U      | Unmerged     |Conflict between HEAD and index; resolution required
 
-在第二列中，小写字母表示工作区和索引之间的不同之处。（相当于 `git diff`。）
+In the second column, a lowercase letter indicates how the working directory differs from the index.
 
-字母  |  含义      | 说明
-------|:-----------|:--------------------------------------
--     | 新/未知    | 不存在于索引中，但存在于工作树中
-m     | 已修改     | 存在于索引中，也存在于工作树中（但已修改）
-d     | 已删除     | 存在于索引中，但不存在于工作树中
+Letter | Meaning     | Description
+-------|:------------|:--------------------------------------
+`-`    | New/unknown | Not in index, in work tree 
+m      | Modified    | In index, in work tree, modified
+d      | Deleted     | In index, not in work tree

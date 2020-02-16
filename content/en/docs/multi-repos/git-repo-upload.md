@@ -4,15 +4,13 @@ draft: false
 weight: 46
 ---
 
-## 功能
+## Description
 
-创建代码评审。
+Send changes to remote server to create code reviews.
 
-对于指定的项目，`git-repo` 会将本地分支与上一次执行 `git repo upload` 时上传的提交做比较，（上一次上传提交记录在 `refs/published/<branch-name>` 的引用中），提示您选择一个或多个尚未上传可供审核的分支。
+For the specified projects, compares the local branches to the remote branches updated during the last Repo sync. Repo prompts you to select one or more of the branches that haven't been uploaded for review.
 
-`git repo upload` 命令会启动一个编辑器，编辑器中的内容是此次代码评审的各项可定制的参数，以及待上传的项目和分支列表。
-
-示例如下：
+`git repo upload` command will start an editor for you with the following text as an example. Add custom options and choose the branches that need to be uploaded in the editor.
 
     ##############################################################################
     # Step 1: Input your options for code review
@@ -20,7 +18,7 @@ weight: 46
     # Note: Input your options below the comments and keep the comments unchanged
     ##############################################################################
     
-    # [Title]       : one line message below as the title of code review
+    # [Title]       : one-line message below as the title of code review
     
     # [Description] : multiple lines of text as the description of code review
     
@@ -52,19 +50,23 @@ weight: 46
     #         47a3cae46019893db78a19906dda97825279f288
     #         ced1a1d6e16bc3f8051f87621eb69ba2a7e10672 
 
-		
-Step 1 中以字符 "#" 开始的行是注释，不要改动注释行，因为 `git-repo` 要根据注释行的内容判断用户输入内容用于更改哪项代码评审的参数设置。 例如：
+The first section of the text is used for input options for `git pr`. Lines begin with the character "#" are comments. Please do not change these comments, for `git-repo` needs to find parameter names in the comments.
 
-+ 在 "# [Title]" 行的下面添加的内容，成为代码评审的标题。默认用提交说明的标题作为代码评审标题。
-+ 在 "# [Description]" 行的下面添加的内容，成为代码评审的详细描述。默认用提交说明的内容作为代码评审的详细描述。
-+ 在 "# [Issue]" 行的下面如果添加 Issue ID，则将代码评审和问题之间的建立关联。
-+ 在 "# [Reviewer]" 行的下面添加代码评审者姓名，一个一行，或者用逗号分隔。
-+ 在 "# [Cc]" 行的下面添加代码评审的关注者姓名，一个一行，或者用逗号分隔。
-+ 在 "# [Draft]" 行的下面如果输入 yes，则表明要创建一个草稿模式的代码评审。
++ Below the line started with "# [Title]", add one-line title.
++ Below the line started with "# [Description]", add description.
++ Below the line started with "# [Issue]", add issue number for reference.
++ Below the line started with "# [Reviewer]", add reviewers (one reviewer on each line, or separated by comma).
++ Below the line started with "# [Cc]", add watchers.
++ Below the line started with "# [Draft]", input "yes" to turn on draft mode.
 
-在最下面的 "Step 2" 区域，显示当前项目将要上传到远程仓库的分支和提交列表。检查提交列表，如果不想创建此次代码评审，则将 "branch ..." 的行注释掉，或者删掉，如果需要为此项目和分支创建代码评审，则打开对应的 "branch ..." 行。
 
-例如将 project foo 的 branch topic1 所在行的注释去掉，而保留 project bar 的 branch topic1 行的注释。如下：
+The second section lists projects and branches that are ready to publish for each project. Uncomment the branches you want to publish. `git-repo` will create code reviews for these publish branches.
+
+If no branch is ready for publish (all branches are comment out), `git repo upload` will abort.
+
+Save the content and quit the editor, will start to send local commits to remote server to create/update code review.
+
+For example: in the following text, the leading character "#" at the beginning of the line of `branch topic1` of `project foo` has been deleted, while other comment letter "#" are preserved:
 
     ##############################################################################
     # Step 2: Select project and branches for upload
@@ -83,22 +85,21 @@ Step 1 中以字符 "#" 开始的行是注释，不要改动注释行，因为 `
     #         47a3cae46019893db78a19906dda97825279f288
     #         ced1a1d6e16bc3f8051f87621eb69ba2a7e10672 
 
-保存并退出编辑器，则只向 project foo 发起代码评审，而不会向 project bar 发起代码评审。
+Save and quit the editor, `git repo upload` will only send changes of project foo, and create code review for it.
 
 
-## 命令格式
+## Usage
 
     git repo upload [options...] [project...]
 
 
-## 选项
+## Options
 
-主要的选项如下：
+Available options:
 
-+ `--cbr`：为当前分支的修改创建代码评审。
-+ `--br <branch-name>`：为指定的分支中的修改创建代码评审。
-+ `--re <user1,user2,...>`：设置代码评审人。
-+ `--cc <user1,user2,...>`：设置代码评审的关注人。
-+ `--title <title>`：设置代码评审的标题。
-+ `--description <description>`：设置代码评审的描述。
-+ `--single`：单仓模式，可用于不使用 manifest 清单仓库的单仓库项目。
++ `--cbr`: Upload current git branch.
++ `--br <branch-name>`: Upload specific branch.
++ `--re <user1,user2,...>`: Request reviews from these people.
++ `--cc <user1,user2,...>`: Also send email to these watchers.
++ `--title <title>`: Set title for code review.
++ `--description <description>`: Set description for code review.
