@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>开始 on git-repo</title>
+    <link>http://git-repo.info/zh_cn/docs/getting-started/</link>
+    <description>Recent content in 开始 on git-repo</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh_cn</language>
+    <copyright>&amp;copy;{year}, All Rights Reserved</copyright>
+    
+        <atom:link href="http://git-repo.info/zh_cn/docs/getting-started/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+      
+      <item>
+        <title>快速开始</title>
+        <link>http://git-repo.info/zh_cn/docs/getting-started/quickstart/</link>
+        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+        
+        <guid>http://git-repo.info/zh_cn/docs/getting-started/quickstart/</guid>
+        <description>快速开始 步骤 1：安装 git-repo 访问 git-repo 的下载页面: https://github.com/aliyun/git-repo-go/releases。 根据您</description>
+      </item>
+      
+      <item>
+        <title>安装 git-repo</title>
+        <link>http://git-repo.info/zh_cn/docs/getting-started/installation/</link>
+        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+        
+        <guid>http://git-repo.info/zh_cn/docs/getting-started/installation/</guid>
+        <description>依赖 git-repo 依赖 git，在安装 git-repo 之前，需要确保已经安装了 git 2.10.0 以上版本。 下载和安装 git-repo 访问 git-repo 的下载页面: https://github.com/aliy</description>
+      </item>
+      
+      <item>
+        <title>运行 git-repo</title>
+        <link>http://git-repo.info/zh_cn/docs/getting-started/running/</link>
+        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+        
+        <guid>http://git-repo.info/zh_cn/docs/getting-started/running/</guid>
+        <description>运行 git-repo 初次运行任意 git-repo 子命令，会完成一些初始化工作，例如：对 Git 配置文件进行扩展。 因此 git-repo 安装完毕后，可以执行如下命令。 $ git repo --version 说明：上面命令中 git</description>
+      </item>
+      
+      <item>
+        <title>升级 git-repo</title>
+        <link>http://git-repo.info/zh_cn/docs/getting-started/upgrade/</link>
+        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+        
+        <guid>http://git-repo.info/zh_cn/docs/getting-started/upgrade/</guid>
+        <description>升级 git-repo 运行下面命令升级 git-repo： $ git repo upgrade 自动下载相应平台的 git-repo 升级包，完成应用的替换和升级。 如果由于文件权限或者其它原因导致升级失败，</description>
+      </item>
+      
+    
+  </channel>
+</rss>
