@@ -8,7 +8,7 @@ weight: 43
 
 Initialize the current workspace or re-initialize workspace with different options.
 
-Will create `.repo` directory inside workspace while executing `git repo init`. There are one manifest repository and manifest file `.repo/manifest.xml` inside it.
+Will create `.repo` directory inside workspace while executing `git repo init`. There are one manifest repository and manifest file `.repo/manifest.xml` inside.
 
 Some options of `git repo init` will save as git configs in the `.repo/manifests.git` repository, such as `-m <name>`, `-g <groups>` options.
 

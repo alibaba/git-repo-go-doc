@@ -1,5 +1,5 @@
 ---
-title: "Manifest Overview"
+title: "Manifest Format"
 draft: false
 weight: 42
 ---
@@ -22,10 +22,10 @@ In a manifest repository, there are one or more XML files, which define the rela
                revision="master"
     	   sync-j="4" />
     
-      <project name="aliyun/git-repo" path="git-repo" groups="app">
+      <project name="aliyun/git-repo-go" path="git-repo" groups="app">
         <linkfile src="README.md" dest="README.md"></linkfile>
       </project>
-      <project name="aliyun/git-repo-doc" path="website" groups="app"/>
+      <project name="aliyun/git-repo-go-doc" path="website" groups="app"/>
       <project name="jiangxin/goconfig" path="lib/goconfig" groups="lib" remote="github" />
       <project name="jiangxin/multi-log" path="lib/multi-log" groups="lib" remote="github" />
     </manifest>
@@ -51,10 +51,10 @@ At most one default element may be specified. Its remote and revision attributes
 
 ## Element project
 
-One or more project elements may be specified. Each element describes a single Git repository to be cloned into the repo client workspace. Project can be nested.
+One or more project elements may be specified. Each element describes a single Git repository to be cloned into the client workspace. Project can be nested.
 
 + Attribute `name`: A unique name of the project. The project's name is appended onto its remote's fetch URL to generate the actual URL to configure the Git remote with.
-+ Attribute `path`: An optional path relative to the top directory of the repo client where the Git working directory for this project should be placed. If not supplied, the project name is used. If the project has a parent element, its path will be prefixed by the parent's.
++ Attribute `path`: An optional path relative to the top directory of the workspace where the Git working directory for this project should be placed. If not supplied, the project name is used. If the project has a parent element, its path will be prefixed by the parent's.
 + Attribute `groups`: List of groups to which this project belongs, whitespace or comma separated. All projects belong to the group "all", and each project automatically belongs to a group of its "name:`name`" and "path:`path`".
 + Attribute `remote`: Name of a previously defined remote element. If not supplied, the remote given by the default element is used.
 + Attribute `revision`: Name of the Git branch the manifest wants to track for this project, or revision used for checkout only. If not supplied, the revision given by the remote element is used if applicable, else the default element is used.

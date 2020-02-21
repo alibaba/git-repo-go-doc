@@ -17,7 +17,7 @@ Clone remote repository to the local workspace (Ignore this step, if have local 
     $ cd demo
 
 
-#### 1.2 Create local topic branch
+#### 1.2 Create a local topic branch
 
 This step is optional. If you want to work on several different tasks at the same local workspace, you must create a topic branch for each task. Otherwise, the code review will be overwritten.
 
@@ -42,7 +42,7 @@ Run the following command to publish local commits to remote server to create or
 
 `git pr` has many options, e.g.:
 
-* Assign reviewers and watchers. Separate multiple users with comma.
+* Assign reviewers and watchers. Multiple users can be separated by commas.
 
         $ git pr --reviewers user1,user2 --cc user3
 
@@ -55,7 +55,7 @@ If nothing changed in the local repository, will show the following error messag
     $ git pr
     NOTE: no branches ready for upload
 
-If all local commits have already been published by running `git pr`, execute another `git pr` will show the following message:
+If all local commits have already been published, execute another `git pr` will show the following message:
 
     $ git pr
     NOTE: no change in project . (branch topic1) since last upload
@@ -73,9 +73,9 @@ If there is no tracking branch, `git pr` doesn't know the target branch to creat
 You can follow the instruction in the message to setup a remote tracking branch.
 
 
-### 1.5 User interface for `git pr`
+### 1.5 User interface of "git pr"
 
-When running `git pr`, will open the following text by an editor (e.g.: vim):
+When running `git pr`, will open an editor with the following text:
 
     ##############################################################################
     # Step 1: Input your options for code review
@@ -112,26 +112,26 @@ When running `git pr`, will open the following text by an editor (e.g.: vim):
     #         4e599aa284ed64ba12ba1b5b06fbbd3199846434
 
 		
-The first section of the text is used for input options for `git pr`. Lines begin with the character "#" are comments. Please do not change these comments, for `git-repo` needs to find parameter names in the comments.
+The first section of the text is used for adding options for `git pr`. Lines begin with the character "#" are comments. Please do not change these comments, for `git pr` needs to find parameter names in the comments.
 
-+ Below the line started with "# [Title]", add one-line title.
-+ Below the line started with "# [Description]", add description.
++ Below the line started with "# [Title]", add one-line title for the code review to be generated.
++ Below the line started with "# [Description]", add description for the code review to be generated.
 + Below the line started with "# [Issue]", add issue number for reference.
-+ Below the line started with "# [Reviewer]", add reviewers (one reviewer on each line, or separated by comma).
++ Below the line started with "# [Reviewer]", add reviewers (one reviewer on each line, or separated by commas).
 + Below the line started with "# [Cc]", add watchers.
 + Below the line started with "# [Draft]", input "yes" to turn on draft mode.
 
 
-The second section lists branches of the current project that are ready to publish for each project. Uncomment the branches you want to publish. `git-repo` will create code reviews for these publish branches.
+The second section lists branches of the current project that are ready to publish. Uncomment the branches you want to publish, and `git pr` will create code reviews for these branches.
 
-If no branch is ready for publish (all branches are comment out), `git pr` will abort.
+If no branch is ready to publish (all branches are commented out), `git pr` will abort.
 
-Save the content and quit the editor, will start to send local commits to remote server to create/update code review.
+Save the content and quit the editor, `git pr` will continue to send local commits to remote server to create/update a code review.
 
 
-### 1.6 Result of creating/updating code review
+### 1.6 Result of creating/updating a code review
 
-The result of creating/updating code review will be displayed. The following message is an example of Alibaba code platform:
+After executing `git pr` successfully, will show message of creating/updating a code review. The following message is an example of Alibaba code platform:
 
     remote: +----------------------------------------------------------------+
     remote: | Merge Request #7937 was created or updated.                    |
@@ -141,33 +141,33 @@ The result of creating/updating code review will be displayed. The following mes
     To ssh://codeup.teambition.com/git-repo/demo.git
      * [new branch]      topic1 -> refs/for/master/topic1
 
-NOTE: code review URL will be displayed in the message.
+NOTE: in the above message, there is a URL to access the generated code review.
 
 
 ### 1.7 Special reference of the code review for download
 
-After the code review is created, a new special reference will be created inside the repository. The special reference is not a branch or tag, and can be fetched, e.g.:
+A new special reference will be created inside the repository for user to access the generated code review. The special reference is not a branch or tag, and need to be fetched using a special command, e.g.:
 
     $ git fetch origin refs/merge-requests/7937/head
     From https://codeup.teambition.com/git-repo/demo.git
      * branch            refs/merge-requests/7937/head -> FETCH_HEAD
 
-Checkout the fetched code:
+Check out the fetched commit:
 
     $ git checkout FETCH_HEAD
 
-NOTE: `git-repo` provides alias command `git download` for downloading commits of the code review.
+NOTE: `git-repo` provides an alias command `git download` to download the specific code review.
 
 
-## 2. Refresh commits of code review
+## 2. Update a code review
 
-If commits of the code review need to be updated, make changes in the local repository, and run the following command to refresh commits of the code review:
+If commits of the code review need to be updated, make changes in the local repository, and run the following command to update commits of the code review:
 
     $ git pr
 
-## 3. Multiple users' collaboration
+## 3. Multi-user collaboration
 
-Run `git pr` on the same repository, with the same local branch, to the same remote branch, by the same user, will refresh commits of the same code review (pull request), instead of creating a new one.
+Run `git pr` on the same repository, with the same local branch, to the same remote branch, by the same user, will update commits of the same code review (pull request), instead of creating a new one.
 
 If a different user, such as a reviewer, wants to update the commits of a code review, how can he/she do it?
 
@@ -181,6 +181,6 @@ Then, create a new local branch, such as:
 
 Make changes in the local repository.
 
-Send changes of the local repository to the remote server to update the specific pull request:
+Send changes of the local repository to the remote server to update the specific pull request using command like:
 
     $ git pr --change 7937

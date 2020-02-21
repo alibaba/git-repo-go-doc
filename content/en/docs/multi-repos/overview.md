@@ -41,7 +41,7 @@ Main steps in the above example:
 
         $ git repo sync
 
-4. Create topic branches for development.
+4. Create a topic branch on all projects for development.
 
         $ git repo start --all <topic-branch>
 

@@ -16,7 +16,7 @@ Note: `git-repo` will be recognized as git subcommand so that we can execute `gi
 
 ## Manual for git-repo
 
-Show help messages of `git-repo`:
+Show help message of `git-repo`:
 
     $ git repo -h
 
@@ -24,7 +24,7 @@ or
 
     $ git repo
 
-To see help messages of subcommands of `git-repo`, see the following examples:
+Show help message of of subcommands of `git-repo`, see the following examples:
 
     $ git repo help init
     $ git repo help sync

@@ -23,9 +23,9 @@ Run any subcommand of `git-repo`, will perform some initialization tasks. e.g.:
     $ git repo version
 
 
-### Code review single repository
+### Working on a single repository
 
-Make sure to setup a remote tracking branch like:
+Make sure to setup a remote tracking branch correctly using:
 
     $ git branch -u origin/master
 
@@ -34,16 +34,16 @@ Create code review (pull request) from command line:
     $ git pr
 
 
-### Code review multiple repositories
+### Working on multiple repositories
 
-`git-repo` is compatible with Android `repo`, and can work on multiple repositories:
+`git-repo` is compatible with Android `repo`, and can work on multiple repositories managed by a manifest repository.
 
 1. Create a workspace.
 
         $ mkdir workspace
         $ cd workspace
 
-2. Initialize workspace from a manifest project, which has an XML file (e.g., default.xml) to describe the relationship of the sub-projects.
+2. Initialize workspace from a manifest project (repository), which has an XML file (e.g., default.xml) to describe the relationship of the sub-projects.
 
         $ git repo init -u <manifest repository>
 
@@ -51,11 +51,11 @@ Create code review (pull request) from command line:
 
         $ git repo sync
 
-4. Create a local branch for development.
+4. Create a local branch on all projects for development.
 
         $ git repo start --all <branch/name>
 
-5. Working in workspace and make new commits.
+5. Working in the workspace and make new commits.
 
 6. Run the following commands to send local commits to remote server to create code reviews (pull requests).
 

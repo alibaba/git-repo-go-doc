@@ -1,5 +1,5 @@
 ---
-title: "Manifest 文件"
+title: "Manifest 格式"
 draft: false
 weight: 42
 ---
@@ -22,10 +22,10 @@ weight: 42
                revision="master"
     	   sync-j="4" />
     
-      <project name="aliyun/git-repo" path="git-repo" groups="app">
+      <project name="aliyun/git-repo-go" path="git-repo" groups="app">
         <linkfile src="README.md" dest="README.md"></linkfile>
       </project>
-      <project name="aliyun/git-repo-doc" path="website" groups="app"/>
+      <project name="aliyun/git-repo-go-doc" path="website" groups="app"/>
       <project name="jiangxin/goconfig" path="lib/goconfig" groups="lib" remote="github" />
       <project name="jiangxin/multi-log" path="lib/multi-log" groups="lib" remote="github" />
     </manifest>

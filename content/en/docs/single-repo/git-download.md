@@ -17,7 +17,7 @@ Download commits of the specific code review, and check out the tip commit by de
 
 Note:
 
-+ For AGit-Flow and other compatible services, use `<Merge-Request-ID>` argument.
++ For AGit-Flow and other compatible services, use `<Merge-Request-ID>` as a argument.
 + For Gerrit service, use `<Change-ID>/<Patch-ID>` format argument.
 
 
@@ -25,6 +25,6 @@ Note:
 
 Available options:
 
-+ `-c`, `--cherry-pick`: Run `cherry-pick` after download.
-+ `-f`, `--ff-only`: Run `merge --ff-only` after download.
++ `-c`, `--cherry-pick`: Run `cherry-pick` after fetching.
++ `-f`, `--ff-only`: Run `merge --ff-only` after fetching.
 + `-r`, `--revert`: Revert specific change of Gerrit.

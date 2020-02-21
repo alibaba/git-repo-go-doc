@@ -20,7 +20,7 @@ AGit-Flow 的核心代码即将贡献到 Git 社区，任何代码平台都能�
 
 作为一款命令行工具 `git-repo`，对原生 `git` 命令做了封装，简化 AGit-Flow 等集中式工作流下用户的输入。`git-repo` 可以支持 Gerrit 以及 AGit-Flow 兼容的代码平台。
 
-下图是用户使用 `git pr` 命令（`git-repo` 的一个别名命令）创建代码评审的演示：
+下图是用户使用 `git pr` 命令（`git-repo` 的一个别名命令）在[阿里巴巴代码平台](https://codeup.teambition.com)创建代码评审的演示：
 
 {{< figure src="/images/git-pr-demo.gif" caption="git-pr 创建 Pull Request 演示图" >}}
 
@@ -36,6 +36,4 @@ Android 采用 Gerrit 提供代码评审服务，并且开发了一个客户端�
 
 2. Android repo 只支持 manifests 仓库管理下的多仓库，而 `git-repo` 在此基础上，还支持单一 Git 代码仓的集中式工作流协同，并提供快捷的别名命令 `git peer-review`，或 `git pr`。
 
-3. Android repo 使用 Python 脚本语言开发，`git-repo` 使用 Go 语言开发，并提供了完整的单元测试和集成测试用例。
-
-4. `git-repo` 命令的命名方式采用 `git-<subcmd>` 格式，扩展了 git 的命令集，即为 git 增加了一个名为 repo 的子命令。而且可以用 git 别名为 `git-repo` 设置别名命令，如 `git peer-review` 命令即是 `git repo upload --single` 的别名命令。
+3. Android repo 使用 Python 脚本语言开发，`git-repo` 使用 Go 语言开发，包含了完整测试用例。`git-repo` 安装简单，除了 `Git` 外，别无其他软件依赖。

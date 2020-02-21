@@ -6,7 +6,7 @@ collapsible: true
 ---
 
 [Overview](overview)
-[Manifest Format](manifest-file)
+[Manifest Format](manifest-format)
 [git repo init](git-repo-init)
 [git repo sync](git-repo-sync)
 [git repo start](git-repo-start)

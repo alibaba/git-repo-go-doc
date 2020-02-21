@@ -9,7 +9,7 @@ weight: 99
 `git-repo` is an open source software, feel free to contribute.
 
 + Source code: https://github.com/aliyun/git-repo-go
-+ Documentation: https://github.com/aliyun/git-repo-go-doc
++ Documentation (for this website): https://github.com/aliyun/git-repo-go-doc
 
 
 ## Build and test git-repo
@@ -25,7 +25,7 @@ weight: 99
         $ cd git-repo-go
         $ make
 
-3. Code style check using golint:
+3. Check code style using golint:
 
         $ golint github.com/aliyun/git-repo-go/...
 
@@ -44,7 +44,7 @@ weight: 99
 
 Send pull request to [https://github.com/aliyun/git-repo-go](https://github.com/aliyun/git-repo-go).
 
-Write your test cases in `test/` directory, using [sharness](https://github.com/chriscool/sharness) as test framework.
+Test cases are in the `test/` directory, using [sharness](https://github.com/chriscool/sharness) as test framework.
 
 ### Documentations
 

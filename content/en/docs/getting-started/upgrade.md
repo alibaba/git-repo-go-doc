@@ -7,13 +7,13 @@ enableToc: false
 
 ## Upgrade git-repo
 
-Upgrade `git-repo`:
+Upgrade `git-repo` to the latest version, using command:
 
     $ git repo upgrade
 
-Will download the latest version of `git-repo` and install.
+Will download and install the latest version of `git-repo`.
 
-If fail to install due to permissions or other reasons, will give an instruction as the solution. Please follow the instruction for upgrade. e.g.:
+If the upgrade process failed because of permissions or other reasons, it would show instruction in the output message. Please follow the instruction for manual upgrade. 
 
     $ git repo upgrade
     Download git-repo: ############################################################ 100%

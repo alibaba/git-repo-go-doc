@@ -8,7 +8,7 @@ weight: 46
 
 Send changes to remote server to create code reviews.
 
-For the specified projects, compares the local branches to the remote branches updated during the last Repo sync. Repo prompts you to select one or more of the branches that haven't been uploaded for review.
+For the specified projects, compares the local branches to the remote branches updated during the last `git repo sync`. `git-repo` prompts you to select one or more of the branches that haven't been uploaded for review.
 
 `git repo upload` command will start an editor for you with the following text as an example. Add custom options and choose the branches that need to be uploaded in the editor.
 
@@ -50,21 +50,21 @@ For the specified projects, compares the local branches to the remote branches u
     #         47a3cae46019893db78a19906dda97825279f288
     #         ced1a1d6e16bc3f8051f87621eb69ba2a7e10672 
 
-The first section of the text is used for input options for `git pr`. Lines begin with the character "#" are comments. Please do not change these comments, for `git-repo` needs to find parameter names in the comments.
+The first section of the text is used for adding options for `git repo upload`. Lines begin with the character "#" are comments. Please do not change these comments, for `git-repo` needs to find parameter names in the comments.
 
-+ Below the line started with "# [Title]", add one-line title.
-+ Below the line started with "# [Description]", add description.
++ Below the line started with "# [Title]", add one-line title for the code review to be generated.
++ Below the line started with "# [Description]", add description for the code review to be generated.
 + Below the line started with "# [Issue]", add issue number for reference.
-+ Below the line started with "# [Reviewer]", add reviewers (one reviewer on each line, or separated by comma).
++ Below the line started with "# [Reviewer]", add reviewers (one reviewer on each line, or separated by commas).
 + Below the line started with "# [Cc]", add watchers.
 + Below the line started with "# [Draft]", input "yes" to turn on draft mode.
 
 
-The second section lists projects and branches that are ready to publish for each project. Uncomment the branches you want to publish. `git-repo` will create code reviews for these publish branches.
+The second section lists projects and branches that are ready to publish. Uncomment the branches you want to publish. `git-repo` will create code reviews for these publish branches.
 
-If no branch is ready for publish (all branches are comment out), `git repo upload` will abort.
+If no branch is ready to publish (all branches are commented out), `git repo upload` will abort.
 
-Save the content and quit the editor, will start to send local commits to remote server to create/update code review.
+Save the content and quit the editor, `git-repo` will continue to send local commits to remote repositories to create/update code reviews.
 
 For example: in the following text, the leading character "#" at the beginning of the line of `branch topic1` of `project foo` has been deleted, while other comment letter "#" are preserved:
 

@@ -12,7 +12,7 @@ titleColor:
 textColor:
 spaceBetweenTitleText: 25
 buttons:
-  - link: docs/getting-started/quickstart
+  - link: docs/
     text: Getting Started
     color: primary
   - link: https://github.com/aliyun/git-repo-go/releases

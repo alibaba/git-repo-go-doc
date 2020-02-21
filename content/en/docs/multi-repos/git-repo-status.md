@@ -8,7 +8,7 @@ weight: 49
 
 Show a summary of git status on each project. For each file in the project, a two-letter code is used. The first letter stands for changes of index, and the second letter stands for changes of worktree.
 
-In the first column, an uppercase letter indicates how the staging area differs from the last committed state.
+In the first column, an uppercase letter indicates how the index differs from the last committed state.
 
 Letter | Meaning      | Description
 -------|:-------------|:--------------------------------------

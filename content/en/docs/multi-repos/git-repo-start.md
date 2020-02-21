@@ -6,7 +6,7 @@ weight: 45
 
 ## Description
 
-Begin a new branch of development, starting from the revision specified in the manifest.
+Begin a new branch for development, starting from the revision specified in the manifest.
 
 ## Usage
 
