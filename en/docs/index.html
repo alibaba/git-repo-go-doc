@@ -976,7 +976,7 @@
         
         
         <li class="">
-          <a href="http://git-repo.info/en/docs/gitconfig/" class="menu__title ">Git Configuration Addon</a>
+          <a href="http://git-repo.info/en/docs/gitconfig/" class="menu__title ">Git Configuration Extensions</a>
         </li>
       
     
@@ -1038,7 +1038,7 @@
             
             
             <li>
-              <a href="http://git-repo.info/en/docs/multi-repos/manifest-file/" class="menu__title ">Manifest Overview</a>
+              <a href="http://git-repo.info/en/docs/multi-repos/manifest-format/" class="menu__title ">Manifest Format</a>
             </li>
           
             
@@ -1566,7 +1566,7 @@
         
         
         <li class="">
-          <a href="http://git-repo.info/en/docs/gitconfig/" class="menu__title ">Git Configuration Addon</a>
+          <a href="http://git-repo.info/en/docs/gitconfig/" class="menu__title ">Git Configuration Extensions</a>
         </li>
       
     
@@ -1628,7 +1628,7 @@
             
             
             <li>
-              <a href="http://git-repo.info/en/docs/multi-repos/manifest-file/" class="menu__title ">Manifest Overview</a>
+              <a href="http://git-repo.info/en/docs/multi-repos/manifest-format/" class="menu__title ">Manifest Format</a>
             </li>
           
             
@@ -1734,14 +1734,14 @@
 <blockquote>
 <p>The big thing about distributed source control is that it makes one of the main issues with SCM&rsquo;s go away - the politics around &ldquo;who can make changes.&rdquo;</p>
 </blockquote>
-<p>The distributed nature of Git makes it possible for a project to have a more flexible workflow. Not only core members but also read-only users can work for the project more elegantly. GitHub invented a &ldquo;Fork + Pull Request&rdquo; development model, which is the most classic and widely used workflow so far. Instead of pushing the commits directly to the branch of the remote repository, a contributor can push his/her commits to his/her own forked fully controlled repository and create a code review (Pull Request) later using the web interface.</p>
+<p>The distributed nature of Git makes it possible for a project to have a more flexible workflow. Not only core members but also read-only users can contribute to the project in a more elegant way. GitHub invented a &ldquo;Fork + Pull Request&rdquo; development model, which is the most classic and widely used workflow so far. Instead of pushing the commits directly to a branch of the remote repository, a contributor can push his/her commits to his/her own forked fully controlled repository and create a code review (Pull Request) later using the web interface.</p>
 <h2 id="agit-flow">AGit-Flow</h2>
 <p>Can we have a more convenient way to collaborate?</p>
-<p>Inspired by Gerrit workflow (which using JGit instead of CGit as its backend), we created a centralized git workflow based on CGit with a minor changed git-core and several APIs. We implemented it in Alibaba&rsquo;s internal source code platform, and we call the workflow as &ldquo;AGit-Flow&rdquo;. With AGit-Flow, it&rsquo;s unnecessary to fork the repository or create many feature branches inside the repository. Users can use <code>git push</code> command to create code review (pull request) directly.</p>
-<p>Changes on git-core will be sent to the Git mailing list to become part of open source software. Any code platform can implement its own AGit-Flow compatible, centralized workflow. See <a href="../2020/03/agit-flow-implementation">AGit-Flow and How to implement</a>.</p>
+<p>Inspired by Gerrit workflow (which using JGit instead of CGit as its backend), we created a centralized git workflow based on CGit with a minor changed git-core and several APIs. We implemented it in Alibaba&rsquo;s internal source code platform, and we call the workflow as &ldquo;AGit-Flow&rdquo;. With the help of &ldquo;AGit-Flow&rdquo;, it&rsquo;s unnecessary to fork a repository or create many feature branches inside a repository. Users can use <code>git push</code> command to create code review (pull request) directly.</p>
+<p><em>TODO</em>: Changes on git-core will be sent to the Git mailing list to become part of open source software. Any code platform can implement its own AGit-Flow compatible, centralized workflow. See <a href="../2020/03/agit-flow-implementation">AGit-Flow and How to implement</a>.</p>
 <h2 id="git-repo">git-repo</h2>
 <p>It&rsquo;s tedious to type long <code>git push</code> command for centralized workflow as AGit-Flow, so we developed a CLI tool named &ldquo;git-repo&rdquo;. &ldquo;git-repo&rdquo; can be used for Gerrit, AGit-Flow and AGit-Flow alike workflows.</p>
-<p>See the following demo about how we use <code>git pr</code> (an alias command for <code>git-repo</code>) to create a pull request on Alibaba code platform:</p>
+<p>See the following demo about how we use <code>git pr</code> (an alias command of <code>git-repo</code>) to create a pull request on <a href="https://codeup.teambition.com">Alibaba code platform</a> (only Chinese version available):</p>
 <figure>
     <img src="/images/git-pr-demo.gif"
          alt="Create pull request using git pr"/> <figcaption>
@@ -1752,17 +1752,16 @@
 <p><code>git-repo</code> is compatible with the Android <code>repo</code> cmd tool, which can work with multiple repositories managed by a manifest repository. See <a href="multi-repos/overview/">manage multiple repositories using git-repo</a>.</p>
 <p><code>git-repo</code> is an open source software on GitHub, see <a href="https://github.com/aliyun/git-repo-go">https://github.com/aliyun/git-repo-go</a>.</p>
 <h2 id="differences-between-git-repo-and-android-repo">Differences between git-repo and Android repo</h2>
-<p>Android project uses Gerrit for code review, and provides a client-side CLI tool named <code>repo</code>. <code>git-repo</code> is compatible with <code>repo</code>, as having the same subcommands and the same user experience. Why we reinvent the wheel?</p>
+<p>Android project uses Gerrit for code review and provides a client-side command line tool named <code>repo</code>. <code>git-repo</code> is compatible with <code>repo</code>, as having the same subcommands and the same user experiences. Why we reinvent the wheel?</p>
 <ol>
 <li>
 <p>Android <code>repo</code> only supports Gerrit servers, <code>git-repo</code> can be used for Gerrit, and AGit-Flow compatible servers.</p>
 </li>
 <li>
-<p>Android <code>repo</code> can be used for multiple repositories managed by a manifest repository, while <code>git-repo</code> can be used for a single repository also, with alias commands, such as <code>git pr</code>, <code>git download</code>, and <code>git abandon</code>, etc.</p>
+<p>Android <code>repo</code> only works on multiple repositories managed by a manifest repository, while <code>git-repo</code> can also work on a single repository, with the help of alias commands, such as <code>git pr</code>, <code>git download</code>, and <code>git abandon</code>, etc.</p>
 </li>
 <li>
-<p><code>git-repo</code> is developed using Golang and with a complete test cases. It is easy to install and no further software dependency except Git itself.<br />
-Android repo was developed in python scripting language, &lsquo;git-repo&rsquo; was developed in the Go language and provided complete unit testing and integrated test cases.</p>
+<p><code>git-repo</code> is developed using Golang and has full functional test cases. It is easy to install without any further software dependency except Git itself.</p>
 </li>
 </ol>
 

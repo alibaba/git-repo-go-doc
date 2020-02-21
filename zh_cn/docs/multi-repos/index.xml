@@ -23,11 +23,11 @@
       </item>
       
       <item>
-        <title>Manifest 文件</title>
-        <link>http://git-repo.info/zh_cn/docs/multi-repos/manifest-file/</link>
+        <title>Manifest 格式</title>
+        <link>http://git-repo.info/zh_cn/docs/multi-repos/manifest-format/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>http://git-repo.info/zh_cn/docs/multi-repos/manifest-file/</guid>
+        <guid>http://git-repo.info/zh_cn/docs/multi-repos/manifest-format/</guid>
         <description>Manifest 清单仓库和 Manifest 清单文件 定义多仓库关联的清单文件（manifest 文件）保存于一个仓库中，这个仓库称为 manifest 仓库。仓库中默认的 manifest 清单文件名为 def</description>
       </item>
       

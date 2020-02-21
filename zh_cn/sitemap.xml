@@ -185,16 +185,16 @@
   </url>
   
   <url>
-    <loc>http://git-repo.info/zh_cn/docs/multi-repos/manifest-file/</loc>
+    <loc>http://git-repo.info/zh_cn/docs/multi-repos/manifest-format/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://git-repo.info/en/docs/multi-repos/manifest-file/"
+                href="http://git-repo.info/en/docs/multi-repos/manifest-format/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh_cn"
-                href="http://git-repo.info/zh_cn/docs/multi-repos/manifest-file/"
+                href="http://git-repo.info/zh_cn/docs/multi-repos/manifest-format/"
                 />
   </url>
   

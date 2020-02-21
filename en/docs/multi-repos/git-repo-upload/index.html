@@ -977,7 +977,7 @@
         
         
         <li class="">
-          <a href="http://git-repo.info/en/docs/gitconfig/" class="menu__title ">Git Configuration Addon</a>
+          <a href="http://git-repo.info/en/docs/gitconfig/" class="menu__title ">Git Configuration Extensions</a>
         </li>
       
     
@@ -1039,7 +1039,7 @@
             
             
             <li>
-              <a href="http://git-repo.info/en/docs/multi-repos/manifest-file/" class="menu__title ">Manifest Overview</a>
+              <a href="http://git-repo.info/en/docs/multi-repos/manifest-format/" class="menu__title ">Manifest Format</a>
             </li>
           
             
@@ -1585,7 +1585,7 @@
         
         
         <li>
-          <a href="http://git-repo.info/en/docs/gitconfig/" class="menu__title ">Git Configuration Addon</a>
+          <a href="http://git-repo.info/en/docs/gitconfig/" class="menu__title ">Git Configuration Extensions</a>
         </li>
       
     
@@ -1647,7 +1647,7 @@
             
             
             <li>
-              <a href="http://git-repo.info/en/docs/multi-repos/manifest-file/" class="menu__title ">Manifest Overview</a>
+              <a href="http://git-repo.info/en/docs/multi-repos/manifest-format/" class="menu__title ">Manifest Format</a>
             </li>
           
             
@@ -1729,7 +1729,7 @@
   <article class="single__contents">
     <h2 id="description">Description</h2>
 <p>Send changes to remote server to create code reviews.</p>
-<p>For the specified projects, compares the local branches to the remote branches updated during the last Repo sync. Repo prompts you to select one or more of the branches that haven&rsquo;t been uploaded for review.</p>
+<p>For the specified projects, compares the local branches to the remote branches updated during the last <code>git repo sync</code>. <code>git-repo</code> prompts you to select one or more of the branches that haven&rsquo;t been uploaded for review.</p>
 <p><code>git repo upload</code> command will start an editor for you with the following text as an example. Add custom options and choose the branches that need to be uploaded in the editor.</p>
 <pre><code>##############################################################################
 # Step 1: Input your options for code review
@@ -1769,18 +1769,18 @@
 #         47a3cae46019893db78a19906dda97825279f288
 #         ced1a1d6e16bc3f8051f87621eb69ba2a7e10672 
 </code></pre>
-<p>The first section of the text is used for input options for <code>git pr</code>. Lines begin with the character &ldquo;#&rdquo; are comments. Please do not change these comments, for <code>git-repo</code> needs to find parameter names in the comments.</p>
+<p>The first section of the text is used for adding options for <code>git repo upload</code>. Lines begin with the character &ldquo;#&rdquo; are comments. Please do not change these comments, for <code>git-repo</code> needs to find parameter names in the comments.</p>
 <ul>
-<li>Below the line started with &ldquo;# [Title]&quot;, add one-line title.</li>
-<li>Below the line started with &ldquo;# [Description]&quot;, add description.</li>
+<li>Below the line started with &ldquo;# [Title]&quot;, add one-line title for the code review to be generated.</li>
+<li>Below the line started with &ldquo;# [Description]&quot;, add description for the code review to be generated.</li>
 <li>Below the line started with &ldquo;# [Issue]&quot;, add issue number for reference.</li>
-<li>Below the line started with &ldquo;# [Reviewer]&quot;, add reviewers (one reviewer on each line, or separated by comma).</li>
+<li>Below the line started with &ldquo;# [Reviewer]&quot;, add reviewers (one reviewer on each line, or separated by commas).</li>
 <li>Below the line started with &ldquo;# [Cc]&quot;, add watchers.</li>
 <li>Below the line started with &ldquo;# [Draft]&quot;, input &ldquo;yes&rdquo; to turn on draft mode.</li>
 </ul>
-<p>The second section lists projects and branches that are ready to publish for each project. Uncomment the branches you want to publish. <code>git-repo</code> will create code reviews for these publish branches.</p>
-<p>If no branch is ready for publish (all branches are comment out), <code>git repo upload</code> will abort.</p>
-<p>Save the content and quit the editor, will start to send local commits to remote server to create/update code review.</p>
+<p>The second section lists projects and branches that are ready to publish. Uncomment the branches you want to publish. <code>git-repo</code> will create code reviews for these publish branches.</p>
+<p>If no branch is ready to publish (all branches are commented out), <code>git repo upload</code> will abort.</p>
+<p>Save the content and quit the editor, <code>git-repo</code> will continue to send local commits to remote repositories to create/update code reviews.</p>
 <p>For example: in the following text, the leading character &ldquo;#&rdquo; at the beginning of the line of <code>branch topic1</code> of <code>project foo</code> has been deleted, while other comment letter &ldquo;#&rdquo; are preserved:</p>
 <pre><code>##############################################################################
 # Step 2: Select project and branches for upload

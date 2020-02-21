@@ -1038,7 +1038,7 @@
             
             
             <li>
-              <a href="http://git-repo.info/zh_cn/docs/multi-repos/manifest-file/" class="menu__title ">Manifest 文件</a>
+              <a href="http://git-repo.info/zh_cn/docs/multi-repos/manifest-format/" class="menu__title ">Manifest 格式</a>
             </li>
           
             
@@ -1628,7 +1628,7 @@
             
             
             <li>
-              <a href="http://git-repo.info/zh_cn/docs/multi-repos/manifest-file/" class="menu__title ">Manifest 文件</a>
+              <a href="http://git-repo.info/zh_cn/docs/multi-repos/manifest-format/" class="menu__title ">Manifest 格式</a>
             </li>
           
             
@@ -1741,7 +1741,7 @@
 <p>AGit-Flow 的核心代码即将贡献到 Git 社区，任何代码平台都能够以此为基础，实现兼容的集中式工作流。参考：<a href="../2020/03/agit-flow-implementation">AGit-Flow 及其实现</a>。</p>
 <h2 id="git-repo-命令行工具">git-repo 命令行工具</h2>
 <p>作为一款命令行工具 <code>git-repo</code>，对原生 <code>git</code> 命令做了封装，简化 AGit-Flow 等集中式工作流下用户的输入。<code>git-repo</code> 可以支持 Gerrit 以及 AGit-Flow 兼容的代码平台。</p>
-<p>下图是用户使用 <code>git pr</code> 命令（<code>git-repo</code> 的一个别名命令）创建代码评审的演示：</p>
+<p>下图是用户使用 <code>git pr</code> 命令（<code>git-repo</code> 的一个别名命令）在<a href="https://codeup.teambition.com">阿里巴巴代码平台</a>创建代码评审的演示：</p>
 <figure>
     <img src="/images/git-pr-demo.gif"
          alt="git-pr 创建 Pull Request 演示图"/> <figcaption>
@@ -1761,10 +1761,7 @@
 <p>Android repo 只支持 manifests 仓库管理下的多仓库，而 <code>git-repo</code> 在此基础上，还支持单一 Git 代码仓的集中式工作流协同，并提供快捷的别名命令 <code>git peer-review</code>，或 <code>git pr</code>。</p>
 </li>
 <li>
-<p>Android repo 使用 Python 脚本语言开发，<code>git-repo</code> 使用 Go 语言开发，并提供了完整的单元测试和集成测试用例。</p>
-</li>
-<li>
-<p><code>git-repo</code> 命令的命名方式采用 <code>git-&lt;subcmd&gt;</code> 格式，扩展了 git 的命令集，即为 git 增加了一个名为 repo 的子命令。而且可以用 git 别名为 <code>git-repo</code> 设置别名命令，如 <code>git peer-review</code> 命令即是 <code>git repo upload --single</code> 的别名命令。</p>
+<p>Android repo 使用 Python 脚本语言开发，<code>git-repo</code> 使用 Go 语言开发，包含了完整测试用例。<code>git-repo</code> 安装简单，除了 <code>Git</code> 外，别无其他软件依赖。</p>
 </li>
 </ol>
 

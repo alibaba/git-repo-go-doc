@@ -977,7 +977,7 @@
         
         
         <li class="">
-          <a href="http://git-repo.info/en/docs/gitconfig/" class="menu__title ">Git Configuration Addon</a>
+          <a href="http://git-repo.info/en/docs/gitconfig/" class="menu__title ">Git Configuration Extensions</a>
         </li>
       
     
@@ -1039,7 +1039,7 @@
             
             
             <li>
-              <a href="http://git-repo.info/en/docs/multi-repos/manifest-file/" class="menu__title ">Manifest Overview</a>
+              <a href="http://git-repo.info/en/docs/multi-repos/manifest-format/" class="menu__title ">Manifest Format</a>
             </li>
           
             
@@ -1585,7 +1585,7 @@
         
         
         <li>
-          <a href="http://git-repo.info/en/docs/gitconfig/" class="menu__title ">Git Configuration Addon</a>
+          <a href="http://git-repo.info/en/docs/gitconfig/" class="menu__title ">Git Configuration Extensions</a>
         </li>
       
     
@@ -1647,7 +1647,7 @@
             
             
             <li>
-              <a href="http://git-repo.info/en/docs/multi-repos/manifest-file/" class="menu__title ">Manifest Overview</a>
+              <a href="http://git-repo.info/en/docs/multi-repos/manifest-format/" class="menu__title ">Manifest Format</a>
             </li>
           
             
@@ -1736,15 +1736,15 @@
 <p>Run any subcommand of <code>git-repo</code>, will perform some initialization tasks. e.g.:</p>
 <pre><code>$ git repo version
 </code></pre>
-<h3 id="code-review-single-repository">Code review single repository</h3>
-<p>Make sure to setup a remote tracking branch like:</p>
+<h3 id="working-on-a-single-repository">Working on a single repository</h3>
+<p>Make sure to setup a remote tracking branch correctly using:</p>
 <pre><code>$ git branch -u origin/master
 </code></pre>
 <p>Create code review (pull request) from command line:</p>
 <pre><code>$ git pr
 </code></pre>
-<h3 id="code-review-multiple-repositories">Code review multiple repositories</h3>
-<p><code>git-repo</code> is compatible with Android <code>repo</code>, and can work on multiple repositories:</p>
+<h3 id="working-on-multiple-repositories">Working on multiple repositories</h3>
+<p><code>git-repo</code> is compatible with Android <code>repo</code>, and can work on multiple repositories managed by a manifest repository.</p>
 <ol>
 <li>
 <p>Create a workspace.</p>
@@ -1753,7 +1753,7 @@
 </code></pre>
 </li>
 <li>
-<p>Initialize workspace from a manifest project, which has an XML file (e.g., default.xml) to describe the relationship of the sub-projects.</p>
+<p>Initialize workspace from a manifest project (repository), which has an XML file (e.g., default.xml) to describe the relationship of the sub-projects.</p>
 <pre><code> $ git repo init -u &lt;manifest repository&gt;
 </code></pre>
 </li>
@@ -1763,12 +1763,12 @@
 </code></pre>
 </li>
 <li>
-<p>Create a local branch for development.</p>
+<p>Create a local branch on all projects for development.</p>
 <pre><code> $ git repo start --all &lt;branch/name&gt;
 </code></pre>
 </li>
 <li>
-<p>Working in workspace and make new commits.</p>
+<p>Working in the workspace and make new commits.</p>
 </li>
 <li>
 <p>Run the following commands to send local commits to remote server to create code reviews (pull requests).</p>

@@ -977,7 +977,7 @@
         
         
         <li class="">
-          <a href="http://git-repo.info/en/docs/gitconfig/" class="menu__title ">Git Configuration Addon</a>
+          <a href="http://git-repo.info/en/docs/gitconfig/" class="menu__title ">Git Configuration Extensions</a>
         </li>
       
     
@@ -1039,7 +1039,7 @@
             
             
             <li>
-              <a href="http://git-repo.info/en/docs/multi-repos/manifest-file/" class="menu__title ">Manifest Overview</a>
+              <a href="http://git-repo.info/en/docs/multi-repos/manifest-format/" class="menu__title ">Manifest Format</a>
             </li>
           
             
@@ -1585,7 +1585,7 @@
         
         
         <li>
-          <a href="http://git-repo.info/en/docs/gitconfig/" class="menu__title ">Git Configuration Addon</a>
+          <a href="http://git-repo.info/en/docs/gitconfig/" class="menu__title ">Git Configuration Extensions</a>
         </li>
       
     
@@ -1647,7 +1647,7 @@
             
             
             <li>
-              <a href="http://git-repo.info/en/docs/multi-repos/manifest-file/" class="menu__title ">Manifest Overview</a>
+              <a href="http://git-repo.info/en/docs/multi-repos/manifest-format/" class="menu__title ">Manifest Format</a>
             </li>
           
             
@@ -1734,7 +1734,7 @@
 <pre><code>$ git clone https://codeup.teambition.com/git-repo/demo.git
 $ cd demo
 </code></pre>
-<h4 id="12-create-local-topic-branch">1.2 Create local topic branch</h4>
+<h4 id="12-create-a-local-topic-branch">1.2 Create a local topic branch</h4>
 <p>This step is optional. If you want to work on several different tasks at the same local workspace, you must create a topic branch for each task. Otherwise, the code review will be overwritten.</p>
 <pre><code>$ git checkout -b topic1 origin/master
 </code></pre>
@@ -1752,7 +1752,7 @@ $ cd demo
 <p><code>git pr</code> has many options, e.g.:</p>
 <ul>
 <li>
-<p>Assign reviewers and watchers. Separate multiple users with comma.</p>
+<p>Assign reviewers and watchers. Multiple users can be separated by commas.</p>
 <pre><code>  $ git pr --reviewers user1,user2 --cc user3
 </code></pre>
 </li>
@@ -1766,7 +1766,7 @@ $ cd demo
 <pre><code>$ git pr
 NOTE: no branches ready for upload
 </code></pre>
-<p>If all local commits have already been published by running <code>git pr</code>, execute another <code>git pr</code> will show the following message:</p>
+<p>If all local commits have already been published, execute another <code>git pr</code> will show the following message:</p>
 <pre><code>$ git pr
 NOTE: no change in project . (branch topic1) since last upload
 NOTE: no branches ready for upload
@@ -1780,8 +1780,8 @@ Please run command &quot;git branch -u &lt;upstream&gt;&quot; to track a remote 
     git branch -u origin/master
 </code></pre>
 <p>You can follow the instruction in the message to setup a remote tracking branch.</p>
-<h3 id="15-user-interface-for-git-pr">1.5 User interface for <code>git pr</code></h3>
-<p>When running <code>git pr</code>, will open the following text by an editor (e.g.: vim):</p>
+<h3 id="15-user-interface-of-git-pr">1.5 User interface of &ldquo;git pr&rdquo;</h3>
+<p>When running <code>git pr</code>, will open an editor with the following text:</p>
 <pre><code>##############################################################################
 # Step 1: Input your options for code review
 #
@@ -1816,20 +1816,20 @@ Please run command &quot;git branch -u &lt;upstream&gt;&quot; to track a remote 
 #         ec78989440697fbc13bfbd3ea082fe9b3fc5f2d7
 #         4e599aa284ed64ba12ba1b5b06fbbd3199846434
 </code></pre>
-<p>The first section of the text is used for input options for <code>git pr</code>. Lines begin with the character &ldquo;#&rdquo; are comments. Please do not change these comments, for <code>git-repo</code> needs to find parameter names in the comments.</p>
+<p>The first section of the text is used for adding options for <code>git pr</code>. Lines begin with the character &ldquo;#&rdquo; are comments. Please do not change these comments, for <code>git pr</code> needs to find parameter names in the comments.</p>
 <ul>
-<li>Below the line started with &ldquo;# [Title]&quot;, add one-line title.</li>
-<li>Below the line started with &ldquo;# [Description]&quot;, add description.</li>
+<li>Below the line started with &ldquo;# [Title]&quot;, add one-line title for the code review to be generated.</li>
+<li>Below the line started with &ldquo;# [Description]&quot;, add description for the code review to be generated.</li>
 <li>Below the line started with &ldquo;# [Issue]&quot;, add issue number for reference.</li>
-<li>Below the line started with &ldquo;# [Reviewer]&quot;, add reviewers (one reviewer on each line, or separated by comma).</li>
+<li>Below the line started with &ldquo;# [Reviewer]&quot;, add reviewers (one reviewer on each line, or separated by commas).</li>
 <li>Below the line started with &ldquo;# [Cc]&quot;, add watchers.</li>
 <li>Below the line started with &ldquo;# [Draft]&quot;, input &ldquo;yes&rdquo; to turn on draft mode.</li>
 </ul>
-<p>The second section lists branches of the current project that are ready to publish for each project. Uncomment the branches you want to publish. <code>git-repo</code> will create code reviews for these publish branches.</p>
-<p>If no branch is ready for publish (all branches are comment out), <code>git pr</code> will abort.</p>
-<p>Save the content and quit the editor, will start to send local commits to remote server to create/update code review.</p>
-<h3 id="16-result-of-creatingupdating-code-review">1.6 Result of creating/updating code review</h3>
-<p>The result of creating/updating code review will be displayed. The following message is an example of Alibaba code platform:</p>
+<p>The second section lists branches of the current project that are ready to publish. Uncomment the branches you want to publish, and <code>git pr</code> will create code reviews for these branches.</p>
+<p>If no branch is ready to publish (all branches are commented out), <code>git pr</code> will abort.</p>
+<p>Save the content and quit the editor, <code>git pr</code> will continue to send local commits to remote server to create/update a code review.</p>
+<h3 id="16-result-of-creatingupdating-a-code-review">1.6 Result of creating/updating a code review</h3>
+<p>After executing <code>git pr</code> successfully, will show message of creating/updating a code review. The following message is an example of Alibaba code platform:</p>
 <pre><code>remote: +----------------------------------------------------------------+
 remote: | Merge Request #7937 was created or updated.                    |
 remote: | View merge request at URL:                                     |
@@ -1838,23 +1838,23 @@ remote: +----------------------------------------------------------------+
 To ssh://codeup.teambition.com/git-repo/demo.git
  * [new branch]      topic1 -&gt; refs/for/master/topic1
 </code></pre>
-<p>NOTE: code review URL will be displayed in the message.</p>
+<p>NOTE: in the above message, there is a URL to access the generated code review.</p>
 <h3 id="17-special-reference-of-the-code-review-for-download">1.7 Special reference of the code review for download</h3>
-<p>After the code review is created, a new special reference will be created inside the repository. The special reference is not a branch or tag, and can be fetched, e.g.:</p>
+<p>A new special reference will be created inside the repository for user to access the generated code review. The special reference is not a branch or tag, and need to be fetched using a special command, e.g.:</p>
 <pre><code>$ git fetch origin refs/merge-requests/7937/head
 From https://codeup.teambition.com/git-repo/demo.git
  * branch            refs/merge-requests/7937/head -&gt; FETCH_HEAD
 </code></pre>
-<p>Checkout the fetched code:</p>
+<p>Check out the fetched commit:</p>
 <pre><code>$ git checkout FETCH_HEAD
 </code></pre>
-<p>NOTE: <code>git-repo</code> provides alias command <code>git download</code> for downloading commits of the code review.</p>
-<h2 id="2-refresh-commits-of-code-review">2. Refresh commits of code review</h2>
-<p>If commits of the code review need to be updated, make changes in the local repository, and run the following command to refresh commits of the code review:</p>
+<p>NOTE: <code>git-repo</code> provides an alias command <code>git download</code> to download the specific code review.</p>
+<h2 id="2-update-a-code-review">2. Update a code review</h2>
+<p>If commits of the code review need to be updated, make changes in the local repository, and run the following command to update commits of the code review:</p>
 <pre><code>$ git pr
 </code></pre>
-<h2 id="3-multiple-users-collaboration">3. Multiple users&rsquo; collaboration</h2>
-<p>Run <code>git pr</code> on the same repository, with the same local branch, to the same remote branch, by the same user, will refresh commits of the same code review (pull request), instead of creating a new one.</p>
+<h2 id="3-multi-user-collaboration">3. Multi-user collaboration</h2>
+<p>Run <code>git pr</code> on the same repository, with the same local branch, to the same remote branch, by the same user, will update commits of the same code review (pull request), instead of creating a new one.</p>
 <p>If a different user, such as a reviewer, wants to update the commits of a code review, how can he/she do it?</p>
 <p>First, download the commits of the code review. Download pull request #7937 for example:</p>
 <pre><code>$ git download 7937
@@ -1863,7 +1863,7 @@ From https://codeup.teambition.com/git-repo/demo.git
 <pre><code>$ git checkout -b code-review
 </code></pre>
 <p>Make changes in the local repository.</p>
-<p>Send changes of the local repository to the remote server to update the specific pull request:</p>
+<p>Send changes of the local repository to the remote server to update the specific pull request using command like:</p>
 <pre><code>$ git pr --change 7937
 </code></pre>
 
@@ -1938,18 +1938,18 @@ From https://codeup.teambition.com/git-repo/demo.git
       <ul>
         <li><a href="#11-clone">1.1 Clone</a>
           <ul>
-            <li><a href="#12-create-local-topic-branch">1.2 Create local topic branch</a></li>
+            <li><a href="#12-create-a-local-topic-branch">1.2 Create a local topic branch</a></li>
           </ul>
         </li>
         <li><a href="#13-working-in-the-worktree">1.3 Working in the worktree</a></li>
         <li><a href="#14-publish-local-commits-to-create-a-new-code-review">1.4 Publish local commits to create a new code review</a></li>
-        <li><a href="#15-user-interface-for-git-pr">1.5 User interface for git pr</a></li>
-        <li><a href="#16-result-of-creatingupdating-code-review">1.6 Result of creating/updating code review</a></li>
+        <li><a href="#15-user-interface-of-git-pr">1.5 User interface of &ldquo;git pr&rdquo;</a></li>
+        <li><a href="#16-result-of-creatingupdating-a-code-review">1.6 Result of creating/updating a code review</a></li>
         <li><a href="#17-special-reference-of-the-code-review-for-download">1.7 Special reference of the code review for download</a></li>
       </ul>
     </li>
-    <li><a href="#2-refresh-commits-of-code-review">2. Refresh commits of code review</a></li>
-    <li><a href="#3-multiple-users-collaboration">3. Multiple users&rsquo; collaboration</a></li>
+    <li><a href="#2-update-a-code-review">2. Update a code review</a></li>
+    <li><a href="#3-multi-user-collaboration">3. Multi-user collaboration</a></li>
   </ul>
 </nav>
 </div>
