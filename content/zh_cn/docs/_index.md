@@ -6,7 +6,7 @@ title: "git-repo 文档"
 
 > The big thing about distributed source control is that it makes one of the main issues with SCM’s go away – the politics around “who can make changes.”
 
-Git 的分布式特性使得软件开发拥有更加灵活的工作流。不仅仅是只读用户，核心成员也可以使用更加优雅的方式来工作。GitHub 的 "Fork + Pull Request" 开发模式是其中最经典、使用最为广泛的一种。开发者不是将提交直接写入仓库分支，而是将提交写入个人派生出来的完全自主可控的派生仓库中，之后再通过 Web 界面发起代码评审（Pull Request）向项目贡献代码。
+Git 的分布式特性使得软件开发拥有更加灵活的工作流。不仅仅是项目的核心成员，只读用户也可以使用更加优雅的方式来工作。GitHub 的 "Fork + Pull Request" 开发模式是其中最经典、使用最为广泛的一种。开发者不是将提交直接写入仓库分支，而是将提交写入个人派生出来的完全自主可控的派生仓库中，之后再通过 Web 界面发起代码评审（Pull Request）向项目贡献代码。
 
 ## AGit-Flow 工作流
 
