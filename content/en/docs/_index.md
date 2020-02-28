@@ -14,7 +14,7 @@ Can we have a more convenient way to collaborate?
 
 Inspired by Gerrit workflow (which using JGit instead of CGit as its backend), we created a centralized git workflow based on CGit with a minor changed git-core and several APIs. We implemented it in Alibaba's internal source code platform, and we call the workflow as "AGit-Flow". With the help of "AGit-Flow", it's unnecessary to fork a repository or create many feature branches inside a repository. Users can use `git push` command to create code review (pull request) directly.
 
-*TODO*: Changes on git-core will be sent to the Git mailing list to become part of open source software. Any code platform can implement its own AGit-Flow compatible, centralized workflow. See [AGit-Flow and How to implement](../2020/03/agit-flow-implementation).
+*TODO*: Changes on git-core will be sent to the Git mailing list to become part of open source software. Any code platform can implement its own AGit-Flow compatible, centralized workflow. See [AGit-Flow and How to implement](../2020/03/agit-flow-and-git-repo/).
 
 ## git-repo
 
