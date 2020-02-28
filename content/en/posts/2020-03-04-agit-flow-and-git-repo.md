@@ -8,7 +8,7 @@ draft: false
 
 Due to the coronavirus outbreak in China, I was unable to attend the [Git Merge 2020](https://git-merge.com) conference to give [a speech on "AGit and git-repo"](https://git-merge.com/#xin-jiang) in Los Angeles on March 4, 2020.  It's a pity that I can't communicate face to face with developers all over the world this time. I will share the content of my speech on this blog.
 
-A brief introduction of my self:
+A brief introduction to myself:
 
 * I am Jiang Xin, a software engineer in Alibaba, China. 
 
@@ -18,34 +18,34 @@ A brief introduction of my self:
 
 * I wrote a book on Git in Chinese and sent copies to Junio and Linus 10 years ago.
 
-## The secret of git success
+## The secret of Git's success
 
-Git is the best choice of SCM and becomes the infrastructure for many popular source code management platforms. So what is the secret behind Git's successful story?
+Git is the best choice of SCM and becomes the infrastructure for many popular source code management platforms. What is the secret behind Git's success?
 
 Linus, the founder of Git and Linux, revealed the secret of Git's success in an interview on Git's 10th anniversary:
 
 > The big thing about distributed source control is that it makes one of the main issues with SCM’s go away – the politics around “who can make changes.”
 
-The keyword in the above sentence is "politics". When using traditional SCM, administrators could only add write permissions of a project to core members, so that lots of potential contributors could not make contributions to the project freely, and that's not good for open source software. 
+The keyword in the above statement is "politics". When using traditional SCM, administrators could only add write permissions to core members, so that lots of potential contributors could not make contributions to the project freely, and that's not good for open-source software. 
 
-The distributed nature of Git makes it possible for a project to have a more flexible workflow. Not only core members but also read-only users can contribute to the project in a more elegant way. For example, GitHub invented a "Fork + Pull Request" development model, which is the most classic and widely used workflow so far. Instead of pushing the commits directly to a branch of the remote repository, a contributor can push his/her commits to his/her own forked fully controlled repository and create a code review (Pull Request) later using the web interface.
+The distributed nature of Git makes it possible for a project to have a more flexible workflow. Not only core members but also read-only users can contribute to the project in a more elegant way. For example, GitHub invented a "Fork + Pull Request" development model, which is the most classic and widely-used workflow so far. Instead of pushing the commits directly to a branch of the remote repository, a contributor can push his/her commits to his/her own forked fully-controlled repository and create a code review (Pull Request) later via the web interface.
 
 
-## The two most commonly used Git workflow
+## The two most commonly-used Git workflow
 
 There are two popular Git workflows that are introduced by GitHub and Gerrit. The two workflows have these common features:
 
-1. Have a simpler authorization model for repositories. Do not need to add write permissions to developers one by one; for read-only users can contribute to repositories.
+1. A simpler authorization model for repositories. Do not need to add write permissions to developers one by one; All read-only users can make contributions to repositories.
 
-2. Improve code quality by code review. Contributors create code reviews instead of push commits to branch directly.
+2. High code quality because of code review. Contributors create code reviews instead of push commits to branch directly.
 
-3. Have a simpler branch model. Do not need to create a feature branch as a temporary place to create a code review.
+3. A simpler branch model. Do not need to create a feature branch as a temporary place to create a code review.
 
-{{< figure src="/images/agit-flow/github-gerrit-comparation-en.png" width="750" caption="Fig: Comparations of GitHub and Gerrit" >}}
+{{< figure src="/images/agit-flow/github-gerrit-comparisons-en.png" width="750" caption="Fig: Comparisons of GitHub and Gerrit" >}}
 
 Differences between these two workflows:
 
-1. Different UI for code review.
+1. Different models for code review.
 
     Code review in GitHub is called "pull request", and each feature has a pull request.
 
@@ -59,13 +59,13 @@ Differences between these two workflows:
 
 3. Different technical details.
 
-    GitHub workflow is "fork + pull request", and it's backend is CGit.
+    GitHub workflow is "fork + pull request", and its backend is CGit.
 
     Gerrit users should install a special hook "commit-msg" inside their local repositories so that every commit generated in local repositories has a unique "Change-Id". Gerrit uses JGit as its backend.
 
 4. Pros:
 
-    GitHub users use standard git command, so GitHub is easy to use. Users have full control of their forked repositories. GitHub is the largest open source community with lots of projects, and one project may share others.
+    GitHub users use standard git command, so GitHub is easy to get going. Users have full control of their forked repositories. GitHub is the largest open-source community with lots of projects, and one project can be shared to others.
 
     Gerrit repositories are manageable for administrators. Android has a better solution for multi-repositories management than git-submodule.
 
@@ -73,7 +73,7 @@ Differences between these two workflows:
 
     GitHub workflow is too heavy for one-time contribution and is hard to use with a multi-repository project like Android.
 
-    Gerrit is managed by one or more adminstrators, and a user cannot create their own repositories freely. So one Gerrit server always hosts repositories for one project or one team. It is hard for Gerrit to create a software community.
+    Gerrit is managed by one or more administrators, and a user cannot create their own repositories freely. So, one Gerrit server always hosts repositories for one project or one team. It is hard for Gerrit to form a software community.
 
 
 ## AGit-Flow Usage
@@ -82,11 +82,11 @@ Differences between these two workflows:
 
 Can we combine these two Git workflows to create a new one with all their advantages? (not GerritHub)
 
-Inspired by Gerrit workflow, we created a centralized git workflow based on CGit (instead of JGit) with a minor changed git-core and several APIs. We implemented it in Alibaba's internal source code platform, and we call the workflow as "AGit-Flow". With the help of "AGit-Flow", it's unnecessary to fork a repository or create many feature branches inside a repository. Users can use `git push` command to create code review (pull request) directly.
+Inspired by Gerrit workflow, we created a centralized git workflow based on CGit (instead of JGit) with a minor changed git-core and several APIs. We call the workflow as “AGit-Flow”, and implemented it in Alibaba's internal source code platform. With the help of "AGit-Flow", it's unnecessary to fork a repository or create many feature branches inside a repository. Users can use `git push` command to create code review (pull request) directly.
 
 {{< figure src="/images/agit-flow/agit-flow-overview-en.png" width="750" caption="Fig: AGit-Flow relationship with GitHub and Gerrit" >}}
 
-In Alibaba, we like pull requests, we like to create or update code reviews directly from the command line, and we like CGit. We don't like the commit-msg hook to mangle our commits, and we don't want to have multiple code platforms, each of which hosts part of our repositories.
+In Alibaba, we like pull requests, we like to create or update code reviews directly from the command line, and we like CGit. We don't like the commit-msg hook to mangle our commits, and we are not willing to have multiple code platforms (each of which hosts part of our repositories).
 
 We developed a command-line tool named "git-repo", so we do not need to type long and complicated `git push` command. "git-repo" can be used for Gerrit, AGit-Flow and AGit-Flow alike workflows.
 
@@ -97,7 +97,7 @@ See the following graph for a typical AGit-Flow workflow for a single repository
 
 {{< figure src="/images/agit-flow/agit-flow-diagram-en.png" width="600" caption="Fig: AGit-Flow diagram for single repository" >}}
 
-In the above graph, there are two roles. One is a developer, and another is a committer.
+In the above graph, there are two roles. One is a developer, and the other is a committer.
 
 The developer creates and updates a pull request with the following steps.
 
@@ -109,20 +109,20 @@ The developer creates and updates a pull request with the following steps.
 
 4. Create a new pull request on the server side. (e.g., pull request #123).
 
-5. After receiving comments from reviewers, the developer works in the worktree and  creates a new commit for modification.
+5. After receiving comments from reviewers, the developer makes a change in the worktree and creates a new commit.
 
 6. Run `git pr` command for a second time, which will push the new commit to the remote server.
 
 7. The remote server finds that the same user pushes commits to the same target branch with the same session (local branch), and will update an existing pull request, instead of creating a new one.
 
 
-The committer can write comments for the pull request for review; what's more, the committer can update the pull request with a new commit.
+The committer can write comments for the pull request; what's more, the committer can update the pull request with a new commit.
 
 8. The committer runs command `git download 123` to download pull request #123 to the local repository.
 
 9. The committer makes modifications and creates a new commit in worktree. Then, run command `git pr --change 123` to send local commit to the remote server.
 
-10. The remote server finds this special `git push` command and will update the existing pull request which created by the developer.
+10. The remote server detects this special `git push` command and will update the existing pull request which created by the developer.
 
 11. The committer (or administrator) merge the pull request to the target branch.
 
@@ -164,7 +164,7 @@ The client sends a special environment for SSH protocol or adds a special HTTP h
 
 + For the HTTP protocol, the `git push` command from the client side has a special option `-c http.extraHeader=AGIT-FLOW: <agent-version>`, which will add a special HTTP header in the request to the HTTP front-end.
 
-+ For the SSH protocol, the client side will use a special SSH command defined by the "GIT_SSH_COMMAND" environment, and the special SSH command had an option `-o SendEnv=AGIT_FLOW` to send a special environment to the SSH front-end.
++ For the SSH protocol, the client side will use a special SSH command defined by the "GIT_SSH_COMMAND" environment, and the special SSH command with the option `-o SendEnv=AGIT_FLOW` will send a special environment to the SSH front-end.
 
 + When the front-end finds a special environment (SSH protocol) or a special HTTP header (HTTP protocol), it will use a loose authorization rule (only checking for read-only permissions).
 
@@ -183,7 +183,7 @@ The original "git-receive-pack" process works like the follows:
 
 2. Packfile is saved (packed or unpacked) into a temporary directory for quarantine. Commands will be sent to the "pre-receive" hook after parsed.
 
-3. If the "pre-receive" hook is failed to execute, the quarantine directory will be deleted, and quit.
+3. If the "pre-receive" hook failed to execute, the quarantine directory will be deleted, and quit.
 
 4. Move files in quarantine directory to objects directory.
 
@@ -200,9 +200,9 @@ The changes we made for "git-receive-pack" to support AGit-Flow:
 
 1. Add a filter for commands sent from users to "git-receive-pack".
 
-2. The filter helps to divide commands into two groups. One group of commands perform the original process, and the other group of commands do not execute the internal `execute_commands` function, but execute an external "execute-commands" hook.
+2. The filter helps to divide commands into two groups. One group of commands performs the original process, and the other group of commands does not execute the internal `execute_commands` function, but executes an external "execute-commands" hook.
 
-3. Some variables for the result of "execite-commands" hook are sent to the "post-receive" hook from its environment.
+3. Some variables for the result of "execute-commands" hook are sent to the "post-receive" hook from its environment.
 
 See the following sections.
 
@@ -213,24 +213,24 @@ Push requests (commands) are sent to the server (git-receive-pack）one by one t
 
     <old-oid> <new-oid> <reference>
 
-Reference names of commands of AGit-Flow style `git push` have different prefixes other than "refs/heads/" and "refs/tags/". We introduced a new git config variable "receive.executeCommandsHooksRef" for Git to recognize the special commands for AGit-Flow. For example, we use the following settings for Alibaba code platform:
+Reference names of commands of AGit-Flow style `git push` have different prefixes other than "refs/heads/" and "refs/tags/". We introduced a new git config variable "receive.executeCommandsHookRefs" for Git to recognize the special commands for AGit-Flow. For example, we use the following settings for Alibaba code platform:
 
     git config --system --add receive.executeCommandsHookRefs refs/for/
     git config --system --add receive.executeCommandsHookRefs refs/drafts/
     git config --system --add receive.executeCommandsHookRefs refs/for-review/
 
-The above git commands add three values for config variable "receive.executeCommandsHookRefs". Commands from clients matched either value of this config variable will be marked with a particular tag to be handle differently later.
+The above git commands add three values for config variable "receive.executeCommandsHookRefs". Commands from clients matched either value of this config variable will be marked with a particular tag to be handled differently later.
 
 
-#### execute-commands Hook
+#### New execute-commands Hook
 
-The commands marked with the particular tag, will not be sent to the processors such as the "pre-receive" hook and the internal `execute_commands` function. They will be executed by a new external hook: "execute-commands".
+The commands marked with the particular tag will not be sent to the processors such as the "pre-receive" hook and the internal `execute_commands` function. They will be executed by a new external hook: "execute-commands".
 
-First, these commands will be sent to the "execute-commands--pre-receive" hook to check permissions, etc. If the "execute-commands--pre-receive" hook does not exist, will execute the "execute-commands" hook with "--pre-receive" as its only option. If it fails to execute, will stop futher executions and return errors to the user.
+First, these commands will be sent to the "execute-commands--pre-receive" hook to check permissions, etc. If the "execute-commands--pre-receive" hook does not exist, Git will execute the "execute-commands" hook with "--pre-receive" as its only option. If the execution failed, it would stop further executions and return errors to the user.
 
 Then, git will execute the "execute-commands" hook instead of the internal `execute_commands` function on these commands to update the repository. This time this hook takes no arguments but gets the same information as the "pre-receive" hook does on its standard input and environment.
 
-The "execute-commands" hook implemented in Alibaba code platform will try to call a restrul API to create a pull request. Parameters for the API are from the command and push options sent from the user. For example, the user may push to a special reference like "refs/for/release/2.0/my/topic". The hook will try to find a matching local branch, first, try "refs/heads/release", then "refs/heads/release/2.0", etc. If it finds a local branch such as "refs/heads/release/2.0" in the repository, then the remaining part of the special reference, "my/topic", will be treated as a source branch for creating/update a pull request.
+The "execute-commands" hook implemented in Alibaba code platform will try to call a RESTful API to create a pull request. Parameters for the API are from the command and push options sent from the user. For example, the user may push to a special reference like "refs/for/release/2.0/my/topic". The hook will try to find a matching local branch, first, try "refs/heads/release", then "refs/heads/release/2.0", etc. If it finds a local branch such as "refs/heads/release/2.0" in the repository, then the remaining part of the special reference, "my/topic", will be treated as a source branch for creating/updating a pull request.
 
 Whether the pull request is created/updated or not, a message will be sent to the user through standard error for notification.
 
@@ -255,9 +255,9 @@ To see different "ssh_info" API results and various corresponding `git push` com
 
 ## git-repo
 
-git-repo is a command-line tool for centralized workflow, can work with Gerrit, AGit-Flow compatible servers. It is written using Golang, and it can be installed easily without further dependency. It provides an easy to use solution for multiple repositories which is introduced by Android repo first, and it can also work with a single repository.
+git-repo is a command-line tool for centralized workflow, can work with Gerrit, AGit-Flow compatible servers. It is written in Golang, and it can be installed easily without further dependency. It provides an easy-to-use solution for multiple repositories which is introduced by Android repo first, and it can also work with a single repository.
 
-git-repo is an open source software on GitHub.
+git-repo is an open-source software on GitHub.
 
 + Source code: [https://github.com/aliyun/git-repo-go](https://github.com/aliyun/git-repo-go/) 
 + Website: [https://git-repo.info](https://git-repo.info/)
@@ -294,7 +294,7 @@ Show help message of git-repo:
 
     $ git repo -h
 
-Show help message of of subcommands of git-repo, see the following examples:
+Show help message of subcommands of git-repo, see the following examples:
 
     $ git repo help init
     $ git repo help sync
@@ -304,8 +304,8 @@ Show help message of of subcommands of git-repo, see the following examples:
 
 git-repo provides several alias commands for git workflow on a single repository:
 
-* `git peer-review` or `git pr`: publish local commits to create code review.
-* `git download`: download specific code review from remote to the local repository.
+* `git peer-review` or `git pr`: publish local commits to create a code review.
+* `git download`: download a code review from remote to the local repository.
 * `git abandon`: prune already published local branch.
 
 Demo for git workflow on a single repository:
@@ -385,6 +385,6 @@ Implement your own "AGit-Flow":
 
 * Write your own "execute-commands" hook and internal code review API.
 
-* Add a public "ssh_info" API, which returns a JSON for service detection.
+* Add a public "ssh_info" API, which returns a JSON response for service detection.
 
 * Add a new helper to git-repo to support your public Git service.

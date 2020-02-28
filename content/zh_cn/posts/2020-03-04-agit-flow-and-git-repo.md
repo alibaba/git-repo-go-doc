@@ -30,7 +30,7 @@ Linus 作为 Git 和 Linux 的创建者，在 Git 十周年的一次采访中，
 2. 仓库的分支模型简单。仓库中没有多余的分支，不需要创建特性分支。
 3. 代码评审提升代码质量。参与者不是将代码直接推送的分支上，而是创建代码评审。
 
-{{< figure src="/images/agit-flow/github-gerrit-comparation-en.png" width="750" caption="图: GitHub、Gerrit 协同模式比较" >}}
+{{< figure src="/images/agit-flow/github-gerrit-comparisons-en.png" width="750" caption="图: GitHub、Gerrit 协同模式比较" >}}
 
 这两种协同模型的差异非常明显：
 
