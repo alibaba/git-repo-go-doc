@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on git-repo</title>
+    <link>http://git-repo.info/en/posts/</link>
+    <description>Recent content in Posts on git-repo</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>&amp;copy;{year}, All Rights Reserved</copyright>
+    <lastBuildDate>Wed, 04 Mar 2020 08:00:00 +0800</lastBuildDate>
+    
+        <atom:link href="http://git-repo.info/en/posts/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+      
+      <item>
+        <title>Agit-Flow and git-repo</title>
+        <link>http://git-repo.info/en/2020/03/agit-flow-and-git-repo/</link>
+        <pubDate>Wed, 04 Mar 2020 08:00:00 +0800</pubDate>
+        
+        <guid>http://git-repo.info/en/2020/03/agit-flow-and-git-repo/</guid>
+        <description>About myself Due to the coronavirus outbreak in China, I was unable to attend the Git Merge 2020 conference to give a speech on &amp;ldquo;AGit and git-repo&amp;rdquo; in Los Angeles on March 4, 2020. It&amp;rsquo;s a pity that I can&amp;rsquo;t communicate face to face with developers all over the world this time. I will share the content of my speech on this blog.
+A brief introduction to myself:
+  I am Jiang Xin, a software engineer in Alibaba, China.</description>
+      </item>
+      
+    
+  </channel>
+</rss>

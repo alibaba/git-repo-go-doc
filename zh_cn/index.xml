@@ -7,6 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh_cn</language>
     <copyright>&amp;copy;{year}, All Rights Reserved</copyright>
+    <lastBuildDate>Wed, 04 Mar 2020 08:00:00 +0800</lastBuildDate>
     
         <atom:link href="http://git-repo.info/zh_cn/index.xml" rel="self" type="application/rss+xml" />
     
@@ -182,6 +183,15 @@
         
         <guid>http://git-repo.info/zh_cn/docs/multi-repos/git-repo-prune/</guid>
         <description>功能 清理本地分支，删除已经被上游合并的本地分支。 该命令等价于 git repo abandon --all [&amp;lt;project&amp;gt;...]。相比 git repo abandon 支持 --force 参数，本命名更</description>
+      </item>
+      
+      <item>
+        <title>Agit-Flow and git-repo</title>
+        <link>http://git-repo.info/zh_cn/2020/03/agit-flow-and-git-repo/</link>
+        <pubDate>Wed, 04 Mar 2020 08:00:00 +0800</pubDate>
+        
+        <guid>http://git-repo.info/zh_cn/2020/03/agit-flow-and-git-repo/</guid>
+        <description>Git Merge 2020 Git 的全球盛会 Git Merge 2020 于 2020年3月4日在美国洛杉矶召开，因为新冠病毒引发的疫情，作为演讲嘉宾的我，虽然早早买好了北京和洛杉矶之间的往返</description>
       </item>
       
       <item>

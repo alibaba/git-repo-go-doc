@@ -339,6 +339,51 @@
   </url>
   
   <url>
+    <loc>http://git-repo.info/zh_cn/2020/03/agit-flow-and-git-repo/</loc>
+    <lastmod>2020-03-04T08:00:00+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://git-repo.info/en/2020/03/agit-flow-and-git-repo/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh_cn"
+                href="http://git-repo.info/zh_cn/2020/03/agit-flow-and-git-repo/"
+                />
+  </url>
+  
+  <url>
+    <loc>http://git-repo.info/zh_cn/posts/</loc>
+    <lastmod>2020-03-04T08:00:00+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://git-repo.info/en/posts/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh_cn"
+                href="http://git-repo.info/zh_cn/posts/"
+                />
+  </url>
+  
+  <url>
+    <loc>http://git-repo.info/zh_cn/</loc>
+    <lastmod>2020-03-04T08:00:00+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://git-repo.info/en/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh_cn"
+                href="http://git-repo.info/zh_cn/"
+                />
+  </url>
+  
+  <url>
     <loc>http://git-repo.info/zh_cn/changelog/</loc>
     <priority>0</priority>
     <xhtml:link
@@ -364,20 +409,6 @@
                 rel="alternate"
                 hreflang="zh_cn"
                 href="http://git-repo.info/zh_cn/docs/"
-                />
-  </url>
-  
-  <url>
-    <loc>http://git-repo.info/zh_cn/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="http://git-repo.info/en/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh_cn"
-                href="http://git-repo.info/zh_cn/"
                 />
   </url>
   

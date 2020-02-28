@@ -1734,11 +1734,11 @@
 <blockquote>
 <p>The big thing about distributed source control is that it makes one of the main issues with SCM’s go away – the politics around “who can make changes.”</p>
 </blockquote>
-<p>Git 的分布式特性使得软件开发拥有更加灵活的工作流。不仅仅是只读用户，核心成员也可以使用更加优雅的方式来工作。GitHub 的 &ldquo;Fork + Pull Request&rdquo; 开发模式是其中最经典、使用最为广泛的一种。开发者不是将提交直接写入仓库分支，而是将提交写入个人派生出来的完全自主可控的派生仓库中，之后再通过 Web 界面发起代码评审（Pull Request）向项目贡献代码。</p>
+<p>Git 的分布式特性使得软件开发拥有更加灵活的工作流。不仅仅是项目的核心成员，只读用户也可以使用更加优雅的方式来工作。GitHub 的 &ldquo;Fork + Pull Request&rdquo; 开发模式是其中最经典、使用最为广泛的一种。开发者不是将提交直接写入仓库分支，而是将提交写入个人派生出来的完全自主可控的派生仓库中，之后再通过 Web 界面发起代码评审（Pull Request）向项目贡献代码。</p>
 <h2 id="agit-flow-工作流">AGit-Flow 工作流</h2>
 <p>有没有更加方便的协同方式呢？</p>
 <p>在 Gerrit（使用 JGit）工作模式的启发下，我们对服务端的 Git 源码做了扩展，使得基于 Git（cgit）的代码平台可以很容易引入新的集中式工作流。这种集中式工作流首先应用在阿里巴巴内部代码平台上，我们称之为 AGit-Flow。不需要派生仓库，也不需要创建一个一个的特性分支，用户使用原生的 <code>git push</code> 命令，就可以实现从命令行直接创建代码评审任务。代码评审任务经过构建、测试等自动化操作及人工评审后，合入仓库即完成了对仓库代码的更改。</p>
-<p>AGit-Flow 的核心代码即将贡献到 Git 社区，任何代码平台都能够以此为基础，实现兼容的集中式工作流。参考：<a href="../2020/03/agit-flow-implementation">AGit-Flow 及其实现</a>。</p>
+<p>AGit-Flow 的核心代码即将贡献到 Git 社区，任何代码平台都能够以此为基础，实现兼容的集中式工作流。参考：<a href="../2020/03/agit-flow-and-git-repo/">AGit-Flow 及其实现</a>。</p>
 <h2 id="git-repo-命令行工具">git-repo 命令行工具</h2>
 <p>作为一款命令行工具 <code>git-repo</code>，对原生 <code>git</code> 命令做了封装，简化 AGit-Flow 等集中式工作流下用户的输入。<code>git-repo</code> 可以支持 Gerrit 以及 AGit-Flow 兼容的代码平台。</p>
 <p>下图是用户使用 <code>git pr</code> 命令（<code>git-repo</code> 的一个别名命令）在<a href="https://codeup.teambition.com">阿里巴巴代码平台</a>创建代码评审的演示：</p>
