@@ -6,6 +6,7 @@ SPHINXOPTS    =
 SPHINXBUILD   = sphinx-build
 PAPER         =
 BUILDDIR      = _build
+HUGO_OPTS     =
 
 # Internal variables.
 PAPEROPT_a4     = -D latex_paper_size=a4
@@ -20,7 +21,7 @@ help:
 
 build:
 	-rm -rf public/
-	hugo
+	hugo $(HUGO_OPTS)
 	cp CNAME public/
 
 gh-pages: build
