@@ -2,6 +2,33 @@
 
 Changes of git-repo.
 
+## 0.7.4 (2020-03-03)
+
+Bugfix:
+
+* To prevent wrong flag for OpenFile, use new file package
+* fix: config example file is not completely overwritten
+* Set proper Revision for manifest project
+* sync: remove unused and unsafe code
+* init: detach manifests project for immutable revision
+* init: when switch manifest branch, use hard reset
+* ssh-info: run ssh_info once for the same hosts
+
+## 0.7.3.1 (2020-01-13)
+
+* Windows: fix wrong URL for repos of a manifest project.
+
+## 0.7.3 (2020-01-11)
+
+* The first release on github.com: github.com/aliyun/git-repo
+* upgrade: download and install tar.gz/zip package
+* README: how to use git-repo
+* upload: confirm all upload tasks if no editor defined
+* editor: search editor from candidates
+* editor: work with editor path with spaces in git-bash
+* upgrade: get program path using os.Executable
+* test: fixed test cases for Linux
+
 ## 0.7.1 (2020-01-02)
 
 New features:
