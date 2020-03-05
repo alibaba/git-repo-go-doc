@@ -24,24 +24,29 @@ build:
 	hugo $(HUGO_OPTS)
 	cp CNAME public/
 
-gh-pages: build
+build-release:
+	-rm -rf public-release/
+	hugo -d public-release $(HUGO_OPTS)
+	cp CNAME public-release/
+
+gh-pages: build-release
 	@if ! git rev-parse refs/heads/gh-pages >/dev/null 2>&1 ; then \
 		echo "Branch gh-pages not exists, forgot check it out?" >&2; \
 		exit 1; \
 	fi
-	@git add -f public; \
-	tree=$$(git write-tree); \
-	newtree=$$(git ls-tree $$tree | grep "public$$" | awk '{print $$3;}') ; \
-	oldtree=$$(git rev-parse refs/heads/gh-pages^{tree}); \
+	@git add public-release && \
+	tree=$$(git write-tree) && \
+	newtree=$$(git ls-tree $$tree | grep "public-release$$" | awk '{print $$3;}') && \
+	oldtree=$$(git rev-parse refs/heads/gh-pages^{tree}) && \
 	if [ "$$oldtree" = "$$newtree" ]; then \
 	  echo "HTML is uptodate, branch gh-pages not changed." ; \
 	else \
-	  commit=$$(git log --format=%B -1 | git commit-tree $$newtree -p refs/heads/gh-pages) ; \
-	  git update-ref -m "HTML compiled from $$(git rev-parse HEAD)" refs/heads/gh-pages $$commit ; \
+	  commit=$$(git log --format=%B -1 | git commit-tree $$newtree -p refs/heads/gh-pages) && \
+	  git update-ref -m "HTML compiled from $$(git rev-parse HEAD)" refs/heads/gh-pages $$commit && \
 	  echo "Branch gh-pages changed." ; \
-	  [ -x .git/hooks/post-commit ] && .git/hooks/post-commit; \
-	fi; \
-	git rm --cached -r -q public
+	fi && \
+	git rm --cached -r -q public-release && \
+	rm -rf public-release
 
 undo:
 	@if ! git rev-parse refs/heads/gh-pages^ >/dev/null 2>&1 ; then \
