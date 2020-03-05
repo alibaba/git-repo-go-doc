@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Agit-Flow and git-repo – git-repo</title>
+    <title>AGit-Flow 阿里巴巴集中式 Git 工作流 – git-repo</title>
     
 <script src="/js/enquire.min.dfb99dee1e029d51d6cfb672d847929890b1585402de17f5ed092edd72a688b4.js"></script>
 
@@ -851,7 +851,7 @@
 
 
 <meta property="og:site_name" content="git-repo">
-<meta property="og:title" content="Agit-Flow and git-repo">
+<meta property="og:title" content="AGit-Flow 阿里巴巴集中式 Git 工作流">
 <meta property="og:url" content="http://git-repo.info/zh_cn/2020/03/agit-flow-and-git-repo/">
 <meta property="og:type" content="article">
 
@@ -882,7 +882,7 @@
   {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "headline": "Agit-Flow and git-repo",
+    "headline": "AGit-Flow 阿里巴巴集中式 Git 工作流",
     "datePublished": "2020-03-04T08:00:00+08:00",
     "dateModified": "2020-03-04T08:00:00+08:00",
     "url" : "http://git-repo.info/zh_cn/2020/03/agit-flow-and-git-repo/",
@@ -939,7 +939,7 @@
         
         
         <li class="">
-          <a href="http://git-repo.info/zh_cn/2020/03/agit-flow-and-git-repo/" class="menu__title ">Agit-Flow and git-repo</a>
+          <a href="http://git-repo.info/zh_cn/2020/03/agit-flow-and-git-repo/" class="menu__title ">AGit-Flow 阿里巴巴集中式 Git 工作流</a>
         </li>
       
     
@@ -1303,7 +1303,7 @@
   <div class="header__wrapper bgcolor__header">
     <div class="divider">
       <div class="lmr">
-        <h2 class="single__title">Agit-Flow and git-repo</h2>
+        <h2 class="single__title">AGit-Flow 阿里巴巴集中式 Git 工作流</h2>
       </div>
     </div>
   </div>
@@ -1336,7 +1336,7 @@
   
   <li  class="is-active" >
     
-      <span>Agit-Flow and git-repo</span>
+      <span>AGit-Flow 阿里巴巴集中式 Git 工作流</span>
     
   </li>
   
@@ -1372,7 +1372,7 @@
         
         
         <li>
-          <a href="http://git-repo.info/zh_cn/2020/03/agit-flow-and-git-repo/" class="menu__title active">Agit-Flow and git-repo</a>
+          <a href="http://git-repo.info/zh_cn/2020/03/agit-flow-and-git-repo/" class="menu__title active">AGit-Flow 阿里巴巴集中式 Git 工作流</a>
         </li>
       
     
@@ -1410,7 +1410,7 @@
 </li>
 </ol>
 <figure>
-    <img src="/images/agit-flow/github-gerrit-comparisons-en.png"
+    <img src="/images/agit-flow/github-gerrit-comparisons-zh.png"
          alt="图: GitHub、Gerrit 协同模式比较" width="750"/> <figcaption>
             <p>图: GitHub、Gerrit 协同模式比较</p>
         </figcaption>
@@ -1441,15 +1441,15 @@
 <li>
 <p>各自的劣势：</p>
 <p>GitHub 使用派生仓库的工作模式，对于一次性参与项目贡献显得太重了，而且对于多仓库项目难于管理。很难想象在 GitHub 上如何使用派生工作流来管理类似 Android 的多仓库类型的项目。</p>
-<p>Gerrit 需要集中管控，由管理员负责创建项目，而普通用户不能创建项目，这就使得一个 Gerrit 实例通常只管理一个项目或一个组织内的项目，这样在项目之间形成代码复用，也很难汇集跨项目的开发者组成开发者社区。</p>
+<p>Gerrit 需要集中管控，由管理员负责创建项目，而普通用户不能创建项目，这就使得一个 Gerrit 实例通常只管理一个项目或一个组织内的项目，难以在项目之间形成代码复用，也很难汇集跨项目的开发者组成开发者社区。</p>
 </li>
 </ol>
 <h2 id="agit-flow-的使用">AGit-Flow 的使用</h2>
 <h3 id="什么是-agit-flow-">什么是 AGit-Flow ？</h3>
-<p>我们能否将 GitHub 和 Gerrit 两种工作流结合到一起（GerritHub 不算），兼具他们的优点？</p>
+<p>我们能否将 GitHub 和 Gerrit 两种工作流结合到一起（不是 GerritHub 的那种集成模式），兼具他们的优点？</p>
 <p>在 Gerrit 的启发下，我们在 CGit 的基础上创建了一个集中式 Git 工作流，其中包含对 Git 核心做的少量修改和几个服务端API。我们称之为 “AGit-Flow”，最早在阿里巴巴的内部代码平台中实现。使用 AGit-Flow 工作流，无需创建派生仓库，也无需在仓库中创建特性分支，只读用户就可以通过 <code>git push</code> 命令创建代码评审。</p>
 <figure>
-    <img src="/images/agit-flow/agit-flow-overview-en.png"
+    <img src="/images/agit-flow/agit-flow-overview-zh.png"
          alt="图: AGit-Flow 功能概览" width="750"/> <figcaption>
             <p>图: AGit-Flow 功能概览</p>
         </figcaption>
@@ -1460,7 +1460,7 @@
 <h3 id="agit-flow-工作流">AGit-Flow 工作流</h3>
 <p>单仓库下 AGit-Flow 工作流如下图所示：</p>
 <figure>
-    <img src="/images/agit-flow/agit-flow-diagram-en.png"
+    <img src="/images/agit-flow/agit-flow-diagram-zh.png"
          alt="图: 单仓库 AGit-Flow 协作流程图" width="600"/> <figcaption>
             <p>图: 单仓库 AGit-Flow 协作流程图</p>
         </figcaption>
@@ -1506,7 +1506,7 @@
 <p>项目管理者通过点击 pull request 评审界面的合并按钮，将 pull request 合入 master 分支。master 分支被更新，同时关闭 pull request。</p>
 </li>
 </ol>
-<p>下面是阿里巴巴代码平台中，单仓库下 AGit-Flow 工作流的演示：</p>
+<p>下面是单仓库下 AGit-Flow 工作流的演示，代码平台使用阿里巴巴旗下的 Teambition·行云（<a href="https://codeup.teambition.com/">https://codeup.teambition.com/</a>）。</p>
 <figure>
     <img src="/images/git-repo-single.gif"
          alt="图: AGit-Flow 单仓库操作演示" width="750"/> <figcaption>
@@ -1532,7 +1532,7 @@
 </ol>
 <p>客户端触发 AGit-Flow 工作流，服务端各个模块及其处理流程示意如下：</p>
 <figure>
-    <img src="/images/agit-flow/agit-flow-impl-en.png"
+    <img src="/images/agit-flow/agit-flow-impl-zh.png"
          alt="图: AGit-Flow 服务端实现" width="750"/> <figcaption>
             <p>图: AGit-Flow 服务端实现</p>
         </figcaption>
@@ -1543,7 +1543,7 @@
 <p>如果既要保持对常规 <code>git push</code> 推送命令采用严格的授权模型，又要对 AGit-Flow 的特殊推送降低授权要求，允许来自只读用户的推送操作，是否可以做到呢？</p>
 <p>我们使用的方法是传递特殊的环境变量（SSH协议）或者特殊的HTTP头（HTTP协议），如下图所示：</p>
 <figure>
-    <img src="/images/agit-flow/impl-1-front-end-en.png"
+    <img src="/images/agit-flow/impl-1-front-end-zh.png"
          alt="图: AGit-Flow 前端授权模块" width="700"/> <figcaption>
             <p>图: AGit-Flow 前端授权模块</p>
         </figcaption>
@@ -1567,7 +1567,7 @@
 <h3 id="git-核心的改造和-execute-command-钩子">Git 核心的改造和 execute-command 钩子</h3>
 <p>接下来客户端请求传递给 &ldquo;git-receive-pack&rdquo;。原生的 &ldquo;git-receive-pack&rdquo; 工作流如下图所示：</p>
 <figure>
-    <img src="/images/agit-flow/impl-2-git-core-en.png"
+    <img src="/images/agit-flow/impl-2-git-core-zh.png"
          alt="图: 原生的 git-receive-pack 工作流" width="320"/> <figcaption>
             <p>图: 原生的 git-receive-pack 工作流</p>
         </figcaption>
@@ -1595,12 +1595,17 @@
 </ol>
 <p>AGit-Flow 对 &ldquo;git-receive-pack&rdquo; 的源码做了改动，新的流程如下图所示：</p>
 <figure>
-    <img src="/images/agit-flow/impl-2-git-core-patched-en.png"
+    <img src="/images/agit-flow/impl-2-git-core-patched-zh.png"
          alt="图: AGit-Flow 对 Git 核心的改动" width="600"/> <figcaption>
             <p>图: AGit-Flow 对 Git 核心的改动</p>
         </figcaption>
 </figure>
 
+<p>对 Git 核心的修改已经贡献到 Git 社区，参见：</p>
+<ul>
+<li><a href="https://public-inbox.org/git/20200304113312.34229-1-zhiyou.jx@alibaba-inc.com/">https://public-inbox.org/git/20200304113312.34229-1-zhiyou.jx@alibaba-inc.com/</a>。</li>
+</ul>
+<p>为支持 AGit-Flow，我们对 &ldquo;git-receive-pack&rdquo; 做了如下修改：</p>
 <ol>
 <li>
 <p>更改后的 &ldquo;git-receive-pack&rdquo; 增加了一个命令过滤器。</p>
@@ -1641,14 +1646,14 @@ git config --system --add receive.executeCommandsHookRefs refs/for-review/
 <p>AGit-Flow 对 &ldquo;ssh_info&rdquo; API 进行了拓展，返回值可以是 JSON 格式，内容包含协议类型和版本等。拓展后的 &ldquo;ssh_info&rdquo; 可以视为 &ldquo;Smart Submit Handler information&rdquo; 的缩写。AGit-Flow 不但在 HTTP 服务中提供该 API，还在 SSH 服务上也提供 &ldquo;ssh_info&rdquo; 命令，用于判断服务端是否支持集中式评审、协议类型和版本等。</p>
 <p>下图是 Gerrit、Agit-Flow 服务的 &ldquo;ssh_info&rdquo; API 的返回值。不同的协议，<code>git push</code> 命令格式和代码评审获取的引用名称各不相同。未来如果有其它的 AGit-Flow 兼容协议，也会有不同的 &ldquo;ssh_info&rdquo; 输出，有不同的 <code>git push</code> 命令和不同的 pull request 引用名称。</p>
 <figure>
-    <img src="/images/agit-flow/impl-4-ssh-info-en.png"
+    <img src="/images/agit-flow/impl-4-ssh-info-zh.png"
          alt="图: ssh_info API" width="750"/> <figcaption>
             <p>图: ssh_info API</p>
         </figcaption>
 </figure>
 
 <h2 id="git-repo">git-repo</h2>
-<p>git-repo 是阿里巴巴开源的一款命令行工具，对原生 Git 命令做了封装，简化了 AGit-Flow 等集中式工作流下复杂的 Git 命令。git-repo 可以支持 AGit-Flow 兼容的代码平台以及 Gerrit。</p>
+<p>git-repo 是阿里巴巴开源的一款命令行工具，对原生 Git 命令做了封装，简化了使用 AGit-Flow 等集中式工作流时稍嫌繁琐的 Git 命令。git-repo 可以支持 AGit-Flow 兼容的代码平台以及 Gerrit。</p>
 <p>git-repo 使用 Golang 开发，在使用上兼容 Android 的 repo，并且运行时除 Git 外不依赖其他软件。除了具备 Android repo 的多仓库管理能力外，还可以对单独的代码仓库进行操作。</p>
 <ul>
 <li>
@@ -1667,7 +1672,7 @@ git config --system --add receive.executeCommandsHookRefs refs/for-review/
 </code></pre>
 <p>下面的这些针对单仓库的别名命令，就是通过 git-repo 初始化安装的 Git 配置文件扩展实现的：</p>
 <figure>
-    <img src="/images/agit-flow/git-repo-aliases-en.png"
+    <img src="/images/agit-flow/git-repo-aliases-zh.png"
          alt="图: git-repo 别名命令" width="450"/> <figcaption>
             <p>图: git-repo 别名命令</p>
         </figcaption>
@@ -1740,28 +1745,39 @@ git config --system --add receive.executeCommandsHookRefs refs/for-review/
 </li>
 </ul>
 <figure>
-    <img src="/images/agit-flow/impl-git-repo-extension-en.png"
+    <img src="/images/agit-flow/impl-git-repo-extension-zh.png"
          alt="图: git-repo 的协议扩展" width="750"/> <figcaption>
             <p>图: git-repo 的协议扩展</p>
         </figcaption>
 </figure>
 
 <h2 id="总结">总结</h2>
+<h3 id="开源地址">开源地址</h3>
 <p>AGit-Flow 是受 Gerrit 启发重新设计和开发的 Git 集中式协同方案。底层基于 CGit、不需要仓库派生、使用 pull request 进行代码评审。</p>
 <p>git-repo 是使用 Go 语言开发的，与 Android repo 兼容的 AGit-Flow 客户端。</p>
-<p>相关代码在 GitHub 上的开源：</p>
+<p>相关代码已经开源：</p>
 <ul>
 <li>
 <p><a href="https://github.com/aliyun/git-repo-go">https://github.com/aliyun/git-repo-go</a> （欢迎加 ⭐️）</p>
 </li>
 <li>
-<p><a href="https://github.com/aliyun/git-repo-go/tree/agit-flow">https://github.com/aliyun/git-repo-go/tree/agit-flow</a> （AGit-Flow 对 git-receive-pack 提供的补丁，将会发到 Git 社区）</p>
-</li>
-<li>
 <p><a href="https://github.com/aliyun/git-repo-go-doc">https://github.com/aliyun/git-repo-go-doc</a> （网站 <a href="https://git-repo.info">https://git-repo.info</a> 代码）</p>
 </li>
+<li>
+<p><a href="https://public-inbox.org/git/20200304113312.34229-1-zhiyou.jx@alibaba-inc.com/">https://public-inbox.org/git/20200304113312.34229-1-zhiyou.jx@alibaba-inc.com/</a> （Git核心的代码修改）</p>
+</li>
 </ul>
-<p>实现你自己的“AGit-Flow”：</p>
+<h3 id="体验-agit-flow">体验 AGit-Flow</h3>
+<p>AGit-Flow 是一套开放的协议，已经在如下代码平台提供服务。</p>
+<ol>
+<li>
+<p>阿里巴巴旗下的 Teambition·行云：<a href="https://codeup.teambition.com/">https://codeup.teambition.com/</a></p>
+</li>
+<li>
+<p>阿里巴巴·云效2.0 （预计4月份上线）: <a href="https://codeup.aliyun.com/">https://codeup.aliyun.com/</a></p>
+</li>
+</ol>
+<h3 id="实现你自己的agit-flow">实现你自己的“AGit-Flow”</h3>
 <ul>
 <li>
 <p>为你的 AGit-Flow 兼容协议起个名字。</p>
@@ -1860,7 +1876,13 @@ git config --system --add receive.executeCommandsHookRefs refs/for-review/
         <li><a href="#扩展-git-repo">扩展 git-repo</a></li>
       </ul>
     </li>
-    <li><a href="#总结">总结</a></li>
+    <li><a href="#总结">总结</a>
+      <ul>
+        <li><a href="#开源地址">开源地址</a></li>
+        <li><a href="#体验-agit-flow">体验 AGit-Flow</a></li>
+        <li><a href="#实现你自己的agit-flow">实现你自己的“AGit-Flow”</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
 </div>
