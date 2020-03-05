@@ -1,5 +1,6 @@
 ---
-title: "Agit-Flow and git-repo"
+title: "AGit-Flow 阿里巴巴集中式 Git 工作流"
+slug: "agit-flow-and-git-repo"
 date: 2020-03-04T08:00:00+08:00
 draft: false
 ---
@@ -32,7 +33,7 @@ Linus 作为 Git 和 Linux 的创建者，在 Git 十周年的一次采访中，
 
 3. 仓库的分支模型简单。仓库中没有多余的分支，即不需要创建特性分支。
 
-{{< figure src="/images/agit-flow/github-gerrit-comparisons-en.png" width="750" caption="图: GitHub、Gerrit 协同模式比较" >}}
+{{< figure src="/images/agit-flow/github-gerrit-comparisons-zh.png" width="750" caption="图: GitHub、Gerrit 协同模式比较" >}}
 
 这两种协同模型的差异非常明显：
 
@@ -64,18 +65,18 @@ Linus 作为 Git 和 Linux 的创建者，在 Git 十周年的一次采访中，
 
     GitHub 使用派生仓库的工作模式，对于一次性参与项目贡献显得太重了，而且对于多仓库项目难于管理。很难想象在 GitHub 上如何使用派生工作流来管理类似 Android 的多仓库类型的项目。
 
-    Gerrit 需要集中管控，由管理员负责创建项目，而普通用户不能创建项目，这就使得一个 Gerrit 实例通常只管理一个项目或一个组织内的项目，这样在项目之间形成代码复用，也很难汇集跨项目的开发者组成开发者社区。
+    Gerrit 需要集中管控，由管理员负责创建项目，而普通用户不能创建项目，这就使得一个 Gerrit 实例通常只管理一个项目或一个组织内的项目，难以在项目之间形成代码复用，也很难汇集跨项目的开发者组成开发者社区。
 
 
 ## AGit-Flow 的使用
 
 ### 什么是 AGit-Flow ？
 
-我们能否将 GitHub 和 Gerrit 两种工作流结合到一起（GerritHub 不算），兼具他们的优点？
+我们能否将 GitHub 和 Gerrit 两种工作流结合到一起（不是 GerritHub 的那种集成模式），兼具他们的优点？
 
 在 Gerrit 的启发下，我们在 CGit 的基础上创建了一个集中式 Git 工作流，其中包含对 Git 核心做的少量修改和几个服务端API。我们称之为 “AGit-Flow”，最早在阿里巴巴的内部代码平台中实现。使用 AGit-Flow 工作流，无需创建派生仓库，也无需在仓库中创建特性分支，只读用户就可以通过 `git push` 命令创建代码评审。
 
-{{< figure src="/images/agit-flow/agit-flow-overview-en.png" width="750" caption="图: AGit-Flow 功能概览" >}}
+{{< figure src="/images/agit-flow/agit-flow-overview-zh.png" width="750" caption="图: AGit-Flow 功能概览" >}}
 
 在阿里巴巴，我们喜欢 pull request、CGit，喜欢在命令行直接创建代码评审的集中式工作流，喜欢开放的开发者社区。我们不喜欢 "commit-msg" 钩子方式关联提交的代码评审，我们不喜欢一个一个分散的代码平台。
 
@@ -86,7 +87,7 @@ Linus 作为 Git 和 Linux 的创建者，在 Git 十周年的一次采访中，
 
 单仓库下 AGit-Flow 工作流如下图所示：
 
-{{< figure src="/images/agit-flow/agit-flow-diagram-en.png" width="600" caption="图: 单仓库 AGit-Flow 协作流程图" >}}
+{{< figure src="/images/agit-flow/agit-flow-diagram-zh.png" width="600" caption="图: 单仓库 AGit-Flow 协作流程图" >}}
 
 图中的两个角色，一个是开发者，另外一个是评审者。
 
@@ -118,7 +119,7 @@ Linus 作为 Git 和 Linux 的创建者，在 Git 十周年的一次采访中，
 11. 项目管理者通过点击 pull request 评审界面的合并按钮，将 pull request 合入 master 分支。master 分支被更新，同时关闭 pull request。
 
 
-下面是阿里巴巴代码平台中，单仓库下 AGit-Flow 工作流的演示：
+下面是单仓库下 AGit-Flow 工作流的演示，代码平台使用阿里巴巴旗下的 Teambition·行云（[https://codeup.teambition.com/](https://codeup.teambition.com/)）。
 
 {{< figure src="/images/git-repo-single.gif" width="750" caption="图: AGit-Flow 单仓库操作演示" >}}
 
@@ -143,7 +144,8 @@ Linus 作为 Git 和 Linux 的创建者，在 Git 十周年的一次采访中，
 
 客户端触发 AGit-Flow 工作流，服务端各个模块及其处理流程示意如下：
 
-{{< figure src="/images/agit-flow/agit-flow-impl-en.png" width="750" caption="图: AGit-Flow 服务端实现" >}}
+{{< figure src="/images/agit-flow/agit-flow-impl-zh.png" width="750" caption="图: AGit-Flow 服务端实现" >}}
+
 
 ### 前端授权模块
 
@@ -153,7 +155,7 @@ Linus 作为 Git 和 Linux 的创建者，在 Git 十周年的一次采访中，
 
 我们使用的方法是传递特殊的环境变量（SSH协议）或者特殊的HTTP头（HTTP协议），如下图所示：
 
-{{< figure src="/images/agit-flow/impl-1-front-end-en.png" width="700" caption="图: AGit-Flow 前端授权模块" >}}
+{{< figure src="/images/agit-flow/impl-1-front-end-zh.png" width="700" caption="图: AGit-Flow 前端授权模块" >}}
 
 说明如下：
 
@@ -169,7 +171,7 @@ Linus 作为 Git 和 Linux 的创建者，在 Git 十周年的一次采访中，
 
 接下来客户端请求传递给 "git-receive-pack"。原生的 "git-receive-pack" 工作流如下图所示：
 
-{{< figure src="/images/agit-flow/impl-2-git-core-en.png" width="320" caption="图: 原生的 git-receive-pack 工作流" >}}
+{{< figure src="/images/agit-flow/impl-2-git-core-zh.png" width="320" caption="图: 原生的 git-receive-pack 工作流" >}}
 
 1. 客户端请求分为两个部分 "commands" 和 "packfile" 依次发送到服务端的 "git-receive-pack" 进程。
 
@@ -186,7 +188,13 @@ Linus 作为 Git 和 Linux 的创建者，在 Git 十周年的一次采访中，
 
 AGit-Flow 对 "git-receive-pack" 的源码做了改动，新的流程如下图所示：
 
-{{< figure src="/images/agit-flow/impl-2-git-core-patched-en.png" width="600" caption="图: AGit-Flow 对 Git 核心的改动" >}}
+{{< figure src="/images/agit-flow/impl-2-git-core-patched-zh.png" width="600" caption="图: AGit-Flow 对 Git 核心的改动" >}}
+
+对 Git 核心的修改已经贡献到 Git 社区，参见：
+
+* [https://public-inbox.org/git/20200304113312.34229-1-zhiyou.jx@alibaba-inc.com/](https://public-inbox.org/git/20200304113312.34229-1-zhiyou.jx@alibaba-inc.com/)。
+
+为支持 AGit-Flow，我们对 "git-receive-pack" 做了如下修改：
 
 1. 更改后的 "git-receive-pack" 增加了一个命令过滤器。
 
@@ -246,11 +254,11 @@ AGit-Flow 对 "ssh_info" API 进行了拓展，返回值可以是 JSON 格式，
 
 下图是 Gerrit、Agit-Flow 服务的 "ssh_info" API 的返回值。不同的协议，`git push` 命令格式和代码评审获取的引用名称各不相同。未来如果有其它的 AGit-Flow 兼容协议，也会有不同的 "ssh_info" 输出，有不同的 `git push` 命令和不同的 pull request 引用名称。
 
-{{< figure src="/images/agit-flow/impl-4-ssh-info-en.png" width="750" caption="图: ssh_info API" >}}
+{{< figure src="/images/agit-flow/impl-4-ssh-info-zh.png" width="750" caption="图: ssh_info API" >}}
 
 ## git-repo
 
-git-repo 是阿里巴巴开源的一款命令行工具，对原生 Git 命令做了封装，简化了 AGit-Flow 等集中式工作流下复杂的 Git 命令。git-repo 可以支持 AGit-Flow 兼容的代码平台以及 Gerrit。
+git-repo 是阿里巴巴开源的一款命令行工具，对原生 Git 命令做了封装，简化了使用 AGit-Flow 等集中式工作流时稍嫌繁琐的 Git 命令。git-repo 可以支持 AGit-Flow 兼容的代码平台以及 Gerrit。
 
 git-repo 使用 Golang 开发，在使用上兼容 Android 的 repo，并且运行时除 Git 外不依赖其他软件。除了具备 Android repo 的多仓库管理能力外，还可以对单独的代码仓库进行操作。
 
@@ -273,7 +281,7 @@ git-repo 使用 Golang 开发，在使用上兼容 Android 的 repo，并且运�
 
 下面的这些针对单仓库的别名命令，就是通过 git-repo 初始化安装的 Git 配置文件扩展实现的：
 
-{{< figure src="/images/agit-flow/git-repo-aliases-en.png" width="450" caption="图: git-repo 别名命令" >}}
+{{< figure src="/images/agit-flow/git-repo-aliases-zh.png" width="450" caption="图: git-repo 别名命令" >}}
 
 
 ### 单仓库下工作
@@ -331,24 +339,36 @@ git-repo 不仅支持 Gerrit 和 AGit-Flow 服务，还支持其他与 AGit-Flow
 
 + 方法二：提供外部 helper 程序，通过 `--upload`、`--download` 等参数返回 `git push` 命令、代码评审引用名称等信息。这种方法适用于那些私有的代码平台。
 
-{{< figure src="/images/agit-flow/impl-git-repo-extension-en.png" width="750" caption="图: git-repo 的协议扩展" >}}
+{{< figure src="/images/agit-flow/impl-git-repo-extension-zh.png" width="750" caption="图: git-repo 的协议扩展" >}}
 
 
 ## 总结
+
+### 开源地址
 
 AGit-Flow 是受 Gerrit 启发重新设计和开发的 Git 集中式协同方案。底层基于 CGit、不需要仓库派生、使用 pull request 进行代码评审。
 
 git-repo 是使用 Go 语言开发的，与 Android repo 兼容的 AGit-Flow 客户端。
 
-相关代码在 GitHub 上的开源：
+相关代码已经开源：
 
 * https://github.com/aliyun/git-repo-go （欢迎加 ⭐️）
 
-* https://github.com/aliyun/git-repo-go/tree/agit-flow （AGit-Flow 对 git-receive-pack 提供的补丁，将会发到 Git 社区）
-
 * https://github.com/aliyun/git-repo-go-doc （网站 https://git-repo.info 代码）
 
-实现你自己的“AGit-Flow”：
+* [https://public-inbox.org/git/20200304113312.34229-1-zhiyou.jx@alibaba-inc.com/](https://public-inbox.org/git/20200304113312.34229-1-zhiyou.jx@alibaba-inc.com/) （Git核心的代码修改）
+
+
+### 体验 AGit-Flow
+
+AGit-Flow 是一套开放的协议，已经在如下代码平台提供服务。
+
+1. 阿里巴巴旗下的 Teambition·行云：[https://codeup.teambition.com/](https://codeup.teambition.com/)
+
+2. 阿里巴巴·云效2.0 （预计4月份上线）: https://codeup.aliyun.com/
+
+
+### 实现你自己的“AGit-Flow”
 
 * 为你的 AGit-Flow 兼容协议起个名字。
 

@@ -1,5 +1,6 @@
 ---
 title: "Agit-Flow and git-repo"
+slug: "agit-flow-and-git-repo"
 date: 2020-03-04T08:00:00+08:00
 draft: false
 ---
@@ -196,6 +197,10 @@ The following diagram is our patched "git-receive-pack" for AGit-Flow:
 
 {{< figure src="/images/agit-flow/impl-2-git-core-patched-en.png" width="600" caption="Fig: Patched git-receive-pack for AGit-Flow" >}}
 
+See our patches in the Git mailing list:
+
+* [https://public-inbox.org/git/20200304113312.34229-1-zhiyou.jx@alibaba-inc.com/](https://public-inbox.org/git/20200304113312.34229-1-zhiyou.jx@alibaba-inc.com/)
+
 The changes we made for "git-receive-pack" to support AGit-Flow:
 
 1. Add a filter for commands sent from users to "git-receive-pack".
@@ -372,8 +377,10 @@ git-repo is a client for AGit-Flow, developed using Golang, and is compatible wi
 Open source on GitHub:
 
 * https://github.com/aliyun/git-repo-go (Give me a ⭐️)
-* https://github.com/aliyun/git-repo-go/tree/agit-flow (patches on git-receive-pack, will send to Git mailing list later)
+
 * https://github.com/aliyun/git-repo-go-doc (For website https://git-repo.info)
+
+* [https://public-inbox.org/git/20200304113312.34229-1-zhiyou.jx@alibaba-inc.com/](https://public-inbox.org/git/20200304113312.34229-1-zhiyou.jx@alibaba-inc.com/) (Patches on git-receive-pack for AGit-Flow)
 
 Implement your own "AGit-Flow":
 
