@@ -19,11 +19,11 @@
 [[main]]
   identifier = "download"
   name = "下载"
-  url = "https://github.com/aliyun/git-repo-go/releases"
+  url = "https://github.com/alibaba/git-repo-go/releases"
   weight = 4
 
 [[main]]
   identifier = "sourcecode"
   name = "源码"
-  url = "https://github.com/aliyun/git-repo-go"
+  url = "https://github.com/alibaba/git-repo-go"
   weight = 5

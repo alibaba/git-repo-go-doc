@@ -22,10 +22,10 @@ In a manifest repository, there are one or more XML files, which define the rela
                revision="master"
     	   sync-j="4" />
     
-      <project name="aliyun/git-repo-go" path="git-repo" groups="app">
+      <project name="alibaba/git-repo-go" path="git-repo" groups="app">
         <linkfile src="README.md" dest="README.md"></linkfile>
       </project>
-      <project name="aliyun/git-repo-go-doc" path="website" groups="app"/>
+      <project name="alibaba/git-repo-go-doc" path="website" groups="app"/>
       <project name="jiangxin/goconfig" path="lib/goconfig" groups="lib" remote="github" />
       <project name="jiangxin/multi-log" path="lib/multi-log" groups="lib" remote="github" />
     </manifest>

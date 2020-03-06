@@ -15,7 +15,7 @@ buttons:
   - link: docs/
     text: 快速上手
     color: primary
-  - link: https://github.com/aliyun/git-repo-go/releases
+  - link: https://github.com/alibaba/git-repo-go/releases
     text: 下载 git-repo
     color: default
 ---

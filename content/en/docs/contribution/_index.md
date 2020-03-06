@@ -8,8 +8,8 @@ weight: 99
 
 `git-repo` is an open source software, feel free to contribute.
 
-+ Source code: https://github.com/aliyun/git-repo-go
-+ Documentation (for this website): https://github.com/aliyun/git-repo-go-doc
++ Source code: https://github.com/alibaba/git-repo-go
++ Documentation (for this website): https://github.com/alibaba/git-repo-go-doc
 
 
 ## Build and test git-repo
@@ -18,7 +18,7 @@ weight: 99
 
 1. Clone repository of git-repo:
 
-        $ git clone https://github.com/aliyun/git-repo-go.git
+        $ git clone https://github.com/alibaba/git-repo-go.git
 
 2. Compile:
 
@@ -27,11 +27,11 @@ weight: 99
 
 3. Check code style using golint:
 
-        $ golint github.com/aliyun/git-repo-go/...
+        $ golint github.com/alibaba/git-repo-go/...
 
 4. Unit test:
 
-        $ go test github.com/aliyun/git-repo-go/...
+        $ go test github.com/alibaba/git-repo-go/...
 
 5. Integration test:
 
@@ -42,10 +42,10 @@ weight: 99
 
 ### git-repo
 
-Send pull request to [https://github.com/aliyun/git-repo-go](https://github.com/aliyun/git-repo-go).
+Send pull request to [https://github.com/alibaba/git-repo-go](https://github.com/alibaba/git-repo-go).
 
 Test cases are in the `test/` directory, using [sharness](https://github.com/chriscool/sharness) as test framework.
 
 ### Documentations
 
-Send pull request to [https://github.com/aliyun/git-repo-go-doc](https://github.com/aliyun/git-repo-go-doc).
+Send pull request to [https://github.com/alibaba/git-repo-go-doc](https://github.com/alibaba/git-repo-go-doc).

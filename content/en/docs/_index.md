@@ -26,7 +26,7 @@ See the following demo about how we use `git pr` (an alias command of `git-repo`
 
 `git-repo` is compatible with the Android `repo` cmd tool, which can work with multiple repositories managed by a manifest repository. See [manage multiple repositories using git-repo](multi-repos/overview/).
 
-`git-repo` is an open source software on GitHub, see [https://github.com/aliyun/git-repo-go](https://github.com/aliyun/git-repo-go).
+`git-repo` is an open source software on GitHub, see [https://github.com/alibaba/git-repo-go](https://github.com/alibaba/git-repo-go).
 
 ## Differences between git-repo and Android repo
 

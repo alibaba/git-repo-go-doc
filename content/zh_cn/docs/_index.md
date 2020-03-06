@@ -26,7 +26,7 @@ AGit-Flow 的核心代码即将贡献到 Git 社区，任何代码平台都能�
 
 `git-repo` 兼容 Android 的 `repo` 工具，支持对多仓库的协同管理。参考：[git-repo 实现多仓库协同](multi-repos/overview/)。
 
-`git-repo` 开源在 GitHub 上，参见：[https://github.com/aliyun/git-repo-go](https://github.com/aliyun/git-repo-go)。
+`git-repo` 开源在 GitHub 上，参见：[https://github.com/alibaba/git-repo-go](https://github.com/alibaba/git-repo-go)。
 
 ## git-repo 与 Android repo
 

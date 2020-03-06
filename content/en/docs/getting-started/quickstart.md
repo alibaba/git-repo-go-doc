@@ -9,7 +9,7 @@ enableToc: false
 
 ### Install git-repo
 
-You can download `git-repo` from: [https://github.com/aliyun/git-repo-go/releases](https://github.com/aliyun/git-repo-go/releases).
+You can download `git-repo` from: [https://github.com/alibaba/git-repo-go/releases](https://github.com/alibaba/git-repo-go/releases).
 
 Choose the proper package according to your OS (Linux, Mac, or Windows), and architecture (amd or 386), download and extract the package.
 

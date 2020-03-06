@@ -9,7 +9,7 @@ draft: false
 
 Git 的全球盛会 [Git Merge 2020](https://git-merge.com) 于 2020年3月4日在美国洛杉矶召开，因为新冠病毒引发的疫情，作为演讲嘉宾的我，虽然早早买好了北京和洛杉矶之间的往返机票，最终还是没能成行。
 
-这次会议我的议题是 “AGit-Flow 和 git-repo”，这也是我在 2019年云栖大会演讲“[Go Git：面向未来的代码平台](https://developer.aliyun.com/article/720615)”做出的承诺，将阿里巴巴代码平台的技术开放给全世界。本文就是原计划在 Git Merge 2020 上的演讲稿，文中介绍的相关核心软件均已开源。
+这次会议我的议题是 “AGit-Flow 和 git-repo”，这也是我在 2019年云栖大会演讲“[Go Git：面向未来的代码平台](https://developer.alibaba.com/article/720615)”做出的承诺，将阿里巴巴代码平台的技术开放给全世界。本文就是原计划在 Git Merge 2020 上的演讲稿，文中介绍的相关核心软件均已开源。
 
 
 ## 为什么 Git 能成功？
@@ -264,12 +264,12 @@ git-repo 使用 Golang 开发，在使用上兼容 Android 的 repo，并且运�
 
 + 网址：[https://git-repo.info](https://git-repo.info/)
 
-+ 源代码：[https://github.com/aliyun/git-repo-go](https://github.com/aliyun/git-repo-go/) 
++ 源代码：[https://github.com/alibaba/git-repo-go](https://github.com/alibaba/git-repo-go/) 
 
 
 ### 安装
 
-访问 git-repo 的下载页面：[https://github.com/aliyun/git-repo-go/releases](https://github.com/aliyun/git-repo-go/releases)。
+访问 git-repo 的下载页面：[https://github.com/alibaba/git-repo-go/releases](https://github.com/alibaba/git-repo-go/releases)。
 
 根据您平台的类型，下载合适的软件包。然后将下载并解压缩后的 git-repo 文件移动到可执行目录中（如 Linux 下的 `/usr/local/bin` 目录），即完成安装。
 
@@ -352,9 +352,9 @@ git-repo 是使用 Go 语言开发的，与 Android repo 兼容的 AGit-Flow 客
 
 相关代码已经开源：
 
-* https://github.com/aliyun/git-repo-go （欢迎加 ⭐️）
+* https://github.com/alibaba/git-repo-go （欢迎加 ⭐️）
 
-* https://github.com/aliyun/git-repo-go-doc （网站 https://git-repo.info 代码）
+* https://github.com/alibaba/git-repo-go-doc （网站 https://git-repo.info 代码）
 
 * [https://public-inbox.org/git/20200304113312.34229-1-zhiyou.jx@alibaba-inc.com/](https://public-inbox.org/git/20200304113312.34229-1-zhiyou.jx@alibaba-inc.com/) （Git核心的代码修改）
 

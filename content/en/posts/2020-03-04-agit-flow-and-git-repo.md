@@ -264,12 +264,12 @@ git-repo is a command-line tool for centralized workflow, can work with Gerrit, 
 
 git-repo is an open-source software on GitHub.
 
-+ Source code: [https://github.com/aliyun/git-repo-go](https://github.com/aliyun/git-repo-go/) 
++ Source code: [https://github.com/alibaba/git-repo-go](https://github.com/alibaba/git-repo-go/) 
 + Website: [https://git-repo.info](https://git-repo.info/)
 
 ### Installation
 
-1. Download the latest release of "git-repo" from [https://github.com/aliyun/git-repo-go/releases](https://github.com/aliyun/git-repo-go/releases).
+1. Download the latest release of "git-repo" from [https://github.com/alibaba/git-repo-go/releases](https://github.com/alibaba/git-repo-go/releases).
 
    Choose the proper package according to your OS (Linux, Mac, or Windows) and architecture (AMD or 386), download and extract the package.
 
@@ -376,9 +376,9 @@ git-repo is a client for AGit-Flow, developed using Golang, and is compatible wi
 
 Open source on GitHub:
 
-* https://github.com/aliyun/git-repo-go (Give me a ⭐️)
+* https://github.com/alibaba/git-repo-go (Give me a ⭐️)
 
-* https://github.com/aliyun/git-repo-go-doc (For website https://git-repo.info)
+* https://github.com/alibaba/git-repo-go-doc (For website https://git-repo.info)
 
 * [https://public-inbox.org/git/20200304113312.34229-1-zhiyou.jx@alibaba-inc.com/](https://public-inbox.org/git/20200304113312.34229-1-zhiyou.jx@alibaba-inc.com/) (Patches on git-receive-pack for AGit-Flow)
 

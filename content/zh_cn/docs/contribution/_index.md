@@ -11,8 +11,8 @@ git-repo 采用 go 语言开发，设计中参考了 Android 的 repo 工具，�
 
 ## 代码仓库
 
-+ 代码: https://github.com/aliyun/git-repo-go
-+ 文档: https://github.com/aliyun/git-repo-go-doc
++ 代码: https://github.com/alibaba/git-repo-go
++ 文档: https://github.com/alibaba/git-repo-go-doc
 
 
 ## 构建 git-repo
@@ -22,7 +22,7 @@ git-repo 采用 go 语言开发，设计中参考了 Android 的 repo 工具，�
  
 1. 克隆 git-repo 仓库
 
-        $ git clone https://github.com/aliyun/git-repo-go.git
+        $ git clone https://github.com/alibaba/git-repo-go.git
 
 2. 构建
 
@@ -33,11 +33,11 @@ git-repo 采用 go 语言开发，设计中参考了 Android 的 repo 工具，�
 
 3. 编码风格测试
 
-        $ golint github.com/aliyun/git-repo-go/...
+        $ golint github.com/alibaba/git-repo-go/...
 
 4. 单元测试
 
-        $ go test github.com/aliyun/git-repo-go/...
+        $ go test github.com/alibaba/git-repo-go/...
 
 5. 集成测试
 
@@ -53,4 +53,4 @@ git-repo 采用 go 语言开发，设计中参考了 Android 的 repo 工具，�
 
 ## Bug 和需求
 
-提交 Bug 或需求，请访问: https://github.com/aliyun/git-repo-go
+提交 Bug 或需求，请访问: https://github.com/alibaba/git-repo-go
