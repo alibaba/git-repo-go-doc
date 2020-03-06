@@ -55,7 +55,7 @@
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
         <guid>http://git-repo.info/zh_cn/docs/contribution/</guid>
-        <description>git-repo 采用 go 语言开发，设计中参考了 Android 的 repo 工具，在多仓库管理命令上和 repo 保持兼容。 参与 git-repo 开发，请向 git-repo 仓库发送代码评审请求。 代码仓库 代码: https://github.com/aliyun/git-repo-go 文档: https://github.com/aliyun/git-repo-go-doc 构</description>
+        <description>git-repo 采用 go 语言开发，设计中参考了 Android 的 repo 工具，在多仓库管理命令上和 repo 保持兼容。 参与 git-repo 开发，请向 git-repo 仓库发送代码评审请求。 代码仓库 代码: https://github.com/alibaba/git-repo-go 文档: https://github.com/alibaba/git-repo-go-doc 构</description>
       </item>
       
     

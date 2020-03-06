@@ -20,7 +20,7 @@
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
         <guid>http://git-repo.info/en/docs/getting-started/quickstart/</guid>
-        <description>Quick Start Install git-repo You can download git-repo from: https://github.com/aliyun/git-repo-go/releases.
+        <description>Quick Start Install git-repo You can download git-repo from: https://github.com/alibaba/git-repo-go/releases.
 Choose the proper package according to your OS (Linux, Mac, or Windows), and architecture (amd or 386), download and extract the package.
 Copy the binary into executable PATH (e.g. /usr/local/bin on Linux or macOS) to complete the installation.
 Run git-repo for the first time Run any subcommand of git-repo, will perform some initialization tasks. e.g.:
@@ -34,7 +34,7 @@ $ git repo version  Working on a single repository Make sure to setup a remote t
         
         <guid>http://git-repo.info/en/docs/getting-started/installation/</guid>
         <description>Dependence Install git 2.10.0 or above before install/running git-repo.
-Download and Install git-repo   Download the latest release of git-repo from: https://github.com/aliyun/git-repo-go/releases.
+Download and Install git-repo   Download the latest release of git-repo from: https://github.com/alibaba/git-repo-go/releases.
 Choose the proper package according to your OS (Linux, Mac, or Windows) and architecture (amd or 386), download and extract the package.
   Make git-repo executable before install on Linux or macOS:
  $ chmod a+x git-repo    Move git-repo into an executable PATH (e.</description>
@@ -130,7 +130,7 @@ Android project introduced a better solution for the management of multiple repo
         
         <guid>http://git-repo.info/en/docs/multi-repos/manifest-format/</guid>
         <description>Manifest file example In a manifest repository, there are one or more XML files, which define the relationship of all repositories of the project. The default manifest file in the manifest project is default.xml. See the following content of a manifest file as an example:
-&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot;?&amp;gt; &amp;lt;manifest&amp;gt; &amp;lt;remote name=&amp;quot;origin&amp;quot; fetch=&amp;quot;..&amp;quot; revision=&amp;quot;master&amp;quot; review=&amp;quot;https://codeup.teambition.com&amp;quot; /&amp;gt; &amp;lt;remote name=&amp;quot;github&amp;quot; fetch=&amp;quot;https://github.com&amp;quot; revision=&amp;quot;master&amp;quot; review=&amp;quot;&amp;quot; /&amp;gt; &amp;lt;default remote=&amp;quot;origin&amp;quot; revision=&amp;quot;master&amp;quot; sync-j=&amp;quot;4&amp;quot; /&amp;gt; &amp;lt;project name=&amp;quot;aliyun/git-repo-go&amp;quot; path=&amp;quot;git-repo&amp;quot; groups=&amp;quot;app&amp;quot;&amp;gt; &amp;lt;linkfile src=&amp;quot;README.</description>
+&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot;?&amp;gt; &amp;lt;manifest&amp;gt; &amp;lt;remote name=&amp;quot;origin&amp;quot; fetch=&amp;quot;..&amp;quot; revision=&amp;quot;master&amp;quot; review=&amp;quot;https://codeup.teambition.com&amp;quot; /&amp;gt; &amp;lt;remote name=&amp;quot;github&amp;quot; fetch=&amp;quot;https://github.com&amp;quot; revision=&amp;quot;master&amp;quot; review=&amp;quot;&amp;quot; /&amp;gt; &amp;lt;default remote=&amp;quot;origin&amp;quot; revision=&amp;quot;master&amp;quot; sync-j=&amp;quot;4&amp;quot; /&amp;gt; &amp;lt;project name=&amp;quot;alibaba/git-repo-go&amp;quot; path=&amp;quot;git-repo&amp;quot; groups=&amp;quot;app&amp;quot;&amp;gt; &amp;lt;linkfile src=&amp;quot;README.</description>
       </item>
       
       <item>
