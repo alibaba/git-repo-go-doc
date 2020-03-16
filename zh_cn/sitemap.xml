@@ -339,23 +339,13 @@
   </url>
   
   <url>
-    <loc>http://git-repo.info/zh_cn/2020/03/agit-flow-and-git-repo/</loc>
-    <lastmod>2020-03-04T08:00:00+08:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="http://git-repo.info/en/2020/03/agit-flow-and-git-repo/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh_cn"
-                href="http://git-repo.info/zh_cn/2020/03/agit-flow-and-git-repo/"
-                />
+    <loc>http://git-repo.info/zh_cn/2020/03/something-about-git-merge/</loc>
+    <lastmod>2020-03-15T08:00:00+08:00</lastmod>
   </url>
   
   <url>
     <loc>http://git-repo.info/zh_cn/posts/</loc>
-    <lastmod>2020-03-04T08:00:00+08:00</lastmod>
+    <lastmod>2020-03-15T08:00:00+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -370,7 +360,7 @@
   
   <url>
     <loc>http://git-repo.info/zh_cn/</loc>
-    <lastmod>2020-03-04T08:00:00+08:00</lastmod>
+    <lastmod>2020-03-15T08:00:00+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -380,6 +370,21 @@
                 rel="alternate"
                 hreflang="zh_cn"
                 href="http://git-repo.info/zh_cn/"
+                />
+  </url>
+  
+  <url>
+    <loc>http://git-repo.info/zh_cn/2020/03/agit-flow-and-git-repo/</loc>
+    <lastmod>2020-03-04T08:00:00+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://git-repo.info/en/2020/03/agit-flow-and-git-repo/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh_cn"
+                href="http://git-repo.info/zh_cn/2020/03/agit-flow-and-git-repo/"
                 />
   </url>
   

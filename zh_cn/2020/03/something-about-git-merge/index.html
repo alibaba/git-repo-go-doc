@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>git-repo</title>
+    <title>Git-Merge 的那点事儿 – git-repo</title>
     
 <script src="/js/enquire.min.dfb99dee1e029d51d6cfb672d847929890b1585402de17f5ed092edd72a688b4.js"></script>
 
@@ -338,7 +338,7 @@
 
   
     
-    var permalink = JSON.parse("\"http://git-repo.info/zh_cn/\"");
+    var permalink = JSON.parse("\"http://git-repo.info/zh_cn/2020/03/something-about-git-merge/\"");
     var searchResults = null;
     var searchMenu = null;
     var searchText = null;
@@ -844,22 +844,21 @@
 
 <link rel="stylesheet" href="/css/main.min.css">
 
-    <link rel="alternate" type="application/rss&#43;xml" title="RSS" href="http://git-repo.info/zh_cn/index.xml">
-<meta name="description" content="git-repo: client for agit-flow, gerrit and more" />
+    <meta name="description" content="" />
 <meta name="keywords" content="">
 <meta name="created" content="2020-03-15T08:00:00&#43;0800">
 <meta name="modified" content="2020-03-15T08:00:00&#43;0800">
-
+<meta name="author" content="蒋鑫">
 
 <meta property="og:site_name" content="git-repo">
-<meta property="og:title" content="首页">
-<meta property="og:url" content="http://git-repo.info/zh_cn/">
-<meta property="og:type" content="website">
+<meta property="og:title" content="Git-Merge 的那点事儿">
+<meta property="og:url" content="http://git-repo.info/zh_cn/2020/03/something-about-git-merge/">
+<meta property="og:type" content="article">
 
 <meta name="generator" content="Hugo 0.64.1" />
 <meta name="msapplication-TileColor" content="#ffffff">
 <meta name="theme-color" content="#ffffff">
-<link rel="canonical" href="http://git-repo.info/zh_cn/">
+<link rel="canonical" href="http://git-repo.info/zh_cn/2020/03/something-about-git-merge/">
 <link rel="manifest" href="/manifest.json">
 
   <link rel="apple-touch-icon" sizes="57x57" href="/favicon/apple-icon-57x57.png">
@@ -883,9 +882,15 @@
   {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "url" : "http://git-repo.info/zh_cn/",
-    "name": "首页",
-    "description": "Homepage of git-repo",
+    "headline": "Git-Merge 的那点事儿",
+    "datePublished": "2020-03-15T08:00:00+08:00",
+    "dateModified": "2020-03-15T08:00:00+08:00",
+    "url" : "http://git-repo.info/zh_cn/2020/03/something-about-git-merge/",
+    "description": "如果您在代码合并时发现 Git 合并结果不符合预期，您是否曾怀疑 Git 出现了 bug ？我希望您把这个选项放在最后。让我们一起来看看 Git-Merge 的那点事儿，一起来查找并解",
+    "author": {
+      "@type": "Person",
+      "name": "蒋鑫"
+    },
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "http://git-repo.info"
@@ -926,11 +931,31 @@
     <div class="menu">
   <h6 class="menu__label">
     
-      git-repo
+      posts
     
   </h6>
   <ul>
     
+    
+      
+      
+      
+        
+        
+        <li class="">
+          <a href="http://git-repo.info/zh_cn/2020/03/something-about-git-merge/" class="menu__title ">Git-Merge 的那点事儿</a>
+        </li>
+      
+    
+      
+      
+      
+        
+        
+        <li class="">
+          <a href="http://git-repo.info/zh_cn/2020/03/agit-flow-and-git-repo/" class="menu__title ">AGit-Flow 阿里巴巴集中式 Git 工作流</a>
+        </li>
+      
     
   </ul>
 </div>
@@ -1011,7 +1036,7 @@
           <span id="navMenuMobile" class="hide">
   <button id="navCollapseBtn" class="navbar__dropdown--title" aria-label="Section Menu">
     
-      git-repo
+      posts
     
     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path fill="currentColor" d="M8.12 9.29L12 13.17l3.88-3.88c.39-.39 1.02-.39 1.41 0 .39.39.39 1.02 0 1.41l-4.59 4.59c-.39.39-1.02.39-1.41 0L6.7 10.7c-.39-.39-.39-1.02 0-1.41.39-.38 1.03-.39 1.42 0z"/></svg>
   </button>
@@ -1156,26 +1181,12 @@
       
       
         
-        
-          
-            
-              <a href="http://git-repo.info/en/" data-lang="en" class="lang__dropdown--item">English</a>
-            
-          
-        
-      
-        
-      
-    
-      
-      
-        
       
         
         
           
             
-              <a href="http://git-repo.info/zh_cn/" data-lang="zh_cn" class="lang__dropdown--item active">中文</a>
+              <a href="http://git-repo.info/zh_cn/2020/03/something-about-git-merge/" data-lang="zh_cn" class="lang__dropdown--item active">中文</a>
             
           
         
@@ -1288,79 +1299,603 @@
 </script>
 
         
-  <div class="top">
-  <header class="header home__banner--wrapper">
+ <div class="top">
+  <div class="header__wrapper bgcolor__header">
     <div class="divider">
       <div class="lmr">
-        <div class="home__banner">
-          
-            因新冠病毒爆发，美国对中国关闭入境通道，原计划在 <a href="https://git-merge.com">Git Merge 2020 会议</a> 的演讲议题在本网站发表：《<a href="/zh_cn/2020/03/agit-flow-and-git-repo/">AGit-Flow 集中式工作流和 git-repo</a>》
-          
-        </div>
+        <h2 class="single__title">Git-Merge 的那点事儿</h2>
       </div>
     </div>
-  </header>
+  </div>
+
+  <div class="header__wrapper bgcolor__breadcrumb">
+    <div class="divider">
+      <div class="lmr flexbox">
+        
+          <nav class="breadcrumb" aria-label="breadcrumbs">
+  <ol>
+    
+  
+  
+  
+  
+  
+  <li >
+    
+      <a href="http://git-repo.info/zh_cn/" class="capitalize">首页</a>
+    
+  </li>
+  
+  
+  <li >
+    
+      <a href="http://git-repo.info/zh_cn/posts/" class="capitalize">Posts</a>
+    
+  </li>
+  
+  
+  <li  class="is-active" >
+    
+      <span>Git-Merge 的那点事儿</span>
+    
+  </li>
+  
+  </ol>
+  
+</nav>
+        
+        <div class="grow"></div>
+        
+      </div>
+    </div>
+  </div>
 </div>
 
         
   <div class="mid">
-  <main class="main">
-    <div class="divider">
-      <div class="lmr">
-        <div class="divider">
-  <div class="lmr">
-    <div class="home__landing">
-      <div class="home__landing--img">
-        <img src="/images/git-repo-single.gif" alt="Site Landing Page image">
-      </div>
-      <div class="home__landing--txt">
-        
-          
-          <div class="title" style=";">
-            git-repo
-          </div>
-          
-        
-          
-            <div style="height: 25px"></div>
-          
-        
-          
-            <div class="text" style=";">
-              Create code review in command line
-            </div>
-          
-        
-
-        
-        <a href="docs/" target="_self" rel="noreferrer" class="home__landing--link">
-          <button class="button" aria-label="快速上手" data-color="primary">
-            快速上手
-          </button>
-        </a>
-        
-        <a href="https://github.com/alibaba/git-repo-go/releases" target="_blank" rel="noreferrer" class="home__landing--link">
-          <button class="button" aria-label="下载 git-repo" data-color="default">
-            下载 git-repo
-          </button>
-        </a>
-        
-      </div>
-    </div>
-  </div>
-</div>
-        <div class="divider">
-  <div class="lmr">
-    <div class="home__social">
+  <div class="divider">
+    
+    <nav id="single-menu" class="l">
       
-    </div>
+        <div class="menu">
+  <h6 class="menu__label">
+    
+      posts
+    
+  </h6>
+  <ul>
+    
+    
+      
+      
+      
+        
+        
+        <li>
+          <a href="http://git-repo.info/zh_cn/2020/03/something-about-git-merge/" class="menu__title active">Git-Merge 的那点事儿</a>
+        </li>
+      
+    
+      
+      
+      
+        
+        
+        <li>
+          <a href="http://git-repo.info/zh_cn/2020/03/agit-flow-and-git-repo/" class="menu__title ">AGit-Flow 阿里巴巴集中式 Git 工作流</a>
+        </li>
+      
+    
+  </ul>
+</div>
+      
+    </nav>
+
+    <article id="list-main" class="m">
+      <div class="single" data-display="block">
+  
+
+  <article class="single__contents">
+    <p>如果您在代码合并时发现 Git 合并结果不符合预期，您是否曾怀疑 Git 出现了 bug ？我希望您把这个选项放在最后。让我们一起来看看 Git-Merge 的那点事儿，一起来查找并解决代码合并的异常&hellip;</p>
+<h2 id="理解三路合并">理解三路合并</h2>
+<p>Git 在分支合并时，采用三路合并的方法。不管合并的两个分支包含多少提交，Git 合并操作只关心代码的三个版本，即：合并双方的两个版本和一个基线版本。</p>
+<p>看下我们的示例程序，使用 Go 语言开发，执行结果如下：</p>
+<pre><code>$ git clone https://github.com/jiangxin/git-merge-demo.git
+$ cd git-merge-demo
+$ git checkout demo-1/user-1 --
+$ go build -o demo
+$ ./demo
+Topics:
+  ♠
+  ♥ ♥ 
+  ♣ 
+</code></pre>
+<p>该示例程序输出一些符号，每行输出同一种符号，代表了某一个特性，符号个数代表该特性功能上的异同。</p>
+<p>我们可以看到 &ldquo;demo-1/user-1&rdquo; 分支上，&ldquo;demo&rdquo; 程序有三个特性。特性 &ldquo;♠&rdquo;（一颗）、特性 &ldquo;♥&rdquo;（两颗）、特性 &ldquo;♣&rdquo;（一颗）。</p>
+<p>同样我们在 &ldquo;demo-1/user-2&rdquo; 分支上会看到不同的特性输出：</p>
+<pre><code>♠ ♠ ♠ 
+♥ ♥ ♥ 
+♦ ♦   
+</code></pre>
+<p>这两个分支各自包含三个特性。如果要将这两个分支合并在一起，那么 &ldquo;demo-1/user-1&rdquo; 分支上独有的 &ldquo;♣&rdquo; 特性应该出现在最终的合并结果中么？&ldquo;demo-1/user-2&rdquo; 分支上独有的 &ldquo;♦&rdquo; 特性应该出现在最终的合并结果中么？对于双方共同拥有的 &ldquo;♠&rdquo; 特性在合并结果中是出现一次，还是重复出现三次呢？</p>
+<p>仅从上面这两个分支信息，我们很难推导出合理的合并结果。这时必须要考虑一个问题：这两个分支的特性是如何演变来的。我们要寻找这两个分支的共同的祖先提交，即寻找基线。</p>
+<p>借助 <code>git merge-base</code> 命令，我们可以看到基线提交编号是 <code>228ec07</code>：</p>
+<pre><code>$ git merge-base --all demo-1/user-1 demo-1/user-2
+228ec07e07ac83295b96be1ad55adfbd0c870f74
+</code></pre>
+<p>注意：上面命令中的 <code>--all</code> 参数会显示两个分支所有的基线提交，可能的结果有：</p>
+<ul>
+<li>0 条基线。即两个分支没有重叠，没有公共的历史提交。</li>
+<li>1 条基线。大多数合并场景两个分支存在一条基线。</li>
+<li>多条基线。可能的场景有：1、两条分支都是集成分支，都接受来自各个特性分支的合入。2、特性分支之间存在依赖关系，复杂的特性分支和集成分支之间可能存在多条基线。</li>
+</ul>
+<p>本例只有一条集成分支。从下面的 <code>git-log</code> 命令可以看出本例的两个分支提交历史还是很简单的，两个分支各自独有的提交标记为 &ldquo;+&rdquo; 和 &ldquo;x&rdquo;，共有的提交标记为星号。从这两个分支提交历史的重叠部分，我们很容易看出来重叠的顶端提交 <code>228ec07</code> 即是我们要找的基线提交。</p>
+<pre><code>$ git log --graph --oneline demo-1/user-1 demo-1/user-2
+
++ 34b76a2 (demo-1/user-2) Topic 4: ♦ ♦
++ dfdce61 Remove topic 3
++ 68bc440 Topic 2: ♥ ♥ ♥
+| x 55e002f (demo-1/user-1) Topic 1: ♠
+|/  
+* 228ec07 (demo-1/base) Topic 3: ♣
+* d1f0d8c Topic 2: ♥ ♥
+* 8f19971 Topic 1: ♠ ♠ ♠
+* bfdeca2 Demo for git 3-way merge
+</code></pre>
+<p>切换到基线提交 <code>228ec07</code> 上执行看看：</p>
+<pre><code>$ git checkout 228ec07 --
+$ make
+Topics:
+  ♠ ♠ ♠ 
+  ♥ ♥ 
+  ♣     
+</code></pre>
+<p>下图综合了该程序三个版本，那么合并版本是不是呼之欲出了呢？</p>
+<pre><code>基线版本      User-1 版本      User-2 版本       合并版本
+========    =============    =============    ===========
+ ♠ ♠ ♠          ♠                ♠ ♠ ♠             ?
+ ♥ ♥            ♥ ♥              ♥ ♥ ♥             ?
+ ♣              ♣                                  ?
+                                 ♦ ♦               ?
+</code></pre>
+<p>对于特性 ♠ ，相比基线版本，User-1将其修改为一颗，User-2 没有修改；对于特性♥，相比基线，User-1没有修改，User-2将其修改为三颗；对于特性♣，User-1没有修改，User-2将其删除；而对于特性♦，是由 User-2 新引入的特性。</p>
+<p>让我们执行命令来看一下真实的合并结果吧：</p>
+<pre><code>$ git checkout demo-1/user-1
+$ git merge demo-1/user-2
+$ make
+Topics:
+  ♠ 
+  ♥ ♥ ♥ 
+  ♦ ♦ 
+</code></pre>
+<h2 id="revert-操作引发的异常合并结果">Revert 操作引发的“异常”合并结果</h2>
+<p>下面我们来看一个“异常”的合并。</p>
+<p>在分支 &ldquo;demo-2/topic-1&rdquo; 运行，显示如下：</p>
+<pre><code>$ git checkout demo-2/topic-1
+$ make
+
+  ◉ ◉ ◉ 
+  ▲ ▲ 
+  △ △ △ 
+</code></pre>
+<p>其中特性 ◉ 是主干 &ldquo;demo-2/master&rdquo; 引入的特性。Topic-1 引入两个子特性： ▲ 和 △ 。</p>
+<p>在分支 &ldquo;demo-2/topic-2&rdquo; 运行，显示如下：</p>
+<pre><code>$ git checkout demo-2/topic-2
+$ make
+
+  ◉ ◉ ◉ 
+  ♡ ♡ ♡ 
+</code></pre>
+<p>在主干分支 &ldquo;demo-2/master&rdquo; 运行，显示如下：</p>
+<pre><code>$ git checkout demo-2/master
+$ make
+
+  ◉ ◉ ◉ ◉ 
+  ♡ ♡ ♡ 
+</code></pre>
+<p>我们可以看出主干分支的特性 ◉ 演进了，而且已经包含了 &ldquo;demo-2/topic-2&rdquo; 分支的特性。</p>
+<p>现在将 &ldquo;demo-2/topic-1&rdquo; 分支合并到主干分支 &ldquo;demo-2/master&rdquo;，看看合并解决是否符合预期：</p>
+<pre><code>$ git checkout demo-2/master
+$ git merge demo-2/topic-1
+$ make
+
+  ◉ ◉ ◉ ◉ 
+  △ △ △ 
+  ♡ ♡ ♡ 
+</code></pre>
+<p>看出问题了么？<strong>&ldquo;demo-2/topic-1&rdquo; 分支的特性没有全部合入，只合入了特性 △ ，而丢失特性 ▲ !</strong></p>
+<p><strong>让我们来分析一下：</strong></p>
+<ul>
+<li>
+<p>先撤回刚刚的合并提交。</p>
+<pre><code>  $ git reset --hard HEAD^
+</code></pre>
+</li>
+<li>
+<p>计算合并基线：</p>
+<pre><code>  $ git merge-base --all demo-2/topic-1 demo-2/master 
+  5db8ab7c5c1d2ede82096ae890446c290a664060
+</code></pre>
+</li>
+<li>
+<p>切换到这个基线版本：</p>
+<pre><code>  $ git checkout 5db8ab7c5c1d2ede82096ae890446c290a664060 --
+  $ make
+
+    ◉ ◉ ◉ 
+    ▲ ▲ 
+</code></pre>
+</li>
+<li>
+<p>基线版本有特性 ▲ ，分支 &ldquo;demo-2/topic-1&rdquo; 也有特性 ▲ ，但是主干分支 &ldquo;demo-2/master&rdquo; 上并没有特性 ▲。</p>
+<p>按照三路合并的原理分析，我们看出合并结果丢失特性 ▲ 是预料中的：</p>
+<pre><code>  基线 5db8ab7   demo-2/master   demo-2/topic-1   合并版本
+  ============   =============   ==============   ========
+     ◉ ◉ ◉          ◉ ◉ ◉ ◉          ◉ ◉ ◉        ◉ ◉ ◉ ◉ 
+     ▲ ▲                             ▲ ▲         
+                                     △ △ △        △ △ △ 
+                    ♡ ♡ ♡                         ♡ ♡ ♡   
+</code></pre>
+</li>
+<li>
+<p>下面命令用于查询基线 <code>5db8ab7</code> 之后主干分支的变更，看看哪个提交删除了特性 ▲ ：</p>
+<pre><code>  $ git log --stat --oneline 5db8ab7..demo-2/master
+  .... ....
+  e50fc0b Topic 1 is not complete, and is not ready for merge
+   topic/topic-1.1.go | 20 --------------------
+   1 file changed, 20 deletions(-)
+  .... ....
+</code></pre>
+</li>
+</ul>
+<p>从上面的日志输出，我们看到主干分支 &ldquo;demo-2/master&rdquo; 上的一个可疑提交 <code>e50fc0b</code>。这个提交删除了文件 &ldquo;topic-1.1.go&rdquo;。提交说明表明“因为当时 topic1 功能尚未完整，故撤回不完整的合并提交”。</p>
+<p>如何才能将 &ldquo;demo-2/topic-1&rdquo; 特性完整地合入呢？采用如下操作：</p>
+<ol>
+<li>
+<p>对提交 <code>e50fc0b</code> 再次执行一次撤回操作。</p>
+<pre><code> $ git checkout demo-2/master --
+ $ git revert e50fc0b
+</code></pre>
+</li>
+<li>
+<p>然后再合并分支 &ldquo;demo-2/topic-1&rdquo;。</p>
+<pre><code> $ git merge demo-2/topic-1
+</code></pre>
+</li>
+<li>
+<p>执行程序，查看合并效果。</p>
+<pre><code> $ make
+
+   ◉ ◉ ◉ ◉ 
+   ▲ ▲ 
+   △ △ △ 
+   ♡ ♡ ♡ 
+</code></pre>
+</li>
+</ol>
+<p>操作完成，我们看到 &ldquo;demo-2/topic-1&rdquo; 分支完整的特性都合入了。</p>
+<h2 id="脏合并引发的异常">“脏合并”引发的“异常”</h2>
+<p>下面我们来看另外一个“异常”的合并。</p>
+<p>在当前版本的开发分支 &ldquo;demo-3/master&rdquo; 运行，显示如下：</p>
+<pre><code>$ git checkout demo-3/master
+$ make
+
+  ◉ ◉ ◉ ◉ ◉ 
+  ♠ ♠ ♠ ♠ 
+  ♦ ♦ ♦ 
+</code></pre>
+<p>其中特性 ◉ 是主干 &ldquo;demo-3/master&rdquo; 引入的特性。其余两个特性 ♠ 和 ♦ 是从相应的特性分支合入的。</p>
+<p>接下来，在下一个版本的开发分支 &ldquo;demo-3/next&rdquo; 中运行，显示如下：</p>
+<pre><code>$ git checkout demo-3/next
+$ make
+
+  ❍ ❍ ❍ ❍ 
+  ♠ ♠ ♠ ♠ 
+  ♥ ♥ 
+  ♦ ♦ ♦ 
+</code></pre>
+<p>其中特性 ❍ 是新版本主干 &ldquo;demo-3/next&rdquo; 引入的特性。其余三个特性 ♠、♥ 和 ♦ 是从相应的特性分支合入的。</p>
+<p>现在要将当前版本 &ldquo;demo-3/master&rdquo; 合入到下一个新版本的开发分支 &ldquo;demo-3/next&rdquo; 中，运行如下：</p>
+<pre><code>$ git checkout demo-3/next
+$ git merge demo-3/master
+$ make
+
+  ◉ ◉ ◉ ◉ ◉ 
+  ❍ ❍ ❍ ❍ 
+  ♠ ♠ ♠ ♠ 
+  ♦ ♦ ♦ 
+</code></pre>
+<p>我们看到合并后，&ldquo;demo-3/master&rdquo; 分支的特性 ◉ 被引入了，但是 &ldquo;demo-3/next&rdquo; 分支原有的特性 ♥ 被删除了。如果特性 ♥ 是需要的，那么合并后为何会丢失特性 ♥ 呢？</p>
+<p>我们按照三路合并的原理来分析一下。</p>
+<p>首先查看下分支 &ldquo;demo-3/master&rdquo; 以及分支 &ldquo;demo-3/next&rdquo; 合并前提交（即 &ldquo;demo-3/next~1&rdquo;）的基线：</p>
+<pre><code>$ git merge-base --all demo-3/master demo-3/next~1
+e54a597938d7aaa20c8b3ce79d0b6c5bca8404e7
+6b57153213757421f83523d1b03f7743aa654160
+b2c844810a095a4e05763ffaff326101e61d444f
+</code></pre>
+<p>惊奇的发现，基线居然有三条！这实际上是三个特性分支分别向 &ldquo;demo-3/master&rdquo; 和 &ldquo;demo-3/next&rdquo; 分支合入后的结果。</p>
+<p>我们使用命令 <code>git log --graph --oneline demo-3/master demo-3/next~1</code> 查看合并双方的提交。如果只显示两个分支重合的部分，如下图所示：</p>
+<pre><code>   * 6b57153 (demo-3/topic-3) Topic 3: ♦ ♦ ♦
+   * f1dca57 Topic 3: ♦
+  /
+ / 
+|  
+| * b2c8448 (demo-3/topic-2) Topic 2: ♥ ♥
+| * 60f846d Topic 2: ♥
+|/
+|
+| * e54a597 (demo-3/topic-1) Topic 1: ♠ ♠ ♠ ♠
+| * 3ccbd75 Topic 1: ♠ ♠
+| * 18ea90f Topic 1: ♠
+|/
+|
+|  
+* bfdeca2 (tag: v0) Demo for git 3-way merge
+</code></pre>
+<p>会看到有三个端点对应三条基线。</p>
+<p>那么对于多基线场景，如何来分析呢？</p>
+<p>Git 会将多条基线合并为一个提交，再将这个提交作为唯一的基线，参与到三路合并中。</p>
+<pre><code>$ git checkout -b demo-3/base e54a597
+$ git merge 6b57153 b2c8448
+$ make
+
+  ♠ ♠ ♠ ♠ 
+  ♥ ♥ 
+  ♦ ♦ ♦ 
+</code></pre>
+<p>列出下列表格分析三路合并结果：</p>
+<pre><code>基线 base    master 分支     next 分支    合并结果
+=========   ============   ==========   ==========
+              ◉ ◉ ◉ ◉ ◉                  ◉ ◉ ◉ ◉ ◉ 
+                            ❍ ❍ ❍ ❍      ❍ ❍ ❍ ❍ 
+ ♠ ♠ ♠ ♠      ♠ ♠ ♠ ♠       ♠ ♠ ♠ ♠      ♠ ♠ ♠ ♠ 
+ ♥ ♥                        ♥ ♥ 
+ ♦ ♦ ♦        ♦ ♦ ♦         ♦ ♦ ♦        ♦ ♦ ♦ 
+</code></pre>
+<p>从上面表格可以看出来，特性 ♥ 在基线中存在，在 &ldquo;demo-3/next&rdquo; 分支中也存在，但是被 &ldquo;demo-3/master&rdquo; 中删除了。所以导致合并结果中缺失了特性 ♥ 。</p>
+<p>那么 &ldquo;demo-3/master&rdquo; 分支是如何在基线 &ldquo;demo-3/base&rdquo; 之后删除了特性 ♥ 的呢？</p>
+<p>在一段提交历史中找出一个有问题的版本有很多办法，例如使用 <code>git bisect</code> 二分查找命令。不过这里使用 <code>git log</code> 命令就足够了。</p>
+<p>使用如下命令查看这段历史中非合并提交：</p>
+<pre><code>$ git log --oneline --stat --no-merges demo-3/base..demo-3/master
+05f2ec3 (origin/demo-3/master, demo-3/master) Topic master: ◉ ◉ ◉ ◉ ◉
+ topic/master.go | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+5daade4 Topic master: ◉ ◉ ◉ ◉
+ topic/master.go | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+6325a3f Topic master: ◉ ◉ ◉
+ topic/master.go | 19 +++++++++++++++++++
+ 1 file changed, 19 insertions(+)
+</code></pre>
+<p>看到非合并提交都是在修改特性 ◉ 的，和特性 ♥ 无关。</p>
+<p>那么问题一定出在合并提交中。不过使用下面命令看不出来合并提交包含了哪些修改，你知道为什么吗？</p>
+<pre><code>$ git log --oneline --stat --merges demo-3/base..demo-3/master
+3a69a8a Merge branch 'demo-3/topic-3' into demo-3/master
+37544d1 Merge branch 'demo-3/topic-2' into demo-3/master
+d872d8f Merge branch 'demo-3/topic-1' into demo-3/master
+</code></pre>
+<p>合并提交是将两个或多个提交合并在一起，因此合并提交有两个以上的父提交。合并的结果要么选择合并的某一方的版本，要么和任何一方版本都不一样，综合了各方版本的修改。</p>
+<p>使用 <code>git log -p</code> 或者 <code>git log --stat</code> 显示提交差异，默认是不会显示合并提交差异的。Git 提供以下三个参数改变 <code>git log</code> 或 <code>git diff</code> 的行为，显示合并提交包含的差异。分别是：</p>
+<ul>
+<li>
+<p>参数 <code>-m</code>：分别显示合并提交和每一个父提交的差异。如果合并有两个父提交，则分别显示两个差异比较的结果。</p>
+</li>
+<li>
+<p>参数 <code>-c</code>：将合并提交和各个父提交的差异合并在一起显示。如果和某个父提交相同，则不显示。</p>
+</li>
+<li>
+<p>参数 <code>--cc</code>：类似 <code>-c</code>，进一步精简补丁的显示，忽略和某一方相同的补丁的显示。</p>
+</li>
+</ul>
+<p>对于本例，使用 <code>-m</code> 参数，执行结果如下：</p>
+<pre><code>$ git log --oneline -m --stat --merges demo-3/base..demo-3/master   
+
+3a69a8a (from 37544d1) Merge branch 'demo-3/topic-3' into demo-3/master
+ topic/3.go | 19 +++++++++++++++++++
+ 1 file changed, 19 insertions(+)
+3a69a8a (from 6b57153) Merge branch 'demo-3/topic-3' into demo-3/master
+ topic/1.go      | 19 +++++++++++++++++++
+ topic/master.go | 19 +++++++++++++++++++
+ 2 files changed, 38 insertions(+)
+37544d1 (from b2c8448) Merge branch 'demo-3/topic-2' into demo-3/master
+ topic/1.go      | 19 +++++++++++++++++++
+ topic/2.go      | 19 -------------------
+ topic/master.go | 19 +++++++++++++++++++
+ 3 files changed, 38 insertions(+), 19 deletions(-)
+d872d8f (from 6325a3f) Merge branch 'demo-3/topic-1' into demo-3/master
+ topic/1.go | 19 +++++++++++++++++++
+ 1 file changed, 19 insertions(+)
+d872d8f (from e54a597) Merge branch 'demo-3/topic-1' into demo-3/master
+ topic/master.go | 19 +++++++++++++++++++
+ 1 file changed, 19 insertions(+)
+</code></pre>
+<p>从输出中我们看到合并提交 <code>37544d1</code> 删除了 <code>topic/2.go</code> 文件。经查这个提交就是导致特性 ♥ 丢失的罪魁祸首。</p>
+<pre><code>$ git log -1 37544d1
+commit 37544d18c2da92a265acd6a7a8145bed4ba51bd8
+Merge: 5daade4 b2c8448
+Author: Jiang Xin &lt;zhiyou.jx@alibaba-inc.com&gt;
+Date:   Sun Mar 15 19:53:56 2020 +0800
+
+    Merge branch 'demo-3/topic-2' into demo-3/master
+    
+    * demo-3/topic-2:
+      Topic 2: ♥ ♥
+      Topic 2: ♥
+    
+    Signed-off-by: Jiang Xin &lt;zhiyou.jx@alibaba-inc.com&gt;
+</code></pre>
+<p>如何解决合并 <code>demo-3/master</code> 分支丢失特性 ♥ 的问题呢？</p>
+<p>我们需要重新执行一次和提交 <code>37544d1</code> 类似的合并：</p>
+<pre><code>$ git checkout 5daade4 --
+$ git merge b2c8448
+$ make
+
+  ◉ ◉ ◉ ◉ 
+  ♠ ♠ ♠ ♠ 
+  ♥ ♥ 
+</code></pre>
+<p>我们看合并的结果中出现了特性 ♥。</p>
+<p>然后再和错误的提交 <code>37544d1</code> 做一次合并，并使用当前提交中的内容。</p>
+<pre><code>$ git merge -s ours 37544d1
+$ make
+
+  ◉ ◉ ◉ ◉ 
+  ♠ ♠ ♠ ♠ 
+  ♥ ♥ 
+</code></pre>
+<p>记下这个合并提交。</p>
+<pre><code>$ git tag -m &quot;fixed merge&quot; fixed-merge
+</code></pre>
+<p>切换到 &ldquo;demo-3/next&rdquo; 分支，合并这个刚刚创建好的正确的提交。</p>
+<pre><code>$ git checkout demo-3/next --
+$ git merge fixed-merge
+$ make
+
+  ◉ ◉ ◉ ◉ ◉ 
+  ❍ ❍ ❍ ❍ 
+  ♠ ♠ ♠ ♠ 
+  ♥ ♥ 
+  ♦ ♦ ♦ 
+</code></pre>
+<p>完美的合并结果。</p>
+<h2 id="建议">建议</h2>
+<ol>
+<li>
+<p>创建 pull request 代码评审时，不要在其中包含合并提交。</p>
+<p>因为合并提交的差异很难查看和分析，不要因此增加代码评审者的负担。开发者可以使用 <code>git rebase</code> 命令去掉不必要的合并提交。</p>
+</li>
+<li>
+<p>如果做到了第一点，就不会出现多基线的情况。要避免多基线。</p>
+<p>多基线一方面增加了三路合并分析的复杂度，另外一方面导致 pull request 展示的代码差异是错的！因为绝大多数代码平台从执行效率考虑，都只会选择多条基线中的一条来和 pull request 的源分支进行比较，显示代码差异。读者可以翻到前面的示例，看看如果选择多条基线中的一条（而不是使用多条基线的合并结果）与要合并的代码进行代码比较，会是什么样的结果？</p>
+</li>
+<li>
+<p>使用 <code>git merge</code> 命令完成分支合并，而不要使用目录比较工具去人为判断合并结果。</p>
+<p>因为人工选择合并结果可能造成“脏合并”，“脏合并”像是埋在提交记录中的一枚炸弹，会在未来随时引爆。</p>
+</li>
+</ol>
+<h2 id="if-not-now-when-if-not-me-who">If not now, when? if not me, who?</h2>
+<p>如果你是一个懂代码，爱Git，有技术梦想的工程师，并想要和我们一起打造世界NO.1的代码服务和云产品，请联系我们吧！C/C++/Golang/Java 我们都要 💖</p>
+<p>简历投递邮箱：</p>
+<ul>
+<li><a href="mailto:zhiyou.jx@alibaba-inc.com">zhiyou.jx@alibaba-inc.com</a></li>
+<li><a href="mailto:worldhello.net@gmail.com">worldhello.net@gmail.com</a></li>
+</ul>
+
+  </article>
+</div>
+      
+<div class="grow"></div>
+<nav class="pagination-single">
+  
+  <div class="grow"></div>
+  
+    <a href="http://git-repo.info/zh_cn/2020/03/agit-flow-and-git-repo/" title="AGit-Flow 阿里巴巴集中式 Git 工作流" class="pagination-single__left">
+      <div class="pagination-single__left-title">AGit-Flow 阿里巴巴集中式 Git 工作流</div>
+      <div class="pagination-single__icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0V0z"/><path fill="currentColor" d="M5 13h11.17l-4.88 4.88c-.39.39-.39 1.03 0 1.42.39.39 1.02.39 1.41 0l6.59-6.59c.39-.39.39-1.02 0-1.41l-6.58-6.6c-.39-.39-1.02-.39-1.41 0-.39.39-.39 1.02 0 1.41L16.17 11H5c-.55 0-1 .45-1 1s.45 1 1 1z"/></svg>
+      </div>
+    </a>
+  
+</nav>
+
+
+      
+  
+    <div id="utterances"></div>
+<noscript>Please enable JavaScript to view the <a href="https://github.com/utterance">comments powered by utterances.</a></noscript>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    try {
+      
+      var owner = JSON.parse("\"jiangxin\"");
+      
+      var repo = JSON.parse("\"alibaba/git-repo-go-doc\"");
+      var localTheme = localStorage.getItem('theme');
+      var utterTheme = localTheme === "dark" || localTheme === "hacker" ? 'photon-dark' : localTheme === 'kimbie' ? 'github-dark-orange' : 'github-light'
+
+      var myScript = document.createElement('script');
+      myScript.setAttribute('src', 'https://utteranc.es/client.js');
+      myScript.setAttribute('repo', `${owner}/${repo}`);
+      myScript.setAttribute('issue-term', 'pathname');
+      myScript.setAttribute('theme', utterTheme);
+      myScript.setAttribute('crossorigin', 'anonymous');
+      myScript.setAttribute('async', '');
+
+      myScript.onload = function() {
+      }
+
+      document.getElementById('utterances').appendChild(myScript);
+    } catch (err) {
+      console.log(err);
+    }
+  });
+</script>
+
+  
+
+    </article>
+    
+    <section id="list-side" class="r">
+      
+        <div class="toc">
+  <h6 class="toc__label">What&#39;s on this Page</h6>
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#理解三路合并">理解三路合并</a></li>
+    <li><a href="#revert-操作引发的异常合并结果">Revert 操作引发的“异常”合并结果</a></li>
+    <li><a href="#脏合并引发的异常">“脏合并”引发的“异常”</a></li>
+    <li><a href="#建议">建议</a></li>
+    <li><a href="#if-not-now-when-if-not-me-who">If not now, when? if not me, who?</a></li>
+  </ul>
+</nav>
+</div>
+      
+    </section>
+
   </div>
 </div>
-      </div>
-    </div>
-  </main>
-</div>
 
+<script>
+  var listSide = document.getElementById('list-side');
+  var listMain = document.getElementById('list-main');
+  var singleMenu = document.getElementById('single-menu');
+
+  enquire.register("screen and (max-width:1280px)", {
+    match: function () {
+      listSide.className = 'r';
+      listMain.className = 'm';
+      singleMenu.className = 'l';
+    },
+    unmatch: function () {
+      listSide.className = 'r';
+      listMain.className = 'm';
+      singleMenu.className = 'l';
+    },
+  }).register("screen and (max-width:960px)", {
+    match: function () {
+      listSide.className = 'hide';
+      listMain.className = 'mr';
+      singleMenu.className = 'l';
+    },
+    unmatch: function () {
+      listSide.className = 'r';
+      listMain.className = 'm';
+      singleMenu.className = 'l';
+    },
+  }).register("screen and (max-width:600px)", {
+    match: function () {
+      listSide.className = 'hide';
+      listMain.className = 'lmr';
+      singleMenu.className = 'hide';
+    },
+    unmatch: function () {
+      listSide.className = 'hide';
+      listMain.className = 'mr';
+      singleMenu.className = 'l';
+      
+    },
+  });
+</script>
 
         
 <div class="bot">
