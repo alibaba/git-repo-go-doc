@@ -1731,7 +1731,7 @@
 <h2 id="1-create-a-code-review">1. Create a code review</h2>
 <h3 id="11-clone">1.1 Clone</h3>
 <p>Clone remote repository to the local workspace (Ignore this step, if have local repository already):</p>
-<pre><code>$ git clone https://codeup.teambition.com/git-repo/demo.git
+<pre><code>$ git clone https://codeup.aliyun.com/git-repo/demo.git
 $ cd demo
 </code></pre>
 <h4 id="12-create-a-local-topic-branch">1.2 Create a local topic branch</h4>
@@ -1830,19 +1830,19 @@ Please run command &quot;git branch -u &lt;upstream&gt;&quot; to track a remote 
 <p>Save the content and quit the editor, <code>git pr</code> will continue to send local commits to remote server to create/update a code review.</p>
 <h3 id="16-result-of-creatingupdating-a-code-review">1.6 Result of creating/updating a code review</h3>
 <p>After executing <code>git pr</code> successfully, will show message of creating/updating a code review. The following message is an example of Alibaba code platform:</p>
-<pre><code>remote: +----------------------------------------------------------------+
-remote: | Merge Request #7937 was created or updated.                    |
-remote: | View merge request at URL:                                     |
-remote: | https://codeup.teambition.com/git-repo/demo/merge_request/7937 |
-remote: +----------------------------------------------------------------+
-To ssh://codeup.teambition.com/git-repo/demo.git
+<pre><code>remote: +------------------------------------------------------------+
+remote: | Merge Request #7937 was created or updated.                |
+remote: | View merge request at URL:                                 |
+remote: | https://codeup.aliyun.com/git-repo/demo/merge_request/7937 |
+remote: +------------------------------------------------------------+
+To ssh://codeup.aliyun.com/git-repo/demo.git
  * [new branch]      topic1 -&gt; refs/for/master/topic1
 </code></pre>
 <p>NOTE: in the above message, there is a URL to access the generated code review.</p>
 <h3 id="17-special-reference-of-the-code-review-for-download">1.7 Special reference of the code review for download</h3>
 <p>A new special reference will be created inside the repository for user to access the generated code review. The special reference is not a branch or tag, and need to be fetched using a special command, e.g.:</p>
 <pre><code>$ git fetch origin refs/merge-requests/7937/head
-From https://codeup.teambition.com/git-repo/demo.git
+From https://codeup.aliyun.com/git-repo/demo.git
  * branch            refs/merge-requests/7937/head -&gt; FETCH_HEAD
 </code></pre>
 <p>Check out the fetched commit:</p>

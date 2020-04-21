@@ -1732,7 +1732,7 @@
 <p>使用 <code>git peer-review</code> 命令创建代码评审的步骤如下：</p>
 <h3 id="11-克隆远程仓库到工作区">1.1 克隆远程仓库到工作区</h3>
 <p>克隆远程仓库到本地工作区。（如果工作区中已经存在该仓库，则忽略此步骤。）</p>
-<pre><code>$ git clone https://codeup.teambition.com/git-repo/demo.git
+<pre><code>$ git clone https://codeup.aliyun.com/git-repo/demo.git
 </code></pre>
 <p>切换到本地仓库的工作区：</p>
 <pre><code>$ cd demo
@@ -1833,12 +1833,12 @@ Please run command &quot;git branch -u &lt;upstream&gt;&quot; to track a remote 
 <p>编辑的内容会以模板的方式保存，以便在下一次执行 <code>git pr</code> 时复用。</p>
 <h3 id="16-完成代码评审的创建">1.6 完成代码评审的创建</h3>
 <p><code>git pr</code> 命令执行完毕后，显示代码评审创建成功的消息，示例如下：</p>
-<pre><code>remote: +----------------------------------------------------------------+
-remote: | Merge Request #7937 was created or updated.                    |
-remote: | View merge request at URL:                                     |
-remote: | https://codeup.teambition.com/git-repo/demo/merge_request/7937 |
-remote: +----------------------------------------------------------------+
-To ssh://codeup.teambition.com/git-repo/demo.git
+<pre><code>remote: +------------------------------------------------------------+
+remote: | Merge Request #7937 was created or updated.                |
+remote: | View merge request at URL:                                 |
+remote: | https://codeup.aliyun.com/git-repo/demo/merge_request/7937 |
+remote: +------------------------------------------------------------+
+To ssh://codeup.aliyun.com/git-repo/demo.git
  * [new branch]      topic1 -&gt; refs/for/master/topic1
 </code></pre>
 <p>注意：提示信息中包含创建成功的代码评审的 URL 地址，通过浏览器访问该地址，显示创建好的代码评审。</p>
@@ -1846,7 +1846,7 @@ To ssh://codeup.teambition.com/git-repo/demo.git
 <p>通过命令行工具在服务器端创建代码评审，服务端不会创建新的分支，但是为了方便用户远程下载评审代码，仓库中生成了一个特殊的引用。</p>
 <p>例如上面创建的第 7937 号代码评审，会创建包含该评审 ID 号的特殊引用，如：<code>refs/merge-requests/7937/head</code>。下载该待评审的代码，可以使用如下命令：</p>
 <pre><code>$ git fetch origin refs/merge-requests/7937/head
-From https://codeup.teambition.com/git-repo/demo.git
+From https://codeup.aliyun.com/git-repo/demo.git
  * branch            refs/merge-requests/7937/head -&gt; FETCH_HEAD
 </code></pre>
 <p>检出相关代码：</p>

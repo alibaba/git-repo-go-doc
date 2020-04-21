@@ -85,7 +85,7 @@ $ git repo upgrade Download git-repo: ##########################################
         <guid>http://git-repo.info/en/docs/single-repo/git-peer-review/</guid>
         <description>git-repo provides alias command git peer-review or git pr to create a code review on a single repository.
 1. Create a code review 1.1 Clone Clone remote repository to the local workspace (Ignore this step, if have local repository already):
-$ git clone https://codeup.teambition.com/git-repo/demo.git $ cd demo  1.2 Create a local topic branch This step is optional. If you want to work on several different tasks at the same local workspace, you must create a topic branch for each task.</description>
+$ git clone https://codeup.aliyun.com/git-repo/demo.git $ cd demo  1.2 Create a local topic branch This step is optional. If you want to work on several different tasks at the same local workspace, you must create a topic branch for each task.</description>
       </item>
       
       <item>
@@ -130,7 +130,7 @@ Android project introduced a better solution for the management of multiple repo
         
         <guid>http://git-repo.info/en/docs/multi-repos/manifest-format/</guid>
         <description>Manifest file example In a manifest repository, there are one or more XML files, which define the relationship of all repositories of the project. The default manifest file in the manifest project is default.xml. See the following content of a manifest file as an example:
-&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot;?&amp;gt; &amp;lt;manifest&amp;gt; &amp;lt;remote name=&amp;quot;origin&amp;quot; fetch=&amp;quot;..&amp;quot; revision=&amp;quot;master&amp;quot; review=&amp;quot;https://codeup.teambition.com&amp;quot; /&amp;gt; &amp;lt;remote name=&amp;quot;github&amp;quot; fetch=&amp;quot;https://github.com&amp;quot; revision=&amp;quot;master&amp;quot; review=&amp;quot;&amp;quot; /&amp;gt; &amp;lt;default remote=&amp;quot;origin&amp;quot; revision=&amp;quot;master&amp;quot; sync-j=&amp;quot;4&amp;quot; /&amp;gt; &amp;lt;project name=&amp;quot;alibaba/git-repo-go&amp;quot; path=&amp;quot;git-repo&amp;quot; groups=&amp;quot;app&amp;quot;&amp;gt; &amp;lt;linkfile src=&amp;quot;README.</description>
+&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot;?&amp;gt; &amp;lt;manifest&amp;gt; &amp;lt;remote name=&amp;quot;origin&amp;quot; fetch=&amp;quot;..&amp;quot; revision=&amp;quot;master&amp;quot; review=&amp;quot;https://codeup.aliyun.com&amp;quot; /&amp;gt; &amp;lt;remote name=&amp;quot;github&amp;quot; fetch=&amp;quot;https://github.com&amp;quot; revision=&amp;quot;master&amp;quot; review=&amp;quot;&amp;quot; /&amp;gt; &amp;lt;default remote=&amp;quot;origin&amp;quot; revision=&amp;quot;master&amp;quot; sync-j=&amp;quot;4&amp;quot; /&amp;gt; &amp;lt;project name=&amp;quot;alibaba/git-repo-go&amp;quot; path=&amp;quot;git-repo&amp;quot; groups=&amp;quot;app&amp;quot;&amp;gt; &amp;lt;linkfile src=&amp;quot;README.</description>
       </item>
       
       <item>

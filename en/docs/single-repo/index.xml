@@ -33,7 +33,7 @@
         <guid>http://git-repo.info/en/docs/single-repo/git-peer-review/</guid>
         <description>git-repo provides alias command git peer-review or git pr to create a code review on a single repository.
 1. Create a code review 1.1 Clone Clone remote repository to the local workspace (Ignore this step, if have local repository already):
-$ git clone https://codeup.teambition.com/git-repo/demo.git $ cd demo  1.2 Create a local topic branch This step is optional. If you want to work on several different tasks at the same local workspace, you must create a topic branch for each task.</description>
+$ git clone https://codeup.aliyun.com/git-repo/demo.git $ cd demo  1.2 Create a local topic branch This step is optional. If you want to work on several different tasks at the same local workspace, you must create a topic branch for each task.</description>
       </item>
       
       <item>
