@@ -36,9 +36,9 @@ weight: 48
 1. 在每个项目中执行 shell 命令，查看当前目录
 
         $ git repo forall  -c 'echo "Project $REPO_PROJECT in `pwd`"'
-        Project git-repo/demo in /Users/jiangxin/work/teambition/git-repo-demo/demo
-        Project git-repo/demo-vendor in /Users/jiangxin/work/teambition/git-repo-demo/demo/vendor
-        Project git-repo/demo-doc in /Users/jiangxin/work/teambition/git-repo-demo/doc
+        Project git-repo/demo in /Users/jiangxin/work/aliyun/git-repo-demo/demo
+        Project git-repo/demo-vendor in /Users/jiangxin/work/aliyun/git-repo-demo/demo/vendor
+        Project git-repo/demo-doc in /Users/jiangxin/work/aliyun/git-repo-demo/doc
 
 2. 显示最新一条 git 日志
        

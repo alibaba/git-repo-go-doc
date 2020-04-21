@@ -11,16 +11,16 @@ In a manifest repository, there are one or more XML files, which define the rela
     <?xml version="1.0" encoding="UTF-8"?>
     <manifest>
       <remote  name="origin"
-    	   fetch=".."
-    	   revision="master"
-    	   review="https://codeup.teambition.com" />
+               fetch=".."
+               revision="master"
+               review="https://codeup.aliyun.com" />
       <remote  name="github"
-    	   fetch="https://github.com"
-    	   revision="master"
-    	   review="" />
+               fetch="https://github.com"
+               revision="master"
+               review="" />
       <default remote="origin"
                revision="master"
-    	   sync-j="4" />
+               sync-j="4" />
     
       <project name="alibaba/git-repo-go" path="git-repo" groups="app">
         <linkfile src="README.md" dest="README.md"></linkfile>

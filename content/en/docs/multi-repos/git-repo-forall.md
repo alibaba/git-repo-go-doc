@@ -36,9 +36,9 @@ Available options:
 1. Execute shell command to show the current working directory on each project.
 
         $ git repo forall  -c 'echo "Project $REPO_PROJECT in `pwd`"'
-        Project git-repo/demo in /Users/jiangxin/work/teambition/git-repo-demo/demo
-        Project git-repo/demo-vendor in /Users/jiangxin/work/teambition/git-repo-demo/demo/vendor
-        Project git-repo/demo-doc in /Users/jiangxin/work/teambition/git-repo-demo/doc
+        Project git-repo/demo in /Users/jiangxin/work/aliyun/git-repo-demo/demo
+        Project git-repo/demo-vendor in /Users/jiangxin/work/aliyun/git-repo-demo/demo/vendor
+        Project git-repo/demo-doc in /Users/jiangxin/work/aliyun/git-repo-demo/doc
 
 2. Show the latest git commit message on all projects.
        

@@ -3,7 +3,7 @@ title: 首页
 description: Homepage of git-repo
 draft: false
 updatesBanner: "因新冠病毒爆发，美国对中国关闭入境通道，原计划在 [Git Merge 2020 会议](https://git-merge.com) 的演讲议题在本网站发表：《[AGit-Flow 集中式工作流和 git-repo](/zh_cn/2020/03/agit-flow-and-git-repo/)》"
-landingImage: /images/git-repo-single.gif
+landingImage: /images/git-pr-demo.gif
 landingTitle:
   - git-repo
 landingText:

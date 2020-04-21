@@ -13,7 +13,7 @@ weight: 32
 
 Clone remote repository to the local workspace (Ignore this step, if have local repository already):
 
-    $ git clone https://codeup.teambition.com/git-repo/demo.git
+    $ git clone https://codeup.aliyun.com/git-repo/demo.git
     $ cd demo
 
 
@@ -133,12 +133,12 @@ Save the content and quit the editor, `git pr` will continue to send local commi
 
 After executing `git pr` successfully, will show message of creating/updating a code review. The following message is an example of Alibaba code platform:
 
-    remote: +----------------------------------------------------------------+
-    remote: | Merge Request #7937 was created or updated.                    |
-    remote: | View merge request at URL:                                     |
-    remote: | https://codeup.teambition.com/git-repo/demo/merge_request/7937 |
-    remote: +----------------------------------------------------------------+
-    To ssh://codeup.teambition.com/git-repo/demo.git
+    remote: +------------------------------------------------------------+
+    remote: | Merge Request #7937 was created or updated.                |
+    remote: | View merge request at URL:                                 |
+    remote: | https://codeup.aliyun.com/git-repo/demo/merge_request/7937 |
+    remote: +------------------------------------------------------------+
+    To ssh://codeup.aliyun.com/git-repo/demo.git
      * [new branch]      topic1 -> refs/for/master/topic1
 
 NOTE: in the above message, there is a URL to access the generated code review.
@@ -149,7 +149,7 @@ NOTE: in the above message, there is a URL to access the generated code review.
 A new special reference will be created inside the repository for user to access the generated code review. The special reference is not a branch or tag, and need to be fetched using a special command, e.g.:
 
     $ git fetch origin refs/merge-requests/7937/head
-    From https://codeup.teambition.com/git-repo/demo.git
+    From https://codeup.aliyun.com/git-repo/demo.git
      * branch            refs/merge-requests/7937/head -> FETCH_HEAD
 
 Check out the fetched commit:

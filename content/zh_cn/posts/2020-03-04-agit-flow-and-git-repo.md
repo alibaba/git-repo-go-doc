@@ -119,7 +119,7 @@ Linus 作为 Git 和 Linux 的创建者，在 Git 十周年的一次采访中，
 11. 项目管理者通过点击 pull request 评审界面的合并按钮，将 pull request 合入 master 分支。master 分支被更新，同时关闭 pull request。
 
 
-下面是单仓库下 AGit-Flow 工作流的演示，代码平台使用阿里巴巴旗下的 Teambition·行云（[https://codeup.teambition.com/](https://codeup.teambition.com/)）。
+下面是单仓库下 AGit-Flow 工作流的演示，代码平台使用阿里巴巴·云效（[https://codeup.aliyun.com/](https://codeup.aliyun.com/)）。
 
 {{< figure src="/images/git-repo-single.gif" width="750" caption="图: AGit-Flow 单仓库操作演示" >}}
 
@@ -296,7 +296,7 @@ git-repo 使用 Golang 开发，在使用上兼容 Android 的 repo，并且运�
 
 参见下面的演示：
 
-{{< figure src="/images/agit-flow/git-pr-demo-en.gif" width="750" caption="图: git pr 命令演示" >}}
+{{< figure src="/images/git-pr-demo.gif" width="750" caption="图: git pr 命令演示" >}}
 
 
 ### 多仓库下工作
@@ -363,9 +363,7 @@ git-repo 是使用 Go 语言开发的，与 Android repo 兼容的 AGit-Flow 客
 
 AGit-Flow 是一套开放的协议，已经在如下代码平台提供服务。
 
-1. 阿里巴巴旗下的 Teambition·行云：[https://codeup.teambition.com/](https://codeup.teambition.com/)
-
-2. 阿里巴巴·云效2.0 （预计4月份上线）: https://codeup.aliyun.com/
+* 阿里巴巴·云效2.0 : https://codeup.aliyun.com/
 
 
 ### 实现你自己的“AGit-Flow”

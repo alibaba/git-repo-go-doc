@@ -3,7 +3,7 @@ title: Home
 description: Homepage of git-repo
 draft: false
 updatesBanner: "Due to the coronavirus outbreak in China, I was unable to attend 'Git Merge 2020 conference' as a speaker in Los Angels on March 4, 2020. The content of the speech is shared in the blog here: [AGit-Flow and git-repo](/en/2020/03/agit-flow-and-git-repo/)"
-landingImage: /images/git-repo-single.gif
+landingImage: /images/git-pr-demo.gif
 landingTitle:
   - git-repo
 landingText:

@@ -35,7 +35,7 @@ Main steps in the above example:
 
     Example:
 
-        $ git repo init -u https://codeup.teambition.com/git-repo/manifests.git
+        $ git repo init -u https://codeup.aliyun.com/git-repo/manifests.git
 
 3. Fetch and check out all related repositories.
 

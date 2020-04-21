@@ -39,7 +39,7 @@ git repo 命令行格式如下：
 
     例如:
 
-        $ git repo init -u https://codeup.teambition.com/git-repo/manifests.git
+        $ git repo init -u https://codeup.aliyun.com/git-repo/manifests.git
 
 3. 下载相关仓库代码
 

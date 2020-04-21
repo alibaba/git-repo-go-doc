@@ -15,7 +15,7 @@ weight: 32
 
 克隆远程仓库到本地工作区。（如果工作区中已经存在该仓库，则忽略此步骤。）
 
-    $ git clone https://codeup.teambition.com/git-repo/demo.git
+    $ git clone https://codeup.aliyun.com/git-repo/demo.git
 
 切换到本地仓库的工作区：
 
@@ -136,12 +136,12 @@ weight: 32
 
 `git pr` 命令执行完毕后，显示代码评审创建成功的消息，示例如下：
 
-    remote: +----------------------------------------------------------------+
-    remote: | Merge Request #7937 was created or updated.                    |
-    remote: | View merge request at URL:                                     |
-    remote: | https://codeup.teambition.com/git-repo/demo/merge_request/7937 |
-    remote: +----------------------------------------------------------------+
-    To ssh://codeup.teambition.com/git-repo/demo.git
+    remote: +------------------------------------------------------------+
+    remote: | Merge Request #7937 was created or updated.                |
+    remote: | View merge request at URL:                                 |
+    remote: | https://codeup.aliyun.com/git-repo/demo/merge_request/7937 |
+    remote: +------------------------------------------------------------+
+    To ssh://codeup.aliyun.com/git-repo/demo.git
      * [new branch]      topic1 -> refs/for/master/topic1
 
 注意：提示信息中包含创建成功的代码评审的 URL 地址，通过浏览器访问该地址，显示创建好的代码评审。
@@ -154,7 +154,7 @@ weight: 32
 例如上面创建的第 7937 号代码评审，会创建包含该评审 ID 号的特殊引用，如：`refs/merge-requests/7937/head`。下载该待评审的代码，可以使用如下命令：
 
     $ git fetch origin refs/merge-requests/7937/head
-    From https://codeup.teambition.com/git-repo/demo.git
+    From https://codeup.aliyun.com/git-repo/demo.git
      * branch            refs/merge-requests/7937/head -> FETCH_HEAD
 
 检出相关代码：

@@ -20,7 +20,7 @@ AGit-Flow 的核心代码即将贡献到 Git 社区，任何代码平台都能�
 
 作为一款命令行工具 `git-repo`，对原生 `git` 命令做了封装，简化 AGit-Flow 等集中式工作流下用户的输入。`git-repo` 可以支持 Gerrit 以及 AGit-Flow 兼容的代码平台。
 
-下图是用户使用 `git pr` 命令（`git-repo` 的一个别名命令）在[阿里巴巴代码平台](https://codeup.teambition.com)创建代码评审的演示：
+下图是用户使用 `git pr` 命令（`git-repo` 的一个别名命令）在[阿里巴巴代码平台](https://codeup.aliyun.com)创建代码评审的演示：
 
 {{< figure src="/images/git-pr-demo.gif" caption="git-pr 创建 Pull Request 演示图" >}}
 

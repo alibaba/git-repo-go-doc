@@ -13,7 +13,7 @@ weight: 42
       <remote  name="origin"
     	   fetch=".."
     	   revision="master"
-    	   review="https://codeup.teambition.com" />
+    	   review="https://codeup.aliyun.com" />
       <remote  name="github"
     	   fetch="https://github.com"
     	   revision="master"

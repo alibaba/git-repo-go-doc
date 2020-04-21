@@ -315,7 +315,7 @@ git-repo provides several alias commands for git workflow on a single repository
 
 Demo for git workflow on a single repository:
 
-{{< figure src="/images/agit-flow/git-pr-demo-en.gif" width="750" caption="Fig: Demo of git pr" >}}
+{{< figure src="/images/git-pr-demo.gif" width="750" caption="Fig: Demo of git pr" >}}
 
 
 ### Working on multiple repositories

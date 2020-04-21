@@ -20,7 +20,7 @@ Inspired by Gerrit workflow (which using JGit instead of CGit as its backend), w
 
 It's tedious to type long `git push` command for centralized workflow as AGit-Flow, so we developed a CLI tool named "git-repo". "git-repo" can be used for Gerrit, AGit-Flow and AGit-Flow alike workflows.
 
-See the following demo about how we use `git pr` (an alias command of `git-repo`) to create a pull request on [Alibaba code platform](https://codeup.teambition.com) (only Chinese version available):
+See the following demo about how we use `git pr` (an alias command of `git-repo`) to create a pull request on [Alibaba code platform](https://codeup.aliyun.com) (only Chinese version available):
 
 {{< figure src="/images/git-pr-demo.gif" caption="Create pull request using `git pr`" >}}
 
