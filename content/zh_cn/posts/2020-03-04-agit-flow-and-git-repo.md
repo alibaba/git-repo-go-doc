@@ -167,11 +167,11 @@ Linus 作为 Git 和 Linux 的创建者，在 Git 十周年的一次采访中，
 
 + 注意：为防止用户通过设置特殊环境变量方式越权推送，还需要在 "pre-receive" 钩子脚本中对授权做进一步检查。
 
-### Git 核心的改造和 execute-command 钩子
+### Git 核心改造和 post-receive 钩子
 
 接下来客户端请求传递给 "git-receive-pack"。原生的 "git-receive-pack" 工作流如下图所示：
 
-{{< figure src="/images/agit-flow/impl-2-git-core-zh.png" width="320" caption="图: 原生的 git-receive-pack 工作流" >}}
+{{< figure src="/images/agit-flow/impl-2-git-core.png" width="320" caption="图: 原生的 git-receive-pack 工作流" >}}
 
 1. 客户端请求分为两个部分 "commands" 和 "packfile" 依次发送到服务端的 "git-receive-pack" 进程。
 
@@ -181,31 +181,33 @@ Linus 作为 Git 和 Linux 的创建者，在 Git 十周年的一次采访中，
 
 4. 如果 "pre-receive" 钩子脚本执行成功，则隔离区中的 "packfile" 移动到仓库的对象库中。
 
-5. 而命令 "commands" 传递给内置的 "execute_commands" 函数，执行 commands（实现分支的创建、更新、删除等操作）。
+5. 而命令 "commands" 传递给内置的 `execute_commands` 函数，执行 commands（实现分支的创建、更新、删除等操作）。
 
 6. 最后执行 "post-receive" 等钩子脚本，完成事件通知等。
 
 
-AGit-Flow 对 "git-receive-pack" 的源码做了改动，新的流程如下图所示：
-
-{{< figure src="/images/agit-flow/impl-2-git-core-patched-zh.png" width="600" caption="图: AGit-Flow 对 Git 核心的改动" >}}
-
-对 Git 核心的修改已经贡献到 Git 社区，参见：
+AGit-Flow 对 "git-receive-pack" 的源码做了改动，相关改动已经贡献到 Git 社区，参见：
 
 * [https://public-inbox.org/git/20200304113312.34229-1-zhiyou.jx@alibaba-inc.com/](https://public-inbox.org/git/20200304113312.34229-1-zhiyou.jx@alibaba-inc.com/)。
 
+新的流程如下图所示：
+
+{{< figure src="/images/agit-flow/impl-2-git-core-patched.png" width="600" caption="图: AGit-Flow 对 Git 核心的改动" >}}
+
 为支持 AGit-Flow，我们对 "git-receive-pack" 做了如下修改：
 
-1. 更改后的 "git-receive-pack" 增加了一个命令过滤器。
+1. 在 "git-receive-pack" 的入口增加了一个命令过滤器。
 
-2. 过滤器将 "commands" 分作两组，一组执行原生的 "git-receive-pack" 流程，另外一组 "commands" 不执行内部的 `execute_commands` 函数，而是调用一个新的外部钩子 "execute-commands" 执行 "commands"。
+2. 过滤器将 "commands" 分作两组，一组执行原生的 "git-receive-pack" 流程，另外一组 "commands" 不执行内部的 `execute_commands` 函数，而是调用一个新的外部钩子 "proc-receive" 执行 "commands"。
 
-3. "execite-commands" 钩子的结果通过环境变量传递给 "post-receive" 钩子。
+3. "proc-receive" 钩子将执行结果报告给 "receive-pack"，并由 "receive-pack" 通知客户端（调用 `report()` 函数）。
 
 具体参见下面的介绍。
 
 
-#### 配置变量：receive.executeCommandsHookRefs
+#### 配置变量：receive.procReceiveRefs
+
+{{< figure src="/images/agit-flow/proc-receive-1.png" width="320" >}}
 
 客户端的推送请求通过标准输入传递给服务端（git-receive-pack），每个命令一行，格式为：
 
@@ -213,48 +215,81 @@ AGit-Flow 对 "git-receive-pack" 的源码做了改动，新的流程如下图�
 
 常规 `git push` 推送命令的引用名称是以 "refs/heads/" 或 "refs/tags/" 作为前缀。而 AGit-Flow 模式的推送命令的引用名称中使用不同的前缀。
 
-我们为 Git 引入了一个新的配置变量 "receive.executeCommandsHookRefs"，用于区分 AGit-Flow 模式的引用前缀名称。这个配置变量是一个多值变量。例如在阿里巴巴的代码平台，我们会进行如下的设置：
+我们为 Git 引入了一个新的配置变量 "receive.procReceiveRefs"，用于区分 AGit-Flow 模式的引用前缀名称。这个配置变量是一个多值变量。例如在阿里巴巴的代码平台，我们会进行如下的设置：
 
-    git config --system --add receive.executeCommandsHookRefs refs/for/
-    git config --system --add receive.executeCommandsHookRefs refs/drafts/
-    git config --system --add receive.executeCommandsHookRefs refs/for-review/
+    git config --system --add receive.procReceiveRefs refs/for
+    git config --system --add receive.procReceiveRefs refs/drafts
+    git config --system --add receive.procReceiveRefs refs/for-review
 
 上面的指令为该配置变量设置了三个值，来自客户端的 command 指令中的引用名称如果和这三个值任意一个相匹配，则 command 会打上特殊的标记，在后面的执行中会选择另外的处理逻辑。
 
 
-#### 新钩子 execute-commands
+#### 新钩子 proc-receive
 
-被打上了特殊标记的 AGit-Flow 模式的命令（commands），不再执行常规命令所要执行的 "pre-receive" 钩子和 `execute_commands` 内部函数，而是调用另外的钩子来执行预检查和执行命令。
+被打上了特殊标记的 的命令，不再通过内置的 `execute_commands` 函数执行，而是调用外部的钩子来执行命令、更新引用。
 
-预检查调用 "execute-commands--pre-receive" 钩子，而不是 "pre-receive" 钩子。"execute-commands--pre-receive" 钩子的参数传递方式和 "pre-receive" 钩子相同。如果 "execute-commands--pre-receive" 钩子不存在，则调用 "execute-commands" 钩子并使用 "--pre-receive" 作为执行时的唯一参数。
+"receive-pack" 和 钩子 "proc-receive" 之间通过 pkt-line 格式的协议进行交互。如下图所示：
 
-执行命令（commands）不再调用内部 `execute_commands` 函数，而是执行外部的 "execute-commands" 钩子。和 "pre-receive" 钩子类似，命令通过标准输入传递给 "execute-commands" 钩子，每个命令一行，格式为：
+{{< figure src="/images/agit-flow/proc-receive-2.png" width="800" >}}
 
-    <旧的oid> <新的oid> <引用名称>
+1. "receive-pack" 和 "proc-receive" 进行版本协商。
 
-推送参数（即 push options）的传递方式也和 "pre-receive" 钩子类似。
+   "receive-pack" 首先通过 pkt-line 编码发送协议版本号和能力（capabilities）给钩子，钩子回复自己所支持的协议版本号和能力。当前协议版本号为1，从服务端向客户端传递的能力有 "push-options", "atomic" 等。
 
-"execute-commands" 钩子首先解析引用名称，例如形如 "refs/for/release/2.0/my/topic" 格式的引用，会在仓库中依次搜索 "refs/heads/release"、"refs/heads/release/2.0" 等引用，直至找到一个匹配的现存分支。当找到分支（如 "refs/heads/release/2.0"）之后，将这个分支名作为 pull request 的目标分支，而引用名称中剩余的部分（如 "my/topic"）则作为创建 pull request 时的源分支参数值。
+2. "receive-pack" 向 "proc-receive" 发送命令和 push-options。
 
-"execute-commands" 使用解析出的参数调用代码平台的 API，发起创建或更新 pull request。如果创建成功，将结果回显给用户。
+   命令每个一行，格式为 `<old-oid> <new-oid> <reference>`，使用 pkt-line 编码，以 flush-pkt 结束。
+
+   只有在版本协商阶段双方都支持 "push-options"，"receive-pack" 才向 "proc-receive" 发送 push-options。
+
+3. "proc-receive" 钩子调用外部 API 执行用户推送的命令。在阿里巴巴，这个被 "proc-receive" 钩子调用的 API 用于创建或者更新代码评审（pull request）。
+
+4. "proc-receive" 钩子执行完毕，向 "receive-pack" 报告执行结果。支持如下格式的报告：
+
+    + `ok <ref>`
+
+      引用 `<ref>` 更新成功。
+
+    + `ng <ref> <reason>`
+
+      引用 `<ref>` 更新失败，原因由 `<reason>` 提供。
+
+    + `alt <ref> [<alt-ref>] [old-oid=<oid>] [new-oid=<oid>] [forced-update]`
+
+      预期更新 `<ref>`，但实际更新的引用为 `<alt-ref>`，可选参数可以用于设置 `old-oid`、`new-oid`、强制更新模式。
+
+    + `ft <ref>`
+
+      交由 "receive-pack" 执行该命令。`ft` 为 fallthrough 的简写。
 
 
-#### 环境变量在 execute-commands 和 post-receive 钩子间的传递
+#### 向客户端报告
 
-有些场景 "post-receive" 钩子需要知道 "execute-commands" 创建的 pull request 的 ID，这种场景如何处理呢？
+"proc-receive" 向标准错误的输出信息，直接显示给客户端。例如 "proc-receive" 可以用此方法将创建好的 pull request 地址通知给用户。
 
-钩子 "execute-commands" 的标准输出被拿来当做传递给 "post-receive" 钩子的环境变量。即 Git 会读取 "execute-commands" 钩子的标准输出，如果 "execute-commands" 每一行的输出是 `key=value` 格式的，将作为环境变量传递给 "post-receive" 脚本。
+命令 `git push` 执行完毕，客户端会显示命令执行结果。我们对 Git 报告机制做了扩展，可以显示实际更新的引用。
+
+{{< figure src="/images/agit-flow/proc-receive-3.png" width="800" >}}
+
+例如执行下面命令：
+
+    $ git push origin HEAD:refs/for/master/topic
+
+新版本 Git 显示的执行结果中可以包含实际更新的引用，而非 `refs/for/master/topic`。示例如下：
+
+    To <URL/of/upstream.git>
+     + 263ea37...e5a9ada  HEAD -> refs/pull/123/head (forced update)
 
 
-### Public API: ssh_info
+### Public API: ssh-info
 
-Gerrit HTTP 服务提供了 "ssh_info" API 接口，返回 Gerrit 的 SSH 服务器的 IP 和端口。这样像 repo 这样的命令行客户端就可以使用 SSH 协议进行推送操作，免除口令认证的麻烦等。
+Gerrit HTTP 服务提供了 `ssh_info` API 接口，返回 Gerrit 的 SSH 服务器的 IP 和端口。这样像 repo 这样的命令行客户端就可以使用 SSH 协议进行推送操作，免除口令认证的麻烦等。
 
-AGit-Flow 对 "ssh_info" API 进行了拓展，返回值可以是 JSON 格式，内容包含协议类型和版本等。拓展后的 "ssh_info" 可以视为 "Smart Submit Handler information" 的缩写。AGit-Flow 不但在 HTTP 服务中提供该 API，还在 SSH 服务上也提供 "ssh_info" 命令，用于判断服务端是否支持集中式评审、协议类型和版本等。
+AGit-Flow 对 `ssh_info` API 进行了拓展，返回值可以是 JSON 格式，内容包含协议类型和版本等。拓展后的 `ssh_info` 可以视为 "Smart Submit Handler information" 的缩写。AGit-Flow 不但在 HTTP 服务中提供该 API，还在 SSH 服务上也提供 `ssh_info` 命令，用于判断服务端是否支持集中式评审、协议类型和版本等。
 
-下图是 Gerrit、Agit-Flow 服务的 "ssh_info" API 的返回值。不同的协议，`git push` 命令格式和代码评审获取的引用名称各不相同。未来如果有其它的 AGit-Flow 兼容协议，也会有不同的 "ssh_info" 输出，有不同的 `git push` 命令和不同的 pull request 引用名称。
+下图是 Gerrit、Agit-Flow 服务的 `ssh_info` API 的返回值。不同的协议，`git push` 命令格式和代码评审获取的引用名称各不相同。未来如果有其它的 AGit-Flow 兼容协议，也会有不同的 `ssh_info` 输出，有不同的 `git push` 命令和不同的 pull request 引用名称。
 
-{{< figure src="/images/agit-flow/impl-4-ssh-info-zh.png" width="750" caption="图: ssh_info API" >}}
+{{< figure src="/images/agit-flow/impl-4-ssh-info-zh.png" width="750" caption="图: `ssh_info` API" >}}
 
 ## git-repo
 
@@ -359,14 +394,14 @@ git-repo 是使用 Go 语言开发的，与 Android repo 兼容的 AGit-Flow 客
 * [https://public-inbox.org/git/20200304113312.34229-1-zhiyou.jx@alibaba-inc.com/](https://public-inbox.org/git/20200304113312.34229-1-zhiyou.jx@alibaba-inc.com/) （Git核心的代码修改）
 
 
-### 体验 AGit-Flow
+### 未来已来，抢先体验 AGit-Flow
 
 AGit-Flow 是一套开放的协议，已经在如下代码平台提供服务。
 
 * 阿里巴巴·云效2.0 : https://codeup.aliyun.com/
 
 
-### 实现你自己的“AGit-Flow”
+### 为即将到来的 Git 2.27，实现你自己的“AGit-Flow”
 
 * 为你的 AGit-Flow 兼容协议起个名字。
 
@@ -374,8 +409,16 @@ AGit-Flow 是一套开放的协议，已经在如下代码平台提供服务。
 
 * 服务器上安装带有 AGit-Flow 补丁的 Git 核心，并设置相关的 Git 配置变量以开启相关功能。
 
-* 开发 "execute-commands" 钩子和内部创建代码评审（pull request）的 API。
+* 开发 "proc-receive" 钩子和内部创建代码评审（pull request）的 API。
 
-* 在 HTTP 和 SSH 服务中开发对外服务的 "ssh_info" API，返回 JSON 格式数据，实现服务发现。
+* 在 HTTP 和 SSH 服务中开发对外服务的 `ssh_info` API，返回 JSON 格式数据，实现服务发现。
 
 * 在 git-repo 中添加内置 helper 或者外部 helper 程序扩展，以支持你的“AGit-Flow”。
+
+
+----
+
+编辑记录：
+
++ 2020/4/27: 钩子重命名，从 "execute-commands" 改名为 "proc-receive"。
++ 2020/4/27: "receive-pack" 和 "proc-receive" 钩子之间使用 pkt-line 协议。
