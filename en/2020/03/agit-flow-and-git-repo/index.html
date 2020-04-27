@@ -1461,7 +1461,7 @@
 </ol>
 <h2 id="agit-flow-usage">AGit-Flow Usage</h2>
 <h3 id="what-is-agit-flow">What is AGit-Flow?</h3>
-<p>Can we combine these two Git workflows to create a new one with all their advantages? (not GerritHub)</p>
+<p>Can we combine these two Git workflows to create a new one with all their advantages? (not like GerritHub)</p>
 <p>Inspired by Gerrit workflow, we created a centralized git workflow based on CGit (instead of JGit) with a minor changed git-core and several APIs. We call the workflow as “AGit-Flow”, and implemented it in Alibaba&rsquo;s internal source code platform. With the help of &ldquo;AGit-Flow&rdquo;, it&rsquo;s unnecessary to fork a repository or create many feature branches inside a repository. Users can use <code>git push</code> command to create code review (pull request) directly.</p>
 <figure>
     <img src="/images/agit-flow/agit-flow-overview-en.png"
@@ -1577,10 +1577,10 @@
 <p>Warning: Please check write permission for the repository in the &ldquo;pre-receive&rdquo; hook to prevent a read-only user with a forged environment.</p>
 </li>
 </ul>
-<h3 id="patched-git-core-and-execute-commands-hook">Patched git-core and execute-commands hook</h3>
+<h3 id="patched-git-core-and-proc-receive-hook">Patched git-core and proc-receive hook</h3>
 <p>Next, requests from the client side will be delivered to the &ldquo;git-receive-pack&rdquo; process.</p>
 <figure>
-    <img src="/images/agit-flow/impl-2-git-core-en.png"
+    <img src="/images/agit-flow/impl-2-git-core.png"
          alt="Fig: Original git-receive-pack diagram" width="320"/> <figcaption>
             <p>Fig: Original git-receive-pack diagram</p>
         </figcaption>
@@ -1607,58 +1607,111 @@
 <p>Run the &ldquo;post-receive&rdquo; hook at last for notifications.</p>
 </li>
 </ol>
+<p>We have contributed our patched &ldquo;git-receive-pack&rdquo; for AGit-Flow to the Git community, See:</p>
+<ul>
+<li><a href="https://public-inbox.org/git/20200304113312.34229-1-zhiyou.jx@alibaba-inc.com/">https://public-inbox.org/git/20200304113312.34229-1-zhiyou.jx@alibaba-inc.com/</a></li>
+</ul>
 <p>The following diagram is our patched &ldquo;git-receive-pack&rdquo; for AGit-Flow:</p>
 <figure>
-    <img src="/images/agit-flow/impl-2-git-core-patched-en.png"
+    <img src="/images/agit-flow/impl-2-git-core-patched.png"
          alt="Fig: Patched git-receive-pack for AGit-Flow" width="600"/> <figcaption>
             <p>Fig: Patched git-receive-pack for AGit-Flow</p>
         </figcaption>
 </figure>
 
-<p>See our patches in the Git mailing list:</p>
-<ul>
-<li><a href="https://public-inbox.org/git/20200304113312.34229-1-zhiyou.jx@alibaba-inc.com/">https://public-inbox.org/git/20200304113312.34229-1-zhiyou.jx@alibaba-inc.com/</a></li>
-</ul>
-<p>The changes we made for &ldquo;git-receive-pack&rdquo; to support AGit-Flow:</p>
+<p>The changes we made for &ldquo;git-receive-pack&rdquo; to support AGit-Flow are:</p>
 <ol>
 <li>
 <p>Add a filter for commands sent from users to &ldquo;git-receive-pack&rdquo;.</p>
 </li>
 <li>
-<p>The filter helps to divide commands into two groups. One group of commands performs the original process, and the other group of commands does not execute the internal <code>execute_commands</code> function, but executes an external &ldquo;execute-commands&rdquo; hook.</p>
+<p>The filter helps to divide commands into two groups. One group of commands performs the original process, and the other group of commands does not execute the internal <code>execute_commands</code> function, but executes an external &ldquo;proc-receive&rdquo; hook instead.</p>
 </li>
 <li>
-<p>Some variables for the result of &ldquo;execute-commands&rdquo; hook are sent to the &ldquo;post-receive&rdquo; hook from its environment.</p>
+<p>Send an extended status report from &ldquo;receive-pack&rdquo; to cliend-side (&ldquo;send-pack&rdquo;).</p>
 </li>
 </ol>
 <p>See the following sections.</p>
-<h4 id="git-config-variable-receiveexecutecommandshookrefs">Git config variable: receive.executeCommandsHookRefs</h4>
+<h4 id="git-config-variable-receiveprocreceiverefs">Git config variable: receive.procReceiveRefs</h4>
+<figure>
+    <img src="/images/agit-flow/proc-receive-1.png" width="320"/> 
+</figure>
+
 <p>Push requests (commands) are sent to the server (git-receive-pack）one by one through its standard input. Each command has the following format:</p>
 <pre><code>&lt;old-oid&gt; &lt;new-oid&gt; &lt;reference&gt;
 </code></pre>
-<p>Reference names of commands of AGit-Flow style <code>git push</code> have different prefixes other than &ldquo;refs/heads/&rdquo; and &ldquo;refs/tags/&quot;. We introduced a new git config variable &ldquo;receive.executeCommandsHookRefs&rdquo; for Git to recognize the special commands for AGit-Flow. For example, we use the following settings for Alibaba code platform:</p>
-<pre><code>git config --system --add receive.executeCommandsHookRefs refs/for/
-git config --system --add receive.executeCommandsHookRefs refs/drafts/
-git config --system --add receive.executeCommandsHookRefs refs/for-review/
+<p>Reference names of commands of AGit-Flow style <code>git push</code> have different prefixes other than &ldquo;refs/heads/&rdquo; and &ldquo;refs/tags/&quot;. We introduced a new git config variable &ldquo;receive.procReceiveRefs&rdquo; for Git to recognize the special commands for AGit-Flow. For example, we use the following settings for Alibaba code platform:</p>
+<pre><code>git config --system --add receive.procReceiveRefs refs/for
+git config --system --add receive.procReceiveRefs refs/drafts
+git config --system --add receive.procReceiveRefs refs/for-review
 </code></pre>
-<p>The above git commands add three values for config variable &ldquo;receive.executeCommandsHookRefs&rdquo;. Commands from clients matched either value of this config variable will be marked with a particular tag to be handled differently later.</p>
-<h4 id="new-execute-commands-hook">New execute-commands Hook</h4>
-<p>The commands marked with the particular tag will not be sent to the processors such as the &ldquo;pre-receive&rdquo; hook and the internal <code>execute_commands</code> function. They will be executed by a new external hook: &ldquo;execute-commands&rdquo;.</p>
-<p>First, these commands will be sent to the &ldquo;execute-commands&ndash;pre-receive&rdquo; hook to check permissions, etc. If the &ldquo;execute-commands&ndash;pre-receive&rdquo; hook does not exist, Git will execute the &ldquo;execute-commands&rdquo; hook with &ldquo;&ndash;pre-receive&rdquo; as its only option. If the execution failed, it would stop further executions and return errors to the user.</p>
-<p>Then, git will execute the &ldquo;execute-commands&rdquo; hook instead of the internal <code>execute_commands</code> function on these commands to update the repository. This time this hook takes no arguments but gets the same information as the &ldquo;pre-receive&rdquo; hook does on its standard input and environment.</p>
-<p>The &ldquo;execute-commands&rdquo; hook implemented in Alibaba code platform will try to call a RESTful API to create a pull request. Parameters for the API are from the command and push options sent from the user. For example, the user may push to a special reference like &ldquo;refs/for/release/2.0/my/topic&rdquo;. The hook will try to find a matching local branch, first, try &ldquo;refs/heads/release&rdquo;, then &ldquo;refs/heads/release/2.0&rdquo;, etc. If it finds a local branch such as &ldquo;refs/heads/release/2.0&rdquo; in the repository, then the remaining part of the special reference, &ldquo;my/topic&rdquo;, will be treated as a source branch for creating/updating a pull request.</p>
-<p>Whether the pull request is created/updated or not, a message will be sent to the user through standard error for notification.</p>
-<h4 id="pass-environments-from-execute-commands-to-post-receive-hook">Pass environments from execute-commands to post-receive hook</h4>
-<p>The &ldquo;post-receive&rdquo; hook may need the pull request ID generated by the &ldquo;execute-commands&rdquo; hook, etc. How to handle this case?</p>
-<p>Each line of the message received from the standard output of the &ldquo;execute-commands&rdquo; in the <code>key=value</code> format is parsed as environment and these variables will be sent to environment of the &ldquo;post-receive&rdquo; hook.</p>
-<h3 id="public-api-ssh_info">Public API: ssh_info</h3>
-<p>Gerrit HTTP service provides a &ldquo;ssh_info&rdquo; API, which returns the IP address and port of the SSH server. Android repo will use this API to connect the remote server using SSH passwordless authentication.</p>
-<p>AGit-Flow makes an extension for this &ldquo;ssh_info&rdquo; API. The return value of the API is not plain text anymore but is a JSON including protocol type (such as &ldquo;agit&rdquo;) and protocol version. And the extended &ldquo;ssh_info&rdquo; is not an abbreviation of &ldquo;Secure Shell information&rdquo;, but is the abbreviation of &ldquo;Smart Submit Handler information&rdquo;. This API can be provided not only from the HTTP service but also from the SSH service.</p>
-<p>To see different &ldquo;ssh_info&rdquo; API results and various corresponding <code>git push</code> commands, see the following chart.</p>
+<p>The above git commands add three values for config variable &ldquo;receive.procReceiveRefs&rdquo;. Commands from clients matched either value of this config variable will be marked with a particular tag to be handled differently later.</p>
+<h4 id="new-proc-receive-hook">New proc-receive Hook</h4>
+<p>The commands marked with the particular tag will not be sent to the internal <code>execute_commands</code> function. They will be executed by a new external hook: &ldquo;proc-receive&rdquo;.</p>
+<p>This hook executes once for the receive operation.  It takes no arguments, but uses a pkt-line format protocol to communicate with &ldquo;receive-pack&rdquo; to read commands, push-options and send results.</p>
+<figure>
+    <img src="/images/agit-flow/proc-receive-2.png" width="800"/> 
+</figure>
+
+<ol>
+<li>
+<p>Version negotiation between &ldquo;receive-pack&rdquo; and &ldquo;proc-receive&rdquo;.</p>
+<p>First, &ldquo;receive-pack&rdquo; sends the protocol version and capabilities to the &ldquo;proc-receive&rdquo; hook. The hook will send back the version it supports. Currently supported capablilities include: push options, atoms, etc.</p>
+</li>
+<li>
+<p>Send commands and push-options from &ldquo;receive-pack&rdquo; to the &ldquo;proc-receive&rdquo; hook.</p>
+<p>Each command will be sent from &ldquo;receive-pack&rdquo; to &ldquo;proc-receive&rdquo; in one pkt-line of the format:</p>
+<pre><code> &lt;old-oid&gt; &lt;new-oid&gt; &lt;reference&gt;
+</code></pre>
+<p>Commands will end with a flush-pkt.</p>
+<p>Only when both &ldquo;receive-pack&rdquo; and &ldquo;proc-receive&rdquo; support &ldquo;push-options&rdquo;，&ldquo;receive-pack&rdquo; will send push-options to &ldquo;proc-receive&rdquo;.</p>
+</li>
+<li>
+<p>The &ldquo;proc-receive&rdquo; hook will call an external API to execute the commands. In Alibaba, this API is used to create or update a pull request.</p>
+</li>
+<li>
+<p>The &ldquo;proc-receive&rdquo; hook sends status report to &ldquo;receive-pack&rdquo;. The following formats of report are supported.</p>
+<ul>
+<li>
+<p><code>ok &lt;ref&gt;</code></p>
+<p>Successfully create or update <code>&lt;ref&gt;</code>.</p>
+</li>
+<li>
+<p><code>ng &lt;ref&gt; &lt;reason&gt;</code></p>
+<p>Fail to update <code>&lt;ref&gt;</code>, and the error message is given by <code>&lt;reason&gt;</code>.</p>
+</li>
+<li>
+<p><code>alt &lt;ref&gt; [&lt;alt-ref&gt;] [old-oid=&lt;oid&gt;] [new-oid=&lt;oid&gt;] [forced-update]</code></p>
+<p>Expect to update <code>&lt;ref&gt;</code>, but update an alternamte reference (<code>&lt;alt-ref&gt;</code>).  <code>old-oid</code>、<code>new-oid</code> and other attributes can be given by optional key-value pairs.</p>
+</li>
+<li>
+<p><code>ft &lt;ref&gt;</code></p>
+<p>Fall through, let &lsquo;receive-pack&rsquo; to execute it.</p>
+</li>
+</ul>
+</li>
+</ol>
+<h4 id="extended-status-report-for-client-side-send-pack">Extended status report for client-side (&ldquo;send-pack&rdquo;)</h4>
+<p>The &ldquo;proc-receive&rdquo; hook may receive a command for a pseudo-reference with a zero-old as its old-oid, while the result of the hook may point to an alternate reference and the reference may exist already with a non-zero old-oid.  We extended the format of report from &ldquo;receive-pack&rdquo; to client-side (&ldquo;send-pack&rdquo;), so git client can report correctly.</p>
+<figure>
+    <img src="/images/agit-flow/proc-receive-3.png" width="800"/> 
+</figure>
+
+<p>For example, the following <code>git-push</code> command has a pseudo-reference in its refspec:</p>
+<pre><code>$ git push origin HEAD:refs/for/master/topic
+</code></pre>
+<p>New version of Git can report the actual reference updated:</p>
+<pre><code>To &lt;URL/of/upstream.git&gt;
+ + 263ea37...e5a9ada  HEAD -&gt; refs/pull/123/head (forced update)
+</code></pre>
+<h3 id="public-api-ssh-info">Public API: ssh-info</h3>
+<p>Gerrit HTTP service provides a <code>ssh_info</code> API, which returns the IP address and port of the SSH server. Android repo will use this API to connect the remote server using SSH passwordless authentication.</p>
+<p>AGit-Flow makes an extension for this <code>ssh_info</code> API. The return value of the API is not plain text anymore but is a JSON including protocol type (such as &ldquo;agit&rdquo;) and protocol version. And the extended <code>ssh_info</code> is not an abbreviation of &ldquo;Secure Shell information&rdquo;, but is the abbreviation of &ldquo;Smart Submit Handler information&rdquo;. This API can be provided not only from the HTTP service but also from the SSH service.</p>
+<p>To see different <code>ssh_info</code> API results and various corresponding <code>git push</code> commands, see the following chart.</p>
 <figure>
     <img src="/images/agit-flow/impl-4-ssh-info-en.png"
          alt="Fig: ssh_info - the Smart Submit Handler information API" width="750"/> <figcaption>
-            <p>Fig: ssh_info - the Smart Submit Handler information API</p>
+            <p>Fig: <code>ssh_info</code> - the Smart Submit Handler information API</p>
         </figcaption>
 </figure>
 
@@ -1809,14 +1862,20 @@ $ git repo help sync
 <p>Install patched git-core in your server and set the special config variable to turn on the feature.</p>
 </li>
 <li>
-<p>Write your own &ldquo;execute-commands&rdquo; hook and internal code review API.</p>
+<p>Write your own &ldquo;proc-receive&rdquo; hook and internal code review API.</p>
 </li>
 <li>
-<p>Add a public &ldquo;ssh_info&rdquo; API, which returns a JSON response for service detection.</p>
+<p>Add a public <code>ssh_info</code> API, which returns a JSON response for service detection.</p>
 </li>
 <li>
 <p>Add a new helper to git-repo to support your public Git service.</p>
 </li>
+</ul>
+<hr />
+<p>Edit:</p>
+<ul>
+<li>2020/4/27: Hook is renamed from &ldquo;execute-commands&rdquo; to &ldquo;proc-receive&rdquo;.</li>
+<li>2020/4/27: Use a pkt-line format protocol between &ldquo;receive-pack&rdquo; and &ldquo;proc-receive&rdquo;.</li>
 </ul>
 
   </article>
@@ -1877,14 +1936,14 @@ $ git repo help sync
     <li><a href="#agit-flow-implementation">AGit-Flow Implementation</a>
       <ul>
         <li><a href="#front-end-authentication">Front-end authentication</a></li>
-        <li><a href="#patched-git-core-and-execute-commands-hook">Patched git-core and execute-commands hook</a>
+        <li><a href="#patched-git-core-and-proc-receive-hook">Patched git-core and proc-receive hook</a>
           <ul>
-            <li><a href="#git-config-variable-receiveexecutecommandshookrefs">Git config variable: receive.executeCommandsHookRefs</a></li>
-            <li><a href="#new-execute-commands-hook">New execute-commands Hook</a></li>
-            <li><a href="#pass-environments-from-execute-commands-to-post-receive-hook">Pass environments from execute-commands to post-receive hook</a></li>
+            <li><a href="#git-config-variable-receiveprocreceiverefs">Git config variable: receive.procReceiveRefs</a></li>
+            <li><a href="#new-proc-receive-hook">New proc-receive Hook</a></li>
+            <li><a href="#extended-status-report-for-client-side-send-pack">Extended status report for client-side (&ldquo;send-pack&rdquo;)</a></li>
           </ul>
         </li>
-        <li><a href="#public-api-ssh_info">Public API: ssh_info</a></li>
+        <li><a href="#public-api-ssh-info">Public API: ssh-info</a></li>
       </ul>
     </li>
     <li><a href="#git-repo">git-repo</a>
