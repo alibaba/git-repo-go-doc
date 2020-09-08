@@ -855,7 +855,7 @@
 <meta property="og:url" content="http://git-repo.info/en/docs/single-repo/git-peer-review/">
 <meta property="og:type" content="article">
 
-<meta name="generator" content="Hugo 0.64.1" />
+<meta name="generator" content="Hugo 0.73.0" />
 <meta name="msapplication-TileColor" content="#ffffff">
 <meta name="theme-color" content="#ffffff">
 <link rel="canonical" href="http://git-repo.info/en/docs/single-repo/git-peer-review/">
@@ -1818,12 +1818,12 @@ Please run command &quot;git branch -u &lt;upstream&gt;&quot; to track a remote 
 </code></pre>
 <p>The first section of the text is used for adding options for <code>git pr</code>. Lines begin with the character &ldquo;#&rdquo; are comments. Please do not change these comments, for <code>git pr</code> needs to find parameter names in the comments.</p>
 <ul>
-<li>Below the line started with &ldquo;# [Title]&quot;, add one-line title for the code review to be generated.</li>
-<li>Below the line started with &ldquo;# [Description]&quot;, add description for the code review to be generated.</li>
-<li>Below the line started with &ldquo;# [Issue]&quot;, add issue number for reference.</li>
-<li>Below the line started with &ldquo;# [Reviewer]&quot;, add reviewers (one reviewer on each line, or separated by commas).</li>
-<li>Below the line started with &ldquo;# [Cc]&quot;, add watchers.</li>
-<li>Below the line started with &ldquo;# [Draft]&quot;, input &ldquo;yes&rdquo; to turn on draft mode.</li>
+<li>Below the line started with &ldquo;# [Title]&rdquo;, add one-line title for the code review to be generated.</li>
+<li>Below the line started with &ldquo;# [Description]&rdquo;, add description for the code review to be generated.</li>
+<li>Below the line started with &ldquo;# [Issue]&rdquo;, add issue number for reference.</li>
+<li>Below the line started with &ldquo;# [Reviewer]&rdquo;, add reviewers (one reviewer on each line, or separated by commas).</li>
+<li>Below the line started with &ldquo;# [Cc]&rdquo;, add watchers.</li>
+<li>Below the line started with &ldquo;# [Draft]&rdquo;, input &ldquo;yes&rdquo; to turn on draft mode.</li>
 </ul>
 <p>The second section lists branches of the current project that are ready to publish. Uncomment the branches you want to publish, and <code>git pr</code> will create code reviews for these branches.</p>
 <p>If no branch is ready to publish (all branches are commented out), <code>git pr</code> will abort.</p>
