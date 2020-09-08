@@ -16,6 +16,8 @@ googleAnalytics = ""
 
 disableKinds = ["taxonomyTerm"]
 
+ignoreErrors = ["error-output-taxonomy"]
+
 [permalinks]
   posts = "/:year/:month/:slug/"
 
