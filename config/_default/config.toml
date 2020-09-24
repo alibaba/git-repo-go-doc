@@ -2,7 +2,7 @@ baseURL = "https://git-repo.info/"
 title = "git-repo"
 theme = "zdoc"
 
-defaultContentLanguage = "en"
+defaultContentLanguage = "zh_cn"
 defaultContentLanguageInSubdir = true
 hasCJKLanguage = true
 
