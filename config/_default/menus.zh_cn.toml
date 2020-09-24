@@ -19,7 +19,7 @@
 [[main]]
   identifier = "download"
   name = "下载"
-  url = "https://github.com/alibaba/git-repo-go/releases"
+  url = "download"
   weight = 4
 
 [[main]]
