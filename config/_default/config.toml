@@ -1,4 +1,4 @@
-baseURL = "http://git-repo.info"
+baseURL = "https://git-repo.info/"
 title = "git-repo"
 theme = "zdoc"
 
