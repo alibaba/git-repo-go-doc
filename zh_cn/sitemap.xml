@@ -3,417 +3,417 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>http://git-repo.info/zh_cn/docs/getting-started/</loc>
+    <loc>/zh_cn/docs/getting-started/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://git-repo.info/en/docs/getting-started/"
+                href="/en/docs/getting-started/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh_cn"
-                href="http://git-repo.info/zh_cn/docs/getting-started/"
+                href="/zh_cn/docs/getting-started/"
                 />
   </url>
   
   <url>
-    <loc>http://git-repo.info/zh_cn/docs/getting-started/quickstart/</loc>
+    <loc>/zh_cn/docs/getting-started/quickstart/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://git-repo.info/en/docs/getting-started/quickstart/"
+                href="/en/docs/getting-started/quickstart/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh_cn"
-                href="http://git-repo.info/zh_cn/docs/getting-started/quickstart/"
+                href="/zh_cn/docs/getting-started/quickstart/"
                 />
   </url>
   
   <url>
-    <loc>http://git-repo.info/zh_cn/docs/getting-started/installation/</loc>
+    <loc>/zh_cn/docs/getting-started/installation/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://git-repo.info/en/docs/getting-started/installation/"
+                href="/en/docs/getting-started/installation/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh_cn"
-                href="http://git-repo.info/zh_cn/docs/getting-started/installation/"
+                href="/zh_cn/docs/getting-started/installation/"
                 />
   </url>
   
   <url>
-    <loc>http://git-repo.info/zh_cn/docs/getting-started/running/</loc>
+    <loc>/zh_cn/docs/getting-started/running/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://git-repo.info/en/docs/getting-started/running/"
+                href="/en/docs/getting-started/running/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh_cn"
-                href="http://git-repo.info/zh_cn/docs/getting-started/running/"
+                href="/zh_cn/docs/getting-started/running/"
                 />
   </url>
   
   <url>
-    <loc>http://git-repo.info/zh_cn/docs/getting-started/upgrade/</loc>
+    <loc>/zh_cn/docs/getting-started/upgrade/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://git-repo.info/en/docs/getting-started/upgrade/"
+                href="/en/docs/getting-started/upgrade/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh_cn"
-                href="http://git-repo.info/zh_cn/docs/getting-started/upgrade/"
+                href="/zh_cn/docs/getting-started/upgrade/"
                 />
   </url>
   
   <url>
-    <loc>http://git-repo.info/zh_cn/docs/gitconfig/</loc>
+    <loc>/zh_cn/docs/gitconfig/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://git-repo.info/en/docs/gitconfig/"
+                href="/en/docs/gitconfig/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh_cn"
-                href="http://git-repo.info/zh_cn/docs/gitconfig/"
+                href="/zh_cn/docs/gitconfig/"
                 />
   </url>
   
   <url>
-    <loc>http://git-repo.info/zh_cn/docs/single-repo/</loc>
+    <loc>/zh_cn/docs/single-repo/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://git-repo.info/en/docs/single-repo/"
+                href="/en/docs/single-repo/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh_cn"
-                href="http://git-repo.info/zh_cn/docs/single-repo/"
+                href="/zh_cn/docs/single-repo/"
                 />
   </url>
   
   <url>
-    <loc>http://git-repo.info/zh_cn/docs/single-repo/overview/</loc>
+    <loc>/zh_cn/docs/single-repo/overview/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://git-repo.info/en/docs/single-repo/overview/"
+                href="/en/docs/single-repo/overview/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh_cn"
-                href="http://git-repo.info/zh_cn/docs/single-repo/overview/"
+                href="/zh_cn/docs/single-repo/overview/"
                 />
   </url>
   
   <url>
-    <loc>http://git-repo.info/zh_cn/docs/single-repo/git-peer-review/</loc>
+    <loc>/zh_cn/docs/single-repo/git-peer-review/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://git-repo.info/en/docs/single-repo/git-peer-review/"
+                href="/en/docs/single-repo/git-peer-review/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh_cn"
-                href="http://git-repo.info/zh_cn/docs/single-repo/git-peer-review/"
+                href="/zh_cn/docs/single-repo/git-peer-review/"
                 />
   </url>
   
   <url>
-    <loc>http://git-repo.info/zh_cn/docs/single-repo/git-download/</loc>
+    <loc>/zh_cn/docs/single-repo/git-download/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://git-repo.info/en/docs/single-repo/git-download/"
+                href="/en/docs/single-repo/git-download/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh_cn"
-                href="http://git-repo.info/zh_cn/docs/single-repo/git-download/"
+                href="/zh_cn/docs/single-repo/git-download/"
                 />
   </url>
   
   <url>
-    <loc>http://git-repo.info/zh_cn/docs/single-repo/git-abandon/</loc>
+    <loc>/zh_cn/docs/single-repo/git-abandon/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://git-repo.info/en/docs/single-repo/git-abandon/"
+                href="/en/docs/single-repo/git-abandon/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh_cn"
-                href="http://git-repo.info/zh_cn/docs/single-repo/git-abandon/"
+                href="/zh_cn/docs/single-repo/git-abandon/"
                 />
   </url>
   
   <url>
-    <loc>http://git-repo.info/zh_cn/docs/multi-repos/</loc>
+    <loc>/zh_cn/docs/multi-repos/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://git-repo.info/en/docs/multi-repos/"
+                href="/en/docs/multi-repos/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh_cn"
-                href="http://git-repo.info/zh_cn/docs/multi-repos/"
+                href="/zh_cn/docs/multi-repos/"
                 />
   </url>
   
   <url>
-    <loc>http://git-repo.info/zh_cn/docs/multi-repos/overview/</loc>
+    <loc>/zh_cn/docs/multi-repos/overview/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://git-repo.info/en/docs/multi-repos/overview/"
+                href="/en/docs/multi-repos/overview/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh_cn"
-                href="http://git-repo.info/zh_cn/docs/multi-repos/overview/"
+                href="/zh_cn/docs/multi-repos/overview/"
                 />
   </url>
   
   <url>
-    <loc>http://git-repo.info/zh_cn/docs/multi-repos/manifest-format/</loc>
+    <loc>/zh_cn/docs/multi-repos/manifest-format/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://git-repo.info/en/docs/multi-repos/manifest-format/"
+                href="/en/docs/multi-repos/manifest-format/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh_cn"
-                href="http://git-repo.info/zh_cn/docs/multi-repos/manifest-format/"
+                href="/zh_cn/docs/multi-repos/manifest-format/"
                 />
   </url>
   
   <url>
-    <loc>http://git-repo.info/zh_cn/docs/multi-repos/git-repo-init/</loc>
+    <loc>/zh_cn/docs/multi-repos/git-repo-init/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://git-repo.info/en/docs/multi-repos/git-repo-init/"
+                href="/en/docs/multi-repos/git-repo-init/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh_cn"
-                href="http://git-repo.info/zh_cn/docs/multi-repos/git-repo-init/"
+                href="/zh_cn/docs/multi-repos/git-repo-init/"
                 />
   </url>
   
   <url>
-    <loc>http://git-repo.info/zh_cn/docs/multi-repos/git-repo-sync/</loc>
+    <loc>/zh_cn/docs/multi-repos/git-repo-sync/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://git-repo.info/en/docs/multi-repos/git-repo-sync/"
+                href="/en/docs/multi-repos/git-repo-sync/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh_cn"
-                href="http://git-repo.info/zh_cn/docs/multi-repos/git-repo-sync/"
+                href="/zh_cn/docs/multi-repos/git-repo-sync/"
                 />
   </url>
   
   <url>
-    <loc>http://git-repo.info/zh_cn/docs/multi-repos/git-repo-start/</loc>
+    <loc>/zh_cn/docs/multi-repos/git-repo-start/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://git-repo.info/en/docs/multi-repos/git-repo-start/"
+                href="/en/docs/multi-repos/git-repo-start/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh_cn"
-                href="http://git-repo.info/zh_cn/docs/multi-repos/git-repo-start/"
+                href="/zh_cn/docs/multi-repos/git-repo-start/"
                 />
   </url>
   
   <url>
-    <loc>http://git-repo.info/zh_cn/docs/multi-repos/git-repo-upload/</loc>
+    <loc>/zh_cn/docs/multi-repos/git-repo-upload/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://git-repo.info/en/docs/multi-repos/git-repo-upload/"
+                href="/en/docs/multi-repos/git-repo-upload/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh_cn"
-                href="http://git-repo.info/zh_cn/docs/multi-repos/git-repo-upload/"
+                href="/zh_cn/docs/multi-repos/git-repo-upload/"
                 />
   </url>
   
   <url>
-    <loc>http://git-repo.info/zh_cn/docs/multi-repos/git-repo-download/</loc>
+    <loc>/zh_cn/docs/multi-repos/git-repo-download/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://git-repo.info/en/docs/multi-repos/git-repo-download/"
+                href="/en/docs/multi-repos/git-repo-download/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh_cn"
-                href="http://git-repo.info/zh_cn/docs/multi-repos/git-repo-download/"
+                href="/zh_cn/docs/multi-repos/git-repo-download/"
                 />
   </url>
   
   <url>
-    <loc>http://git-repo.info/zh_cn/docs/multi-repos/git-repo-forall/</loc>
+    <loc>/zh_cn/docs/multi-repos/git-repo-forall/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://git-repo.info/en/docs/multi-repos/git-repo-forall/"
+                href="/en/docs/multi-repos/git-repo-forall/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh_cn"
-                href="http://git-repo.info/zh_cn/docs/multi-repos/git-repo-forall/"
+                href="/zh_cn/docs/multi-repos/git-repo-forall/"
                 />
   </url>
   
   <url>
-    <loc>http://git-repo.info/zh_cn/docs/multi-repos/git-repo-status/</loc>
+    <loc>/zh_cn/docs/multi-repos/git-repo-status/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://git-repo.info/en/docs/multi-repos/git-repo-status/"
+                href="/en/docs/multi-repos/git-repo-status/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh_cn"
-                href="http://git-repo.info/zh_cn/docs/multi-repos/git-repo-status/"
+                href="/zh_cn/docs/multi-repos/git-repo-status/"
                 />
   </url>
   
   <url>
-    <loc>http://git-repo.info/zh_cn/docs/multi-repos/git-repo-abandon/</loc>
+    <loc>/zh_cn/docs/multi-repos/git-repo-abandon/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://git-repo.info/en/docs/multi-repos/git-repo-abandon/"
+                href="/en/docs/multi-repos/git-repo-abandon/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh_cn"
-                href="http://git-repo.info/zh_cn/docs/multi-repos/git-repo-abandon/"
+                href="/zh_cn/docs/multi-repos/git-repo-abandon/"
                 />
   </url>
   
   <url>
-    <loc>http://git-repo.info/zh_cn/docs/multi-repos/git-repo-prune/</loc>
+    <loc>/zh_cn/docs/multi-repos/git-repo-prune/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://git-repo.info/en/docs/multi-repos/git-repo-prune/"
+                href="/en/docs/multi-repos/git-repo-prune/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh_cn"
-                href="http://git-repo.info/zh_cn/docs/multi-repos/git-repo-prune/"
+                href="/zh_cn/docs/multi-repos/git-repo-prune/"
                 />
   </url>
   
   <url>
-    <loc>http://git-repo.info/zh_cn/docs/contribution/</loc>
+    <loc>/zh_cn/docs/contribution/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://git-repo.info/en/docs/contribution/"
+                href="/en/docs/contribution/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh_cn"
-                href="http://git-repo.info/zh_cn/docs/contribution/"
+                href="/zh_cn/docs/contribution/"
                 />
   </url>
   
   <url>
-    <loc>http://git-repo.info/zh_cn/2020/03/something-about-git-merge/</loc>
+    <loc>/zh_cn/2020/03/something-about-git-merge/</loc>
     <lastmod>2020-03-15T08:00:00+08:00</lastmod>
   </url>
   
   <url>
-    <loc>http://git-repo.info/zh_cn/posts/</loc>
+    <loc>/zh_cn/posts/</loc>
     <lastmod>2020-03-15T08:00:00+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://git-repo.info/en/posts/"
+                href="/en/posts/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh_cn"
-                href="http://git-repo.info/zh_cn/posts/"
+                href="/zh_cn/posts/"
                 />
   </url>
   
   <url>
-    <loc>http://git-repo.info/zh_cn/</loc>
+    <loc>/zh_cn/</loc>
     <lastmod>2020-03-15T08:00:00+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://git-repo.info/en/"
+                href="/en/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh_cn"
-                href="http://git-repo.info/zh_cn/"
+                href="/zh_cn/"
                 />
   </url>
   
   <url>
-    <loc>http://git-repo.info/zh_cn/2020/03/agit-flow-and-git-repo/</loc>
+    <loc>/zh_cn/2020/03/agit-flow-and-git-repo/</loc>
     <lastmod>2020-03-04T08:00:00+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://git-repo.info/en/2020/03/agit-flow-and-git-repo/"
+                href="/en/2020/03/agit-flow-and-git-repo/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh_cn"
-                href="http://git-repo.info/zh_cn/2020/03/agit-flow-and-git-repo/"
+                href="/zh_cn/2020/03/agit-flow-and-git-repo/"
                 />
   </url>
   
   <url>
-    <loc>http://git-repo.info/zh_cn/changelog/</loc>
+    <loc>/zh_cn/changelog/</loc>
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://git-repo.info/en/changelog/"
+                href="/en/changelog/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh_cn"
-                href="http://git-repo.info/zh_cn/changelog/"
+                href="/zh_cn/changelog/"
                 />
   </url>
   
   <url>
-    <loc>http://git-repo.info/zh_cn/docs/</loc>
+    <loc>/zh_cn/docs/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://git-repo.info/en/docs/"
+                href="/en/docs/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh_cn"
-                href="http://git-repo.info/zh_cn/docs/"
+                href="/zh_cn/docs/"
                 />
   </url>
   

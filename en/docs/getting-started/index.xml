@@ -2,23 +2,23 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Getting Started on git-repo</title>
-    <link>http://git-repo.info/en/docs/getting-started/</link>
+    <link>/en/docs/getting-started/</link>
     <description>Recent content in Getting Started on git-repo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>&amp;copy;{year}, All Rights Reserved</copyright>
     
-        <atom:link href="http://git-repo.info/en/docs/getting-started/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="/en/docs/getting-started/index.xml" rel="self" type="application/rss+xml" />
     
     
     
       
       <item>
         <title>Quick start</title>
-        <link>http://git-repo.info/en/docs/getting-started/quickstart/</link>
+        <link>/en/docs/getting-started/quickstart/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>http://git-repo.info/en/docs/getting-started/quickstart/</guid>
+        <guid>/en/docs/getting-started/quickstart/</guid>
         <description>Quick Start Install git-repo You can download git-repo from: https://github.com/alibaba/git-repo-go/releases.
 Choose the proper package according to your OS (Linux, Mac, or Windows), and architecture (amd or 386), download and extract the package.
 Copy the binary into executable PATH (e.g. /usr/local/bin on Linux or macOS) to complete the installation.
@@ -28,10 +28,10 @@ $ git repo version  Working on a single repository Make sure to setup a remote t
       
       <item>
         <title>Installation</title>
-        <link>http://git-repo.info/en/docs/getting-started/installation/</link>
+        <link>/en/docs/getting-started/installation/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>http://git-repo.info/en/docs/getting-started/installation/</guid>
+        <guid>/en/docs/getting-started/installation/</guid>
         <description>Dependence Install git 2.10.0 or above before install/running git-repo.
 Download and Install git-repo   Download the latest release of git-repo from: https://github.com/alibaba/git-repo-go/releases.
 Choose the proper package according to your OS (Linux, Mac, or Windows) and architecture (amd or 386), download and extract the package.
@@ -41,10 +41,10 @@ Choose the proper package according to your OS (Linux, Mac, or Windows) and arch
       
       <item>
         <title>Running</title>
-        <link>http://git-repo.info/en/docs/getting-started/running/</link>
+        <link>/en/docs/getting-started/running/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>http://git-repo.info/en/docs/getting-started/running/</guid>
+        <guid>/en/docs/getting-started/running/</guid>
         <description>Execute git-repo for the first time git-repo will perform some initialization tasks on the first execution. See: git config extensions. Running any command will trigger the initialization tasks.
 $ git repo --version  Note: git-repo will be recognized as git subcommand so that we can execute git repo (without a dash).
 Manual for git-repo Show help message of git-repo:
@@ -54,10 +54,10 @@ $ git repo  Show help message of of subcommands of git-repo, see the following e
       
       <item>
         <title>Upgrade</title>
-        <link>http://git-repo.info/en/docs/getting-started/upgrade/</link>
+        <link>/en/docs/getting-started/upgrade/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>http://git-repo.info/en/docs/getting-started/upgrade/</guid>
+        <guid>/en/docs/getting-started/upgrade/</guid>
         <description>Upgrade git-repo Upgrade git-repo to the latest version, using command:
 $ git repo upgrade  Will download and install the latest version of git-repo.
 If the upgrade process failed because of permissions or other reasons, it would show instruction in the output message. Please follow the instruction for manual upgrade.

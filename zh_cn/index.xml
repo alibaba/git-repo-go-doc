@@ -2,213 +2,213 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>首页 on git-repo</title>
-    <link>http://git-repo.info/zh_cn/</link>
+    <link>/zh_cn/</link>
     <description>Recent content in 首页 on git-repo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh_cn</language>
     <copyright>&amp;copy;{year}, All Rights Reserved</copyright>
     <lastBuildDate>Sun, 15 Mar 2020 08:00:00 +0800</lastBuildDate>
     
-        <atom:link href="http://git-repo.info/zh_cn/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="/zh_cn/index.xml" rel="self" type="application/rss+xml" />
     
     
     
       
       <item>
         <title>快速开始</title>
-        <link>http://git-repo.info/zh_cn/docs/getting-started/quickstart/</link>
+        <link>/zh_cn/docs/getting-started/quickstart/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>http://git-repo.info/zh_cn/docs/getting-started/quickstart/</guid>
+        <guid>/zh_cn/docs/getting-started/quickstart/</guid>
         <description>快速开始 步骤 1：安装 git-repo 访问 git-repo 的下载页面: https://github.com/alibaba/git-repo-go/releases。 根据</description>
       </item>
       
       <item>
         <title>安装 git-repo</title>
-        <link>http://git-repo.info/zh_cn/docs/getting-started/installation/</link>
+        <link>/zh_cn/docs/getting-started/installation/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>http://git-repo.info/zh_cn/docs/getting-started/installation/</guid>
+        <guid>/zh_cn/docs/getting-started/installation/</guid>
         <description>依赖 git-repo 依赖 git，在安装 git-repo 之前，需要确保已经安装了 git 2.10.0 以上版本。 下载和安装 git-repo 访问 git-repo 的下载页面: https://github.com/alib</description>
       </item>
       
       <item>
         <title>运行 git-repo</title>
-        <link>http://git-repo.info/zh_cn/docs/getting-started/running/</link>
+        <link>/zh_cn/docs/getting-started/running/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>http://git-repo.info/zh_cn/docs/getting-started/running/</guid>
+        <guid>/zh_cn/docs/getting-started/running/</guid>
         <description>运行 git-repo 初次运行任意 git-repo 子命令，会完成一些初始化工作，例如：对 Git 配置文件进行扩展。 因此 git-repo 安装完毕后，可以执行如下命令。 $ git repo --version 说明：上面命令中 git</description>
       </item>
       
       <item>
         <title>升级 git-repo</title>
-        <link>http://git-repo.info/zh_cn/docs/getting-started/upgrade/</link>
+        <link>/zh_cn/docs/getting-started/upgrade/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>http://git-repo.info/zh_cn/docs/getting-started/upgrade/</guid>
+        <guid>/zh_cn/docs/getting-started/upgrade/</guid>
         <description>升级 git-repo 运行下面命令升级 git-repo： $ git repo upgrade 自动下载相应平台的 git-repo 升级包，完成应用的替换和升级。 如果由于文件权限或者其它原因导致升级失败，</description>
       </item>
       
       <item>
         <title>单仓库协同概览</title>
-        <link>http://git-repo.info/zh_cn/docs/single-repo/overview/</link>
+        <link>/zh_cn/docs/single-repo/overview/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>http://git-repo.info/zh_cn/docs/single-repo/overview/</guid>
+        <guid>/zh_cn/docs/single-repo/overview/</guid>
         <description>大多数用户参与的项目是一个代码仓。对于单仓库操作， git-repo 提供了如下命令扩展： git peer-review，或 git pr: 创建代码评审。 git download: 下载评审的代码到本</description>
       </item>
       
       <item>
         <title>git peer-review</title>
-        <link>http://git-repo.info/zh_cn/docs/single-repo/git-peer-review/</link>
+        <link>/zh_cn/docs/single-repo/git-peer-review/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>http://git-repo.info/zh_cn/docs/single-repo/git-peer-review/</guid>
+        <guid>/zh_cn/docs/single-repo/git-peer-review/</guid>
         <description>git-repo 针对常用的单仓库的工作区，提供了快捷的创建代码评审的命令：git peer-review。该命令可以简写为 git pr 或者 git review。 1. 创建代码</description>
       </item>
       
       <item>
         <title>git download</title>
-        <link>http://git-repo.info/zh_cn/docs/single-repo/git-download/</link>
+        <link>/zh_cn/docs/single-repo/git-download/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>http://git-repo.info/zh_cn/docs/single-repo/git-download/</guid>
+        <guid>/zh_cn/docs/single-repo/git-download/</guid>
         <description>功能 git download 是 git-repo 的一个别名命令，实现下载代码评审的源代码。默认使用 checkout 命令检出待评审的提交。 命令格式 git download [options] &amp;lt;Merge-Request-ID&amp;gt; git download [options] &amp;lt;Change-ID&amp;gt;/&amp;lt;Patch-ID&amp;gt; 说明: 对于支持 AGit-Flow 协议的仓库，使</description>
       </item>
       
       <item>
         <title>git abandon</title>
-        <link>http://git-repo.info/zh_cn/docs/single-repo/git-abandon/</link>
+        <link>/zh_cn/docs/single-repo/git-abandon/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>http://git-repo.info/zh_cn/docs/single-repo/git-abandon/</guid>
+        <guid>/zh_cn/docs/single-repo/git-abandon/</guid>
         <description>功能 git abandon 是 git-repo 的一个别名命令，清理已经发起代码评审的本地分支。 如果使用 --force 参数，强制删除分支，等价于 git branch -D &amp;lt;branchname&amp;gt; 命令。 如果不使用 --force 参数（默认），则只</description>
       </item>
       
       <item>
         <title>多仓库协同概览</title>
-        <link>http://git-repo.info/zh_cn/docs/multi-repos/overview/</link>
+        <link>/zh_cn/docs/multi-repos/overview/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>http://git-repo.info/zh_cn/docs/multi-repos/overview/</guid>
+        <guid>/zh_cn/docs/multi-repos/overview/</guid>
         <description>在实践中，Git 大仓库存在着诸多问题：下载慢、不能对授权进行精细控制。解决大仓库的一个有效方案是化整为零：将大仓库拆分为多仓库。 为了实现多仓</description>
       </item>
       
       <item>
         <title>Manifest 格式</title>
-        <link>http://git-repo.info/zh_cn/docs/multi-repos/manifest-format/</link>
+        <link>/zh_cn/docs/multi-repos/manifest-format/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>http://git-repo.info/zh_cn/docs/multi-repos/manifest-format/</guid>
+        <guid>/zh_cn/docs/multi-repos/manifest-format/</guid>
         <description>Manifest 清单仓库和 Manifest 清单文件 定义多仓库关联的清单文件（manifest 文件）保存于一个仓库中，这个仓库称为 manifest 仓库。仓库中默认的 manifest 清单文件名为 def</description>
       </item>
       
       <item>
         <title>git repo init</title>
-        <link>http://git-repo.info/zh_cn/docs/multi-repos/git-repo-init/</link>
+        <link>/zh_cn/docs/multi-repos/git-repo-init/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>http://git-repo.info/zh_cn/docs/multi-repos/git-repo-init/</guid>
+        <guid>/zh_cn/docs/multi-repos/git-repo-init/</guid>
         <description>功能 初始化当前工作区，或修改前一次 git repo init 执行时的参数设置。 当 git repo init 命令执行完毕后，会在工作区中创建子目录 .repo。其中包含 manifest 清单仓库（.r</description>
       </item>
       
       <item>
         <title>git repo sync</title>
-        <link>http://git-repo.info/zh_cn/docs/multi-repos/git-repo-sync/</link>
+        <link>/zh_cn/docs/multi-repos/git-repo-sync/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>http://git-repo.info/zh_cn/docs/multi-repos/git-repo-sync/</guid>
+        <guid>/zh_cn/docs/multi-repos/git-repo-sync/</guid>
         <description>功能 执行 sync 子命令，会在工作区克隆、检出、更新 manifest 清单中包含的仓库。 首先更新 manfiest 仓库。 和上一次更新的项目列表（.repo/project.list</description>
       </item>
       
       <item>
         <title>git repo start</title>
-        <link>http://git-repo.info/zh_cn/docs/multi-repos/git-repo-start/</link>
+        <link>/zh_cn/docs/multi-repos/git-repo-start/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>http://git-repo.info/zh_cn/docs/multi-repos/git-repo-start/</guid>
+        <guid>/zh_cn/docs/multi-repos/git-repo-start/</guid>
         <description>功能 以 manifest 清单仓库指定的版本为基准，为项目创建分支或切换分支。 命令格式 只对指定的项目，创建或切换分支： git repo start &amp;lt;branch-name&amp;gt; [project...] 为所有项目创建或切换分支，分支</description>
       </item>
       
       <item>
         <title>git repo upload</title>
-        <link>http://git-repo.info/zh_cn/docs/multi-repos/git-repo-upload/</link>
+        <link>/zh_cn/docs/multi-repos/git-repo-upload/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>http://git-repo.info/zh_cn/docs/multi-repos/git-repo-upload/</guid>
+        <guid>/zh_cn/docs/multi-repos/git-repo-upload/</guid>
         <description>功能 创建代码评审。 对于指定的项目，git-repo 会将本地分支与上一次执行 git repo upload 时上传的提交做比较，（上一次上传提交记录在 refs/published/&amp;lt;branch-name&amp;gt; 的引用中），提示</description>
       </item>
       
       <item>
         <title>git repo download</title>
-        <link>http://git-repo.info/zh_cn/docs/multi-repos/git-repo-download/</link>
+        <link>/zh_cn/docs/multi-repos/git-repo-download/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>http://git-repo.info/zh_cn/docs/multi-repos/git-repo-download/</guid>
+        <guid>/zh_cn/docs/multi-repos/git-repo-download/</guid>
         <description>功能 实现下载代码评审的源代码。默认使用 checkout 命令检出待评审的提交。 命令格式 git repo download [options] &amp;lt;project&amp;gt; &amp;lt;Merge-Request-ID&amp;gt; ... git repo download [options] &amp;lt;project&amp;gt; &amp;lt;Change-ID&amp;gt;/&amp;lt;Patch-ID&amp;gt; ... 说明: &amp;lt;project&amp;gt; 和代码评审ID 成对出现。如果省略 &amp;lt;project&amp;gt;</description>
       </item>
       
       <item>
         <title>git repo forall</title>
-        <link>http://git-repo.info/zh_cn/docs/multi-repos/git-repo-forall/</link>
+        <link>/zh_cn/docs/multi-repos/git-repo-forall/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>http://git-repo.info/zh_cn/docs/multi-repos/git-repo-forall/</guid>
+        <guid>/zh_cn/docs/multi-repos/git-repo-forall/</guid>
         <description>功能 该命令提供一个迭代器。可以为指定的每个项目运行指定的 shell 命令。 在 git repo forall 的 shell 命令中，可使用下列额外的环境变量： REPO_PROJECT 是项目的唯一名称。 REPO_PATH 是相对于</description>
       </item>
       
       <item>
         <title>git repo status</title>
-        <link>http://git-repo.info/zh_cn/docs/multi-repos/git-repo-status/</link>
+        <link>/zh_cn/docs/multi-repos/git-repo-status/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>http://git-repo.info/zh_cn/docs/multi-repos/git-repo-status/</guid>
+        <guid>/zh_cn/docs/multi-repos/git-repo-status/</guid>
         <description>功能 显示项目工作区状态。每个项目的状态显示两个字符，分别表示索引、工作区的改动: 在第一列中，大写字母表示索引中包含的更改。（相当于 git diff --c</description>
       </item>
       
       <item>
         <title>git repo abandon</title>
-        <link>http://git-repo.info/zh_cn/docs/multi-repos/git-repo-abandon/</link>
+        <link>/zh_cn/docs/multi-repos/git-repo-abandon/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>http://git-repo.info/zh_cn/docs/multi-repos/git-repo-abandon/</guid>
+        <guid>/zh_cn/docs/multi-repos/git-repo-abandon/</guid>
         <description>功能 删除已经发起代码评审的开发分支。 如果使用 --force 参数，强制删除分支，等价于 git branch -D &amp;lt;branchname&amp;gt; 命令。 如果不使用 --force 参数（默认），则只清理已经发起代码评审的本</description>
       </item>
       
       <item>
         <title>git repo prune</title>
-        <link>http://git-repo.info/zh_cn/docs/multi-repos/git-repo-prune/</link>
+        <link>/zh_cn/docs/multi-repos/git-repo-prune/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>http://git-repo.info/zh_cn/docs/multi-repos/git-repo-prune/</guid>
+        <guid>/zh_cn/docs/multi-repos/git-repo-prune/</guid>
         <description>功能 清理本地分支，删除已经被上游合并的本地分支。 该命令等价于 git repo abandon --all [&amp;lt;project&amp;gt;...]。相比 git repo abandon 支持 --force 参数，本命名更</description>
       </item>
       
       <item>
         <title>Git-Merge 的那点事儿</title>
-        <link>http://git-repo.info/zh_cn/2020/03/something-about-git-merge/</link>
+        <link>/zh_cn/2020/03/something-about-git-merge/</link>
         <pubDate>Sun, 15 Mar 2020 08:00:00 +0800</pubDate>
         
-        <guid>http://git-repo.info/zh_cn/2020/03/something-about-git-merge/</guid>
+        <guid>/zh_cn/2020/03/something-about-git-merge/</guid>
         <description>如果您在代码合并时发现 Git 合并结果不符合预期，您是否曾怀疑 Git 出现了 bug ？我希望您把这个选项放在最后。让我们一起来看看 Git-Merge 的那点事儿，一起来查找并解</description>
       </item>
       
       <item>
         <title>AGit-Flow 阿里巴巴集中式 Git 工作流</title>
-        <link>http://git-repo.info/zh_cn/2020/03/agit-flow-and-git-repo/</link>
+        <link>/zh_cn/2020/03/agit-flow-and-git-repo/</link>
         <pubDate>Wed, 04 Mar 2020 08:00:00 +0800</pubDate>
         
-        <guid>http://git-repo.info/zh_cn/2020/03/agit-flow-and-git-repo/</guid>
+        <guid>/zh_cn/2020/03/agit-flow-and-git-repo/</guid>
         <description>Git Merge 2020 Git 的全球盛会 Git Merge 2020 于 2020年3月4日在美国洛杉矶召开，因为新冠病毒引发的疫情，作为演讲嘉宾的我，虽然早早买好了北京和洛杉矶之间的往返</description>
       </item>
       
       <item>
         <title></title>
-        <link>http://git-repo.info/zh_cn/changelog/</link>
+        <link>/zh_cn/changelog/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>http://git-repo.info/zh_cn/changelog/</guid>
+        <guid>/zh_cn/changelog/</guid>
         <description>Changelog Changes of git-repo.
 0.7.5 (2020-09-08) Improvements:
  Support using http proxy when access ssh_info API prune: drop branches without a tracking branch start: not setup tracking branch for immutable rev  Bugfix:

@@ -2,43 +2,43 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>For Multiple Repositories on git-repo</title>
-    <link>http://git-repo.info/en/docs/multi-repos/</link>
+    <link>/en/docs/multi-repos/</link>
     <description>Recent content in For Multiple Repositories on git-repo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>&amp;copy;{year}, All Rights Reserved</copyright>
     
-        <atom:link href="http://git-repo.info/en/docs/multi-repos/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="/en/docs/multi-repos/index.xml" rel="self" type="application/rss+xml" />
     
     
     
       
       <item>
         <title>Overview</title>
-        <link>http://git-repo.info/en/docs/multi-repos/overview/</link>
+        <link>/en/docs/multi-repos/overview/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>http://git-repo.info/en/docs/multi-repos/overview/</guid>
+        <guid>/en/docs/multi-repos/overview/</guid>
         <description>Git built-in solution for multiple repositories is git submodule. It is OK for the release of the source code of all related repositories, but it is bad for development because all sub repositories pin to specific commits.
 Android project introduced a better solution for the management of multiple repositories that the relationship of repositories is defined in an XML file in a manifest project. Android also introduced a new command-line tool named repo, which helps manage repositories.</description>
       </item>
       
       <item>
         <title>Manifest Format</title>
-        <link>http://git-repo.info/en/docs/multi-repos/manifest-format/</link>
+        <link>/en/docs/multi-repos/manifest-format/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>http://git-repo.info/en/docs/multi-repos/manifest-format/</guid>
+        <guid>/en/docs/multi-repos/manifest-format/</guid>
         <description>Manifest file example In a manifest repository, there are one or more XML files, which define the relationship of all repositories of the project. The default manifest file in the manifest project is default.xml. See the following content of a manifest file as an example:
 &amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot;?&amp;gt; &amp;lt;manifest&amp;gt; &amp;lt;remote name=&amp;quot;origin&amp;quot; fetch=&amp;quot;..&amp;quot; revision=&amp;quot;master&amp;quot; review=&amp;quot;https://codeup.aliyun.com&amp;quot; /&amp;gt; &amp;lt;remote name=&amp;quot;github&amp;quot; fetch=&amp;quot;https://github.com&amp;quot; revision=&amp;quot;master&amp;quot; review=&amp;quot;&amp;quot; /&amp;gt; &amp;lt;default remote=&amp;quot;origin&amp;quot; revision=&amp;quot;master&amp;quot; sync-j=&amp;quot;4&amp;quot; /&amp;gt; &amp;lt;project name=&amp;quot;alibaba/git-repo-go&amp;quot; path=&amp;quot;git-repo&amp;quot; groups=&amp;quot;app&amp;quot;&amp;gt; &amp;lt;linkfile src=&amp;quot;README.</description>
       </item>
       
       <item>
         <title>git repo init</title>
-        <link>http://git-repo.info/en/docs/multi-repos/git-repo-init/</link>
+        <link>/en/docs/multi-repos/git-repo-init/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>http://git-repo.info/en/docs/multi-repos/git-repo-init/</guid>
+        <guid>/en/docs/multi-repos/git-repo-init/</guid>
         <description>Description Initialize the current workspace or re-initialize workspace with different options.
 Will create .repo directory inside workspace while executing git repo init. There are one manifest repository and manifest file .repo/manifest.xml inside.
 Some options of git repo init will save as git configs in the .repo/manifests.git repository, such as -m &amp;lt;name&amp;gt;, -g &amp;lt;groups&amp;gt; options.
@@ -48,10 +48,10 @@ Usage git repo init -u &amp;lt;URL&amp;gt; [options...]  Options Available optio
       
       <item>
         <title>git repo sync</title>
-        <link>http://git-repo.info/en/docs/multi-repos/git-repo-sync/</link>
+        <link>/en/docs/multi-repos/git-repo-sync/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>http://git-repo.info/en/docs/multi-repos/git-repo-sync/</guid>
+        <guid>/en/docs/multi-repos/git-repo-sync/</guid>
         <description>Description Run git fetch and git checkout to downloads new changes and updates the working files in your local workspace. If you run repo sync without arguments, it synchronizes the files for all projects.
 When you run repo sync, this is what happens:
   Update manifest project.
@@ -60,10 +60,10 @@ When you run repo sync, this is what happens:
       
       <item>
         <title>git repo start</title>
-        <link>http://git-repo.info/en/docs/multi-repos/git-repo-start/</link>
+        <link>/en/docs/multi-repos/git-repo-start/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>http://git-repo.info/en/docs/multi-repos/git-repo-start/</guid>
+        <guid>/en/docs/multi-repos/git-repo-start/</guid>
         <description>Description Begin a new branch for development, starting from the revision specified in the manifest.
 Usage Create a new branch for specific projects.
 git repo start &amp;lt;branch-name&amp;gt; [project...]  Create a new branch for all projects.
@@ -72,10 +72,10 @@ git repo start --all &amp;lt;branch-name&amp;gt;  </description>
       
       <item>
         <title>git repo upload</title>
-        <link>http://git-repo.info/en/docs/multi-repos/git-repo-upload/</link>
+        <link>/en/docs/multi-repos/git-repo-upload/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>http://git-repo.info/en/docs/multi-repos/git-repo-upload/</guid>
+        <guid>/en/docs/multi-repos/git-repo-upload/</guid>
         <description>Description Send changes to remote server to create code reviews.
 For the specified projects, compares the local branches to the remote branches updated during the last git repo sync. git-repo prompts you to select one or more of the branches that haven&amp;rsquo;t been uploaded for review.
 git repo upload command will start an editor for you with the following text as an example. Add custom options and choose the branches that need to be uploaded in the editor.</description>
@@ -83,10 +83,10 @@ git repo upload command will start an editor for you with the following text as 
       
       <item>
         <title>git repo download</title>
-        <link>http://git-repo.info/en/docs/multi-repos/git-repo-download/</link>
+        <link>/en/docs/multi-repos/git-repo-download/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>http://git-repo.info/en/docs/multi-repos/git-repo-download/</guid>
+        <guid>/en/docs/multi-repos/git-repo-download/</guid>
         <description>Description Download commits of the specific code review, and check out the tip commit by default.
 Usage git repo download [options] &amp;lt;project&amp;gt; &amp;lt;Merge-Request-ID&amp;gt; ... git repo download [options] &amp;lt;project&amp;gt; &amp;lt;Change-ID&amp;gt;/&amp;lt;Patch-ID&amp;gt; ...  Note:
  For AGit-Flow and other compatible services, use &amp;lt;Merge-Request-ID&amp;gt; as a argument. For Gerrit service, use &amp;lt;Change-ID&amp;gt;/&amp;lt;Patch-ID&amp;gt; format argument.  Options Available options:
@@ -95,10 +95,10 @@ Usage git repo download [options] &amp;lt;project&amp;gt; &amp;lt;Merge-Request-
       
       <item>
         <title>git repo forall</title>
-        <link>http://git-repo.info/en/docs/multi-repos/git-repo-forall/</link>
+        <link>/en/docs/multi-repos/git-repo-forall/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>http://git-repo.info/en/docs/multi-repos/git-repo-forall/</guid>
+        <guid>/en/docs/multi-repos/git-repo-forall/</guid>
         <description>Description This command provides an iterator, run a specific shell command on each project.
 The following environments can be used in a shell command:
  REPO_PROJECT: Name of project. REPO_PATH: Relative path to the project. REPO_REMOTE: Name of the remote in the manifest.  Usage git repo forall [project-list] -c command  Options Available options:
@@ -107,10 +107,10 @@ The following environments can be used in a shell command:
       
       <item>
         <title>git repo status</title>
-        <link>http://git-repo.info/en/docs/multi-repos/git-repo-status/</link>
+        <link>/en/docs/multi-repos/git-repo-status/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>http://git-repo.info/en/docs/multi-repos/git-repo-status/</guid>
+        <guid>/en/docs/multi-repos/git-repo-status/</guid>
         <description>Description Show a summary of git status on each project. For each file in the project, a two-letter code is used. The first letter stands for changes of index, and the second letter stands for changes of worktree.
 In the first column, an uppercase letter indicates how the index differs from the last committed state.
    Letter Meaning Description     - No change Same in HEAD and index   A Added Not in HEAD, in index   M Modified In HEAD, modified in index   D Deleted In HEAD, not in index   R Renamed Not in HEAD, path changed in index   C Copied Not in HEAD, copied from another in index   T Mode changed Same content in HEAD and index, mode changed   U Unmerged Conflict between HEAD and index; resolution required    In the second column, a lowercase letter indicates how the working directory differs from the index.</description>
@@ -118,10 +118,10 @@ In the first column, an uppercase letter indicates how the index differs from th
       
       <item>
         <title>git repo abandon</title>
-        <link>http://git-repo.info/en/docs/multi-repos/git-repo-abandon/</link>
+        <link>/en/docs/multi-repos/git-repo-abandon/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>http://git-repo.info/en/docs/multi-repos/git-repo-abandon/</guid>
+        <guid>/en/docs/multi-repos/git-repo-abandon/</guid>
         <description>Description Remove already published local branches. If option --force is given, will delete branch by force, just like git branch -D &amp;lt;branch-name&amp;gt;.
 Usage git-repo abandon [options] [&amp;lt;project&amp;gt;...]  Options Available options:
  --all: Abandon all branches. -b, --branch: Abandon the specific branch. --force: Delete by force, even local branch is not published yet.  </description>
@@ -129,10 +129,10 @@ Usage git-repo abandon [options] [&amp;lt;project&amp;gt;...]  Options Available
       
       <item>
         <title>git repo prune</title>
-        <link>http://git-repo.info/en/docs/multi-repos/git-repo-prune/</link>
+        <link>/en/docs/multi-repos/git-repo-prune/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>http://git-repo.info/en/docs/multi-repos/git-repo-prune/</guid>
+        <guid>/en/docs/multi-repos/git-repo-prune/</guid>
         <description>Description Delete all published local branches.
 It equivalent to git repo abandon --all [&amp;lt;project&amp;gt;...] command. git repo prune does not allow --force option, so it is safer.
 Usage git-repo prune [&amp;lt;project&amp;gt;...]  </description>

@@ -2,59 +2,59 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>git-repo 文档 on git-repo</title>
-    <link>http://git-repo.info/zh_cn/docs/</link>
+    <link>/zh_cn/docs/</link>
     <description>Recent content in git-repo 文档 on git-repo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh_cn</language>
     <copyright>&amp;copy;{year}, All Rights Reserved</copyright>
     
-        <atom:link href="http://git-repo.info/zh_cn/docs/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="/zh_cn/docs/index.xml" rel="self" type="application/rss+xml" />
     
     
     
       
       <item>
         <title>开始</title>
-        <link>http://git-repo.info/zh_cn/docs/getting-started/</link>
+        <link>/zh_cn/docs/getting-started/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>http://git-repo.info/zh_cn/docs/getting-started/</guid>
+        <guid>/zh_cn/docs/getting-started/</guid>
         <description>快速开始 安装 运行 升级</description>
       </item>
       
       <item>
         <title>Git 配置文件扩展</title>
-        <link>http://git-repo.info/zh_cn/docs/gitconfig/</link>
+        <link>/zh_cn/docs/gitconfig/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>http://git-repo.info/zh_cn/docs/gitconfig/</guid>
+        <guid>/zh_cn/docs/gitconfig/</guid>
         <description>安装 git 配置扩展 git-repo 会在用户主目录下创建扩展的 Git 配置文件：.git-repo/gitconfig。该文件由 git-repo 自动管理，不要手工修改。如果手工修改</description>
       </item>
       
       <item>
         <title>单仓库代码评审</title>
-        <link>http://git-repo.info/zh_cn/docs/single-repo/</link>
+        <link>/zh_cn/docs/single-repo/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>http://git-repo.info/zh_cn/docs/single-repo/</guid>
+        <guid>/zh_cn/docs/single-repo/</guid>
         <description>概览 git pr git abandon git download</description>
       </item>
       
       <item>
         <title>多仓库协同和代码评审</title>
-        <link>http://git-repo.info/zh_cn/docs/multi-repos/</link>
+        <link>/zh_cn/docs/multi-repos/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>http://git-repo.info/zh_cn/docs/multi-repos/</guid>
+        <guid>/zh_cn/docs/multi-repos/</guid>
         <description>概览 Manifest 格式 git repo init git repo sync git repo start git repo upload git repo download git repo forall git repo status</description>
       </item>
       
       <item>
         <title>代码贡献</title>
-        <link>http://git-repo.info/zh_cn/docs/contribution/</link>
+        <link>/zh_cn/docs/contribution/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>http://git-repo.info/zh_cn/docs/contribution/</guid>
+        <guid>/zh_cn/docs/contribution/</guid>
         <description>git-repo 采用 go 语言开发，设计中参考了 Android 的 repo 工具，在多仓库管理命令上和 repo 保持兼容。 参与 git-repo 开发，请向 git-repo 仓库发送代码评审请求。 代码仓库 代码: https://github.com/alibaba/git-repo-go 文档: https://github.com/alibaba/git-repo-go-doc 构</description>
       </item>
       

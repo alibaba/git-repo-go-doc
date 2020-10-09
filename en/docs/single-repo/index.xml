@@ -2,23 +2,23 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>For Single Repository on git-repo</title>
-    <link>http://git-repo.info/en/docs/single-repo/</link>
+    <link>/en/docs/single-repo/</link>
     <description>Recent content in For Single Repository on git-repo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>&amp;copy;{year}, All Rights Reserved</copyright>
     
-        <atom:link href="http://git-repo.info/en/docs/single-repo/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="/en/docs/single-repo/index.xml" rel="self" type="application/rss+xml" />
     
     
     
       
       <item>
         <title>Overview</title>
-        <link>http://git-repo.info/en/docs/single-repo/overview/</link>
+        <link>/en/docs/single-repo/overview/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>http://git-repo.info/en/docs/single-repo/overview/</guid>
+        <guid>/en/docs/single-repo/overview/</guid>
         <description>git-repo provides several alias commands for git workflow on a single repository:
  git peer-review or git pr: publish local commits to create code review. git download: download specific code review from remote to the local repository. git abandon: prune already published local branch.  Demo for git workflow on a single repository:
   Fig: git-repo for multiple repositories
@@ -27,10 +27,10 @@
       
       <item>
         <title>git peer-review</title>
-        <link>http://git-repo.info/en/docs/single-repo/git-peer-review/</link>
+        <link>/en/docs/single-repo/git-peer-review/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>http://git-repo.info/en/docs/single-repo/git-peer-review/</guid>
+        <guid>/en/docs/single-repo/git-peer-review/</guid>
         <description>git-repo provides alias command git peer-review or git pr to create a code review on a single repository.
 1. Create a code review 1.1 Clone Clone remote repository to the local workspace (Ignore this step, if have local repository already):
 $ git clone https://codeup.aliyun.com/git-repo/demo.git $ cd demo  1.2 Create a local topic branch This step is optional. If you want to work on several different tasks at the same local workspace, you must create a topic branch for each task.</description>
@@ -38,10 +38,10 @@ $ git clone https://codeup.aliyun.com/git-repo/demo.git $ cd demo  1.2 Create a 
       
       <item>
         <title>git download</title>
-        <link>http://git-repo.info/en/docs/single-repo/git-download/</link>
+        <link>/en/docs/single-repo/git-download/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>http://git-repo.info/en/docs/single-repo/git-download/</guid>
+        <guid>/en/docs/single-repo/git-download/</guid>
         <description>Description Download commits of the specific code review, and check out the tip commit by default.
 git download is an alias command of git-repo.
 Usage git download [options] &amp;lt;Merge-Request-ID&amp;gt; git download [options] &amp;lt;Change-ID&amp;gt;/&amp;lt;Patch-ID&amp;gt;  Note:
@@ -51,10 +51,10 @@ Usage git download [options] &amp;lt;Merge-Request-ID&amp;gt; git download [opti
       
       <item>
         <title>git abandon</title>
-        <link>http://git-repo.info/en/docs/single-repo/git-abandon/</link>
+        <link>/en/docs/single-repo/git-abandon/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>http://git-repo.info/en/docs/single-repo/git-abandon/</guid>
+        <guid>/en/docs/single-repo/git-abandon/</guid>
         <description>Description Remove already published local branches. If option --force is given, will delete branch by force, just like git branch -D &amp;lt;branch-name&amp;gt;.
 git abandon is an alias command of git-repo.
 Usage git abandon [options]  Options Available options:
