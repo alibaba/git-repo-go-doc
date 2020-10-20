@@ -6,7 +6,7 @@ defaultContentLanguage = "en"
 defaultContentLanguageInSubdir = true
 hasCJKLanguage = true
 
-copyright = "&copy;{year}, All Rights Reserved"
+copyright = "&copy;{year}, All Rights Reserved<div><a href='http://beian.miit.gov.cn/' target='_blank'><img width='16' height='16' src='//img.alicdn.com/tfs/TB1..50QpXXXXX7XpXXXXXXXXXX-40-40.png'><span class='caption'>浙ICP备12022327号-722</span></a></div>"
 timeout = 10000
 enableEmoji = true
 paginate = 13
