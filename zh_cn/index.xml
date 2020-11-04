@@ -15,6 +15,15 @@
     
       
       <item>
+        <title>变更说明</title>
+        <link>/zh_cn/changelog/</link>
+        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+        
+        <guid>/zh_cn/changelog/</guid>
+        <description>Changelog Changes of git-repo. 0.7.6 (2020-10-13) Improvements: Add http proxy support in command git-repo upgrade Fix http proxy support for API call of ssh-info Bugfix: go 1.15 compatible issue: not add rune with int 0.7.5 (2020-09-08) Improvements: Support using http proxy when access ssh_info API prune: drop branches without a tracking branch start: not setup tracking branch for immutable rev Bugfix: bugfix: close project.list file before rename Transfer repository from</description>
+      </item>
+      
+      <item>
         <title>快速开始</title>
         <link>/zh_cn/docs/getting-started/quickstart/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -201,20 +210,6 @@
         
         <guid>/zh_cn/2020/03/agit-flow-and-git-repo/</guid>
         <description>Git Merge 2020 Git 的全球盛会 Git Merge 2020 于 2020年3月4日在美国洛杉矶召开，因为新冠病毒引发的疫情，作为演讲嘉宾的我，虽然早早买好了北京和洛杉矶之间的往返</description>
-      </item>
-      
-      <item>
-        <title></title>
-        <link>/zh_cn/changelog/</link>
-        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-        
-        <guid>/zh_cn/changelog/</guid>
-        <description>Changelog Changes of git-repo.
-0.7.6 (2020-10-13) Improvements:
- Add http proxy support in command git-repo upgrade Fix http proxy support for API call of ssh-info  Bugfix:
- go 1.15 compatible issue: not add rune with int  0.7.5 (2020-09-08) Improvements:
- Support using http proxy when access ssh_info API prune: drop branches without a tracking branch start: not setup tracking branch for immutable rev  Bugfix:
- bugfix: close project.</description>
       </item>
       
     

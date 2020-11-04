@@ -3,6 +3,20 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>/zh_cn/changelog/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/en/changelog/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh_cn"
+                href="/zh_cn/changelog/"
+                />
+  </url>
+  
+  <url>
     <loc>/zh_cn/docs/getting-started/</loc>
     <xhtml:link
                 rel="alternate"
@@ -385,21 +399,6 @@
                 rel="alternate"
                 hreflang="zh_cn"
                 href="/zh_cn/2020/03/agit-flow-and-git-repo/"
-                />
-  </url>
-  
-  <url>
-    <loc>/zh_cn/changelog/</loc>
-    <priority>0</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/en/changelog/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh_cn"
-                href="/zh_cn/changelog/"
                 />
   </url>
   

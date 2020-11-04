@@ -15,6 +15,20 @@
     
       
       <item>
+        <title>Changelog</title>
+        <link>/en/changelog/</link>
+        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+        
+        <guid>/en/changelog/</guid>
+        <description>Changelog Changes of git-repo.
+0.7.6 (2020-10-13) Improvements:
+ Add http proxy support in command git-repo upgrade Fix http proxy support for API call of ssh-info  Bugfix:
+ go 1.15 compatible issue: not add rune with int  0.7.5 (2020-09-08) Improvements:
+ Support using http proxy when access ssh_info API prune: drop branches without a tracking branch start: not setup tracking branch for immutable rev  Bugfix:
+ bugfix: close project.</description>
+      </item>
+      
+      <item>
         <title>Quick start</title>
         <link>/en/docs/getting-started/quickstart/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -247,20 +261,6 @@ Usage git-repo prune [&amp;lt;project&amp;gt;...]  </description>
         <description>About myself Due to the coronavirus outbreak in China, I was unable to attend the Git Merge 2020 conference to give a speech on &amp;ldquo;AGit and git-repo&amp;rdquo; in Los Angeles on March 4, 2020. It&amp;rsquo;s a pity that I can&amp;rsquo;t communicate face to face with developers all over the world this time. I will share the content of my speech on this blog.
 A brief introduction to myself:
   I am Jiang Xin, a software engineer in Alibaba, China.</description>
-      </item>
-      
-      <item>
-        <title></title>
-        <link>/en/changelog/</link>
-        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-        
-        <guid>/en/changelog/</guid>
-        <description>Changelog Changes of git-repo.
-0.7.6 (2020-10-13) Improvements:
- Add http proxy support in command git-repo upgrade Fix http proxy support for API call of ssh-info  Bugfix:
- go 1.15 compatible issue: not add rune with int  0.7.5 (2020-09-08) Improvements:
- Support using http proxy when access ssh_info API prune: drop branches without a tracking branch start: not setup tracking branch for immutable rev  Bugfix:
- bugfix: close project.</description>
       </item>
       
     

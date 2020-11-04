@@ -3,6 +3,20 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>/en/changelog/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh_cn"
+                href="/zh_cn/changelog/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/en/changelog/"
+                />
+  </url>
+  
+  <url>
     <loc>/en/docs/getting-started/</loc>
     <xhtml:link
                 rel="alternate"
@@ -380,21 +394,6 @@
                 rel="alternate"
                 hreflang="en"
                 href="/en/posts/"
-                />
-  </url>
-  
-  <url>
-    <loc>/en/changelog/</loc>
-    <priority>0</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh_cn"
-                href="/zh_cn/changelog/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/en/changelog/"
                 />
   </url>
   
