@@ -888,7 +888,7 @@
     "datePublished": "0001-01-01T00:00:00Z",
     "dateModified": "0001-01-01T00:00:00Z",
     "url" : "/en/changelog/",
-    "description": "Changelog Changes of git-repo. 0.7.6 (2020-10-13) Improvements:  Add http proxy support in command git-repo upgrade Fix http proxy support for API call of ssh-info …",
+    "description": "Changelog Changes of git-repo. 0.7.7 (2020-12-15) Improvements:   sync: Set default tracking branch even for fixed revision   upload: do not upload fixed revision if not …",
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https://git-repo.info/"
@@ -1366,6 +1366,43 @@
   <article class="single__contents">
     <h1 id="changelog">Changelog</h1>
 <p>Changes of git-repo.</p>
+<h2 id="077-2020-12-15">0.7.7 (2020-12-15)</h2>
+<p>Improvements:</p>
+<ul>
+<li>
+<p>sync: Set default tracking branch even for fixed revision</p>
+</li>
+<li>
+<p>upload: do not upload fixed revision if not changed</p>
+</li>
+<li>
+<p>helper: add new field pushurl in ssh-info</p>
+</li>
+<li>
+<p>project: default use pushurl defined in manifest file instead of <code>ssh_info</code> resp</p>
+</li>
+<li>
+<p>workspace: show error if review is undefined for remote</p>
+</li>
+<li>
+<p>test: result of Variant() may change on different env</p>
+</li>
+<li>
+<p>manifest: Merge duplicate fields if attribute override is true</p>
+</li>
+<li>
+<p>ssh-info api: add new field <code>review_ref</code></p>
+<p>Add new member field <code>review_ref</code> in <code>ssh_info</code> API. When downloading<br />
+a review, return the reference name by parsing the pattern defined in<br />
+<code>review_ref</code> of <code>ssh_info</code>.</p>
+</li>
+</ul>
+<p>Bugfix and style:</p>
+<ul>
+<li>Bug: do not set push.default for repository</li>
+<li>upload: create parent dir for cache of upload-options</li>
+<li>upload: fix warning of redundant type</li>
+</ul>
 <h2 id="076-2020-10-13">0.7.6 (2020-10-13)</h2>
 <p>Improvements:</p>
 <ul>
@@ -1671,6 +1708,7 @@ will not be overwritten.</p>
   <h6 class="toc__label">What&#39;s on this Page</h6>
   <nav id="TableOfContents">
   <ul>
+    <li><a href="#077-2020-12-15">0.7.7 (2020-12-15)</a></li>
     <li><a href="#076-2020-10-13">0.7.6 (2020-10-13)</a></li>
     <li><a href="#075-2020-09-08">0.7.5 (2020-09-08)</a></li>
     <li><a href="#074-2020-03-03">0.7.4 (2020-03-03)</a></li>

@@ -21,11 +21,13 @@
         
         <guid>/en/changelog/</guid>
         <description>Changelog Changes of git-repo.
-0.7.6 (2020-10-13) Improvements:
- Add http proxy support in command git-repo upgrade Fix http proxy support for API call of ssh-info  Bugfix:
- go 1.15 compatible issue: not add rune with int  0.7.5 (2020-09-08) Improvements:
- Support using http proxy when access ssh_info API prune: drop branches without a tracking branch start: not setup tracking branch for immutable rev  Bugfix:
- bugfix: close project.</description>
+0.7.7 (2020-12-15) Improvements:
+  sync: Set default tracking branch even for fixed revision
+  upload: do not upload fixed revision if not changed
+  helper: add new field pushurl in ssh-info
+  project: default use pushurl defined in manifest file instead of ssh_info resp
+  workspace: show error if review is undefined for remote
+  test: result of Variant() may change on different env</description>
       </item>
       
       <item>
