@@ -6,7 +6,8 @@ defaultContentLanguage = "en"
 defaultContentLanguageInSubdir = true
 hasCJKLanguage = true
 
-copyright = "&copy;{year}, All Rights Reserved<div><a href='http://beian.miit.gov.cn/' target='_blank'><img width='16' height='16' src='//img.alicdn.com/tfs/TB1..50QpXXXXX7XpXXXXXXXXXX-40-40.png'><span class='caption'>浙ICP备12022327号-722</span></a></div>"
+copyright = "&copy;{year}, All Rights Reserved <div style='width:800px;margin:0 auto; padding:20px 0;'> <span class='caption'> <a href='http://idinfo.zjamr.zj.gov.cn/bscx.do?method=lzxx&id=3301843301000000126540' target='_blank'><img src='//gw.alicdn.com/tfs/TB1GxwdSXXXXXa.aXXXXXXXXXXX-65-70.gif' style='display:inline-block;text-decoration:none;width:18px;height:18px;' /></a> <a target='_blank' href='http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=33011002015835' style='display:inline-block;text-decoration:none;height:20px;line-height:20px;'>    <img src='//img.alicdn.com/tfs/TB1..50QpXXXXX7XpXXXXXXXXXX-40-40.png' style='display:inline-block;text-decoration:none;width:18px;height:18px;'/> 浙公网安备 33011002015835号 </a> </span> | <span class='caption'><a target='_blank' href='https://beian.miit.gov.cn/'>浙ICP备12022327号-722</a></span> </div>"
+
 timeout = 10000
 enableEmoji = true
 paginate = 13
