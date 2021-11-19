@@ -888,7 +888,7 @@
     "datePublished": "0001-01-01T00:00:00Z",
     "dateModified": "0001-01-01T00:00:00Z",
     "url" : "/zh_cn/changelog/",
-    "description": "Changelog Changes of git-repo. 0.7.7 (2020-12-15) Improvements: sync: Set default tracking branch even for fixed revision upload: do not upload fixed revision if not …",
+    "description": "Changelog Changes of git-repo. 0.7.8 (2021-11-19) Improvements: arm64: native Apple Silicon (M1) support to Mac builds sshinfo: check response of ssh_info for bad …",
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https://git-repo.info/"
@@ -1366,6 +1366,22 @@
   <article class="single__contents">
     <h1 id="changelog">Changelog</h1>
 <p>Changes of git-repo.</p>
+<h2 id="078-2021-11-19">0.7.8 (2021-11-19)</h2>
+<p>Improvements:</p>
+<ul>
+<li>arm64: native Apple Silicon (M1) support to Mac builds</li>
+<li>sshinfo: check response of <code>ssh_info</code> for bad hostname</li>
+<li>ci: remove azure-pipeline, use github-action instead</li>
+<li>Setup githb action</li>
+<li>test: turn off git advice and warnings</li>
+<li>After load manifests, check and fixup missing attrs</li>
+<li>sync: check published ref if has &ndash;check-published option</li>
+<li>sync: clean obsolete mirror repositories</li>
+<li>sync: remove obsolete gitdir if obsolete project deleted</li>
+<li>init: do not init repo with InitByLink for mirror</li>
+<li>sync: refactor: move UpdateProjectList() to workspace</li>
+<li>sync: instead of removing obsolete projects, show instructions</li>
+</ul>
 <h2 id="077-2020-12-15">0.7.7 (2020-12-15)</h2>
 <p>Improvements:</p>
 <ul>
@@ -1708,6 +1724,7 @@ will not be overwritten.</p>
   <h6 class="toc__label">What&#39;s on this Page</h6>
   <nav id="TableOfContents">
   <ul>
+    <li><a href="#078-2021-11-19">0.7.8 (2021-11-19)</a></li>
     <li><a href="#077-2020-12-15">0.7.7 (2020-12-15)</a></li>
     <li><a href="#076-2020-10-13">0.7.6 (2020-10-13)</a></li>
     <li><a href="#075-2020-09-08">0.7.5 (2020-09-08)</a></li>
