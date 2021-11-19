@@ -4,42 +4,51 @@ draft: false
 weight: 20
 ---
 
-# Download
+# Latest version
 
-## Latest version
-
-## 0.7.6 (2020-10-13)
+## 0.7.8 (2021-11-19)
 
 ### Changes
 
 Improvements:
 
-+ Add http proxy support in command git-repo upgrade
-+ Fix http proxy support for API call of ssh-info
+* arm64: native Apple Silicon (M1) support to Mac builds
+* sshinfo: check response of `ssh_info` for bad hostname
+* ci: remove azure-pipeline, use github-action instead
+* Setup githb action
+* test: turn off git advice and warnings
+* After load manifests, check and fixup missing attrs
+* sync: check published ref if has --check-published option
+* sync: clean obsolete mirror repositories
+* sync: remove obsolete gitdir if obsolete project deleted
+* init: do not init repo with InitByLink for mirror
+* sync: refactor: move UpdateProjectList() to workspace
+* sync: instead of removing obsolete projects, show instructions
 
-Bugfix:
-
-+ go 1.15 compatible issue: not add rune with int
 
 ### Files
 
-+ Linux (amd64): [git-repo-0.7.6-Linux-64.tar.gz](/releases/v0.7.6/git-repo-0.7.6-Linux-64.tar.gz)
-  SHA-256: 523feeeea0cb65769ad881d0bc08ab1e6ecf9a1cbeb06acacc407ab8961ee47a
++ Linux (amd64): [git-repo-0.7.8-Linux-64.tar.gz](/releases/v0.7.8/git-repo-0.7.8-Linux-64.tar.gz)
+  SHA-256: 92fe06087dea70d34e4cf62786b2bf58f51a47407a89775825a006b80acf0dc3
 
-+ Linux (386): [git-repo-0.7.6-Linux-32.tar.gz](/releases/v0.7.6/git-repo-0.7.6-Linux-32.tar.gz)
-  SHA-256: 04705a11c314d249595c42a682d4bb176d7e9a2904076484b840ca1f638de19c
++ Linux (386): [git-repo-0.7.8-Linux-32.tar.gz](/releases/v0.7.8/git-repo-0.7.8-Linux-32.tar.gz)
+  SHA-256: fe9828bdc4a0ef298535121fef36d62b897b47217c9c419084a7c4838e864a64 
 
-+ macOS (amd64): [git-repo-0.7.6-macOS-64.tar.gz](/releases/v0.7.6/git-repo-0.7.6-macOS-64.tar.gz)
-  SHA-256: b2d11133de94badbce34ea3e738dfd4c949bc9819f0c918be8700c3e9248c8fa
++ macOS (amd64): [git-repo-0.7.8-macOS-64.tar.gz](/releases/v0.7.8/git-repo-0.7.8-macOS-64.tar.gz)
+  SHA-256: 8e5d1656bfc43ac5a88895f6e8149769099dfd71d59660e233ace926f6e938fe
 
-+ macOS (386): [git-repo-0.7.6-macOS-32.tar.gz](/releases/v0.7.6/git-repo-0.7.6-macOS-32.tar.gz)
-  SHA-256: 0bf536a9d626f6395238e86288e5dbb6d15cfbbd558d7596d2d897b9c6b5a3e5
++ macOS (arm64): [git-repo-0.7.8-macOS-arm64.tar.gz](/releases/v0.7.8/git-repo-0.7.8-macOS-arm64.tar.gz)
+  SHA-256: 1b73d6abe145cdac7513acff8fc1783204880306483da1b3bd5ac9e4d4c4938f
 
-+ Windows (amd64): [git-repo-0.7.6-Windows-64.zip](/releases/v0.7.6/git-repo-0.7.6-Windows-64.zip)
-  SHA-256: 55952d53eae833fead90fb4719e60f262cd9b7b8648d2f4e669311fa42f5d77d
++ Windows (amd64): [git-repo-0.7.8-Windows-64.zip](/releases/v0.7.8/git-repo-0.7.8-Windows-64.zip)
+  SHA-256: fed6b48b04ca8495eab66fd647eb3a26989d24782435083972755fb55e6ed191
 
-+ Windows (386): [git-repo-0.7.6-Windows-32.zip](/releases/v0.7.6/git-repo-0.7.6-Windows-32.zip)
-  SHA-256: f79afd6e658e49ca5540049241e38827dcd0e2dbc9f4c7bac7be5d2a205be275
++ Windows (386): [git-repo-0.7.8-Windows-32.zip](/releases/v0.7.8/git-repo-0.7.8-Windows-32.zip)
+  SHA-256: b2eda9cd23034a5fc80a9c053ee574492f07a3a52e487b84a7d299adcb763e5c
 
 
-## Archives
+# Archives
+
+For history versions, see:
+
++ https://github.com/alibaba/git-repo-go/releases
