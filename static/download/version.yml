@@ -1,3 +1,3 @@
 production: 0.7.8
-test: 0.7.8
+test: 0.7.8.7.g8de1b39
 url: "https://git-repo.info/releases/v<version>/git-repo-<version>-<os>-<arch>.<ext>"
