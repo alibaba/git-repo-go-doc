@@ -1,5 +1,5 @@
 baseURL = "https://git-repo.info/"
-title = "git-repo"
+title = "阿里git客户端工具"
 theme = "zdoc"
 
 defaultContentLanguage = "en"
