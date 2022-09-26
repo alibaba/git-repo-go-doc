@@ -1,11 +1,11 @@
 [en]
-  title = "git-repo"
+  title = "git-repo: a git wrapper from Alibaba"
   languageName = "English"
   weight = 1
   contentdir = "content/en"
 
 [zh_cn]
-  title = "git-repo"
+  title = "阿里git客户端工具"
   languageName = "中文"
   weight = 2
   contentdir = "content/zh_cn"
